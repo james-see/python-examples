@@ -5,28 +5,25 @@
 import sys # need this to pass arguments at the command line
 from termcolor import colored # awesome color library for printing colored text in the terminal
 import argparse
+import random
 
+# terminal arguments parser globals - do not change
 parser = argparse.ArgumentParser()
-
 parser.add_argument('-s', action='store', dest='simple_value',
                     help='Search term')
-
 parser.add_argument('-c', action='store_const', dest='constant_value',
                     const='value-to-store',
                     help='Store a constant value')
-
 parser.add_argument('-t', action='store_true', default=False,
                     dest='boolean_switch',
                     help='Set a switch to true')
 parser.add_argument('-f', action='store_false', default=False,
                     dest='boolean_switch',
                     help='Set a switch to false')
-
 parser.add_argument('-a', action='append', dest='collection',
                     default=[],
                     help='Add repeated values to a list',
                     )
-
 parser.add_argument('-A', action='append_const', dest='const_collection',
                     const='value-1-to-append',
                     default=[],
@@ -34,9 +31,26 @@ parser.add_argument('-A', action='append_const', dest='const_collection',
 parser.add_argument('-B', action='append_const', dest='const_collection',
                     const='value-2-to-append',
                     help='Add different values to list')
-
 parser.add_argument('--version', action='version', version='%(prog)s 1.1')
 results = parser.parse_args()
+
+# global dictionary list of terms - do not change
+diction = []
+subset = []
+lengthmin = 6
+fname = '/Users/mbpjc/projects/python-examples/assets/dictionary-list.html'
+with open(fname) as f:
+    diction = f.readlines()
+    for term in diction:
+     if len(term) > lengthmin:
+          subset.append(term)
+#print subset[5]
+#print diction[1]
+
+# function to get a random term from the minlength dictionary in subset list
+def rando(listed):
+     randomed = random.choice(listed)
+     return randomed
 
 # function that searches twitter using the public API based on searchterms set at the terminal
 def gettweets(searchterms):
@@ -47,11 +61,19 @@ def gettweets(searchterms):
 		tweetlist.append(plaintext(tweet.text))
 	return tweetlist
 
-searchterms = '"@jamescampbell"' # default search term if none set
-if results.simple_value != '': # if search terms set then change from default to that
+
+
+searchterms = rando(subset) # default search term if none set is a random term from a dictionary list
+if results.simple_value != None: # if search terms set then change from default to that
 	searchterms = results.simple_value
 
+print "Search term set to: %s" % (searchterms)
 outputtweets = gettweets(searchterms)
+if len(outputtweets) == 0:
+     searchterms = rando(subset)
+     print "Search term set to: %s" % (searchterms)
+     outputtweets = gettweets(searchterms)
+
 print colored('Twitter search example using pattern package:','blue')
 print colored('Note: @jamescampbell default search term and first result returned if nothing set \n\n','yellow')
 print outputtweets[1]
