@@ -1,6 +1,7 @@
-# pattern library examples # 1
+# pattern library examples including querying Twitter, Google, and others
 # author: James Campbell
 # Date Created: 2015 05 17
+# to install pattern, it is simple via pip: pip install pattern
 
 import sys # need this to pass arguments at the command line
 from termcolor import colored # awesome color library for printing colored text in the terminal
@@ -61,22 +62,24 @@ def gettweets(searchterms):
 		tweetlist.append(plaintext(tweet.text))
 	return tweetlist
 
-
-
+# setup the default search terms 
 searchterms = rando(subset) # default search term if none set is a random term from a dictionary list
 if results.simple_value != None: # if search terms set then change from default to that
-	searchterms = results.simple_value
+	searchterms = results.simple_value # set from argparse above in globals section
 
-print "Search term set to: %s" % (searchterms)
+print "Search term set to: %s" % (searchterms) # Nice to see output of what random term was selected
 outputtweets = gettweets(searchterms)
-if len(outputtweets) == 0:
+while len(outputtweets) == 0:
      searchterms = rando(subset)
      print "Search term set to: %s" % (searchterms)
      outputtweets = gettweets(searchterms)
-
+if isinstance(outputtweets[0],basestring):
+    outputtweets[0].encode('utf8')
+else:
+    unicode(outputtweets[0]).encode('utf8')
 print colored('Twitter search example using pattern package:','blue')
-print colored('Note: @jamescampbell default search term and first result returned if nothing set \n\n','yellow')
-print outputtweets[1]
+print colored('Note: a random search term from dictionary list is set if nothing set. \n\n','red')
+print outputtweets[0]
 print '\n\n'
 exit()
 
