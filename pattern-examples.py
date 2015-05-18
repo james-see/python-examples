@@ -73,13 +73,17 @@ while len(outputtweets) == 0:
      searchterms = rando(subset)
      print "Search term set to: %s" % (searchterms)
      outputtweets = gettweets(searchterms)
-if isinstance(outputtweets[0],basestring):
-    outputtweets[0].encode('utf8')
-else:
-    unicode(outputtweets[0]).encode('utf8')
+
 print colored('Twitter search example using pattern package:','blue')
 print colored('Note: a random search term from dictionary list is set if nothing set. \n\n','red')
-print outputtweets[0]
+i = 0
+for tweet in outputtweets:
+     if isinstance(tweet,basestring):
+          tweet = tweet.encode('utf8')
+     else:
+          tweet = unicode(tweet).encode('utf8')
+     i = i + 1
+     print '[--' + str(i)+ '--] ' + ' ' + tweet
 print '\n\n'
 exit()
 
