@@ -6,8 +6,8 @@ The first example I created is pattern-example-twitter.py. Pattern is a great li
 
 This twitter example connects to twitter and searches either a random string or terms you set via the terminal with the -s 'search terms'.
 
-Terminal Example:
-<code>$ python pattern-example-twitter.py -s 'Hello World'</code>
+Terminal Example: 
+ <code>$ python pattern-example-twitter.py -s 'Hello World'</code>
 
 ## Tor Connect Example
 Tor (The Onion Router) has a particular socks port and connection setup that needs configured to connect in Python. This example shows you how.
