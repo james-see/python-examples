@@ -12,16 +12,16 @@ import sys
 # terminal arguments parser globals - do not change
 parser = argparse.ArgumentParser()
 parser.add_argument('-o', action='store', dest='onion',
-                    help='put in onion site to load (with http & quotes)')
+                    help='put in onion site to load (with http & quotes)') # set -o to accept onion address
 results = parser.parse_args()
 
 # Global Vars
 onionsite = 'http://3g2upl4pq6kufc4m.onion' # set the default onion site to visit to test
-if results.onion != None: # if search terms set then change from default to that
+if results.onion != None: # if search terms set in terminal then change from default to that
 	onionsite = results.onion # set from argparse above in globals section
 
 #TOR SETUP GLOBAL Vars
-SOCKS_PORT = 9050  # TOR proxy port
+SOCKS_PORT = 9050  # TOR proxy port that is default from torrc, change to whatever torrc is configured to
 
 # Set socks proxy and wrap the urllib module
 socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, '127.0.0.1', SOCKS_PORT) # sets default proxy for connect
