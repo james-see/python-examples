@@ -13,7 +13,7 @@ Terminal Example:
 ## Tor Connect Example
 Tor (The Onion Router) has a particular socks port and connection setup that needs configured to connect in Python. This example shows you how. You must already have [Tor](http://torproject.org/download) installed. 
 
-*Note:* You need to install the Socksipy module for this to work, which has an actively maintained fork in PySocks. It is easy if you already have pip (and if you don't have pip you should). <code>$ pip install PySocks</code>
+*Note:* You need to install the Socksipy module for this to work, which has an actively maintained fork in [PySocks](https://github.com/Anorov/PySocks). It is easy if you already have pip (and if you don't have pip you should). <code>$ pip install PySocks</code>
 
 Then make sure your code (like the example) has <code>import socks</code>.
 
