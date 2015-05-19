@@ -13,6 +13,12 @@ Terminal Example:
 ## Tor Connect Example
 Tor (The Onion Router) has a particular socks port and connection setup that needs configured to connect in Python. This example shows you how.
 
+Just simply run it from the terminal window:
+
+<code>$ python tor-example.py</code>
+
+This will return the DuckDuckGo .onion html as proof that it is working.
+
 ## Google Search Example
 The Google seach portion of the pattern library is very useful. This example shows you that you can compare the popularity of phrases or sets of terms together using percentages and the sort() command. It selects 10 random words to search on from the imported included dictionary list that is in the assets folder.
 
