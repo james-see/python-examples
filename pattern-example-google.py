@@ -1,6 +1,6 @@
-# pattern library example querying Twitter
+# pattern library example querying Google using the context and terms option to get weights and comparisons
 # author: James Campbell
-# Date Created: 2015 05 17
+# Date Created: 2015 05 18
 # to install pattern, it is simple via pip: pip install pattern
 
 import sys # need this to pass arguments at the command line
@@ -12,9 +12,8 @@ import random
 parser = argparse.ArgumentParser()
 parser.add_argument('-s', action='store', dest='simple_value',
                     help='Search term')
-parser.add_argument('-c', action='store_const', dest='constant_value',
-                    const='value-to-store',
-                    help='Store a constant value')
+parser.add_argument('-c', action='store', dest='context',
+                    help='Set the context term to search on in Google')
 parser.add_argument('-t', action='store_true', default=False,
                     dest='boolean_switch',
                     help='Set a switch to true')
@@ -35,55 +34,39 @@ parser.add_argument('-B', action='append_const', dest='const_collection',
 parser.add_argument('--version', action='version', version='%(prog)s 1.1')
 results = parser.parse_args()
 
+# check to see if the context term is set at the command line, otherwise set it to dangerous as default
+if results.context != None:
+     contexter = results.context
+else: contexter = 'dangerous'
+
 # global dictionary list of terms - do not change
 diction = []
 subset = []
 lengthmin = 6
+numterms = 10
 fname = '/Users/mbpjc/projects/python-examples/assets/dictionary-list.html'
 with open(fname) as f:
     diction = f.readlines()
     for term in diction:
      if len(term) > lengthmin:
           subset.append(term)
-#print subset[5]
-#print diction[1]
 
 # function to get a random term from the minlength dictionary in subset list
-def rando(listed):
-     randomed = random.choice(listed)
-     return randomed
+def rando(listofterms,num):
+     i = 0
+     while i < num:
+          randomed = random.choice(listofterms)
+          #print randomed
+          searchlist.append(randomed)
+          i = i + 1
+     return
 
-# function that searches twitter using the public API based on searchterms set at the terminal
-def gettweets(searchterms):
-	tweetlist = []
-	from pattern.web import Twitter, plaintext
-	twitter = Twitter(language='en') 
-	for tweet in twitter.search(searchterms, cached=False):
-		tweetlist.append(plaintext(tweet.text))
-	return tweetlist
-
+searchlist = [] # the list of terms that will be generated in the rando function
 # setup the default search terms 
-searchterms = rando(subset) # default search term if none set is a random term from a dictionary list
-if results.simple_value != None: # if search terms set then change from default to that
-	searchterms = results.simple_value # set from argparse above in globals section
-
-print "Search term set to: %s" % (searchterms) # Nice to see output of what random term was selected
-outputtweets = gettweets(searchterms)
-while len(outputtweets) == 0:
-     searchterms = rando(subset)
-     print "Search term set to: %s" % (searchterms)
-     outputtweets = gettweets(searchterms)
-
-print colored('Twitter search example using pattern package:','blue')
-print colored('Note: a random search term from dictionary list is set if nothing set. \n\n','red')
-i = 0
-for tweet in outputtweets:
-     if isinstance(tweet,basestring):
-          tweet = tweet.encode('utf8')
-     else:
-          tweet = unicode(tweet).encode('utf8')
-     i = i + 1
-     print '[--' + str(i)+ '--] ' + ' ' + tweet
-print '\n\n'
+rando(subset,numterms) # get total list of terms based on numterms set in the globals section above
+from pattern.web import sort
+ 
+results = sort(terms=searchlist,context=contexter,prefix=True)
+for weight, term in results:
+     print "%.2f" % (weight * 100) + '%', term
 exit()
-
