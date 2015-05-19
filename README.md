@@ -17,7 +17,7 @@ Tor (The Onion Router) has a particular socks port and connection setup that nee
 
 Then make sure your code (like the example) has <code>import socks</code>.
 
-### Run the example:
+#### Run the example:
 
 Just simply run it from the terminal window:
 
@@ -28,7 +28,7 @@ This will return the DuckDuckGo .onion html as proof that it is working.
 ## Google Search Example
 The Google seach portion of the pattern library is very useful. This example shows you that you can compare the popularity of phrases or sets of terms together using percentages and the sort() command. It selects 10 random words to search on from the imported included dictionary list that is in the assets folder.
 
-Terminal Example:
+#### Run the example:
 
 <code>$ python pattern-example-google.py -c 'sexy'</code>
 
