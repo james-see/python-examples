@@ -49,7 +49,7 @@ with open(fname) as f:
     diction = f.readlines()
     for term in diction:
      if len(term) > lengthmin:
-          subset.append(term)
+          subset.append(term.strip('\n'))
 
 # function to get a random term from the minlength dictionary in subset list
 def rando(listofterms,num):
