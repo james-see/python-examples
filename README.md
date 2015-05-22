@@ -7,6 +7,7 @@ By library:
 
 * [pattern (twitter)](#pattern-example)
 * [pattern (google)](#google-search-example)
+* [bs4 (Beautiful Soup)](#html-to-text-example)
 * [socks](#tor-connect-example)
 
 ## Pattern Example
@@ -53,3 +54,38 @@ Returns:
 1.09% "sexy evaporators"
 1.09% "sexy cudgeler"</code>
 
+## Html to Text Example
+Beautiful Soup is a great library to parse and select html or iterate through the DOM.
+For this example to work you need to install Beautiful Soup via pip:
+```
+$ pip install bs4
+```
+
+#### Run the example:
+
+<code>$ python example-html2plaintext.py</code>
+
+Returns:
+```
+[*-*]Before html with text:
+------------------
+<!DOCTYPE HTML>
+<head>
+<title>THIS IS AN EXAMPLE by @jamescampbell</title>
+<meta author='jamescampbell'>
+<style>a {font-family:arial;}</style>
+</head><body>
+<h1>Hello World</h1>
+<p>I hope you enjoy this example.</p></body>
+------------------
+
+
+
+[*-*]After cleanMe() function:
+-------------------
+THIS IS AN EXAMPLE by @jamescampbell
+Hello World
+I hope you enjoy this example.
+-------------------
+```
+*More coming soon*
