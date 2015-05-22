@@ -1,6 +1,6 @@
 # example on how to get plaintext from html using python's beautiful soup
 # author: James Campbell
-# date: May 19 2015
+# date: 2015 05 19
 from bs4 import BeautifulSoup
 
 def cleanMe(html):
@@ -20,5 +20,9 @@ def cleanMe(html):
 testhtml = "<!DOCTYPE HTML>\n<head>\n<title>THIS IS AN EXAMPLE by @jamescampbell</title>\n<meta author='jamescampbell'>\n<style>a {font-family:arial;}</style>\n</head><body>\n<h1>Hello World</h1>\n<p>I hope you enjoy this example.</p></body>"
 
 converted = cleanMe(testhtml)
-print converted.encode('utf-8')
+print ('\n\n[*-*]Before html with text:\n------------------')
+print (testhtml)
+print ('------------------\n\n\n\n[*-*]After cleanMe() function:\n-------------------')
+print (converted.encode('utf-8'))
+print ('-------------------\n\n')
 exit()
