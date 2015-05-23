@@ -16,7 +16,7 @@ parser.add_argument('-o', action='store', dest='onion',
 results = parser.parse_args()
 
 # Global Vars
-onionsite = 'http://3g2upl4pq6kufc4m.onion' # set the default onion site to visit to test
+onionsite = 'http://3g2upl4pq6kufc4m.onion' # set the default onion site to visit to test, in this case DuckDuckGo
 if results.onion != None: # if search terms set in terminal then change from default to that
 	onionsite = results.onion # set from argparse above in globals section
 
