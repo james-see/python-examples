@@ -8,10 +8,13 @@ By library:
 **pattern** 
  1. [twitter search](#pattern-example) 
  2. [google search example](#google-search-example)
+
 **bs4** 
  1. [html to text parser](#html-to-text-example)
+
 **socks** 
  1. [connect to tor and print .onion site](#tor-connect-example)
+
 **scrapy** 
  1. [crawl all internal links for a domain](#scrapy-spider-example)
 
