@@ -5,15 +5,15 @@ It is a way for me to remember and hopefully get others started.
 
 By library:
 
-**pattern 
+**pattern** 
  1. [twitter search](#pattern-example) 
  2. [google search example](#google-search-example)
-**bs4 
-    1. [html to text parser](#html-to-text-example)
-**socks 
-    1. [connect to tor and print .onion site](#tor-connect-example)
-**scrapy 
-    1. [crawl all internal links for a domain](#scrapy-spider-example)
+**bs4** 
+ 1. [html to text parser](#html-to-text-example)
+**socks** 
+ 1. [connect to tor and print .onion site](#tor-connect-example)
+**scrapy** 
+ 1. [crawl all internal links for a domain](#scrapy-spider-example)
 
 ## Pattern Twitter Search Example
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
