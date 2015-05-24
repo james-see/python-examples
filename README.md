@@ -5,13 +5,12 @@ It is a way for me to remember and hopefully get others started.
 
 By library:
 
-* [pattern (twitter)](#pattern-example)
-* [pattern (google)](#google-search-example)
+* pattern [twitter search](#pattern-example) [google searcg example](#google-search-example)
 * [bs4 (Beautiful Soup)](#html-to-text-example)
 * [socks](#tor-connect-example)
 * [scrapy](#scrapy-spider-example)
 
-## Pattern Example
+## Pattern Twitter Search Example
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
 
 This twitter example connects to twitter and searches either a random string or terms you set via the terminal with the -s 'search terms'.
