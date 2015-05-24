@@ -6,8 +6,8 @@ It is a way for me to remember and hopefully get others started.
 By library:
 
 * pattern 
-    1. [twitter search](#pattern-example) 
-    2. [google search example](#google-search-example)
+ 1. [twitter search](#pattern-example) 
+ 2. [google search example](#google-search-example)
 * bs4 
     1. [html to text parser](#html-to-text-example)
 * socks 
