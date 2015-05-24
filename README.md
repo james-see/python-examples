@@ -1,5 +1,5 @@
 # python-examples
-This is a colletion of python examples I created for some key libraries in Python that I use all the time. 
+This is a collection of python examples I created for some key libraries in Python that I use all the time. 
 
 It is a way for me to remember and hopefully get others started.
 
