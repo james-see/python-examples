@@ -9,6 +9,7 @@ By library:
 * [pattern (google)](#google-search-example)
 * [bs4 (Beautiful Soup)](#html-to-text-example)
 * [socks](#tor-connect-example)
+* [scrapy](#scrapy-spider-example)
 
 ## Pattern Example
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
@@ -88,4 +89,14 @@ Hello World
 I hope you enjoy this example.
 -------------------
 ```
-*More coming soon*
+
+## Scrapy Spider Example
+This example gets the list of all internal links for any domain by following all internal homepage links and their links.
+
+#### Run the Example:
+```
+$ python spider.py -u jamescampbell.us
+```
+
+*More coming soon!*
+
