@@ -5,7 +5,7 @@ It is a way for me to remember and hopefully get others started.
 
 By python package:
 
-**pattern**([package download link](http://www.clips.ua.ac.be/pattern))
+**pattern** ([package download link](http://www.clips.ua.ac.be/pattern))
  1. [twitter search](#pattern-example) 
  2. [google search example](#google-search-example)
 
