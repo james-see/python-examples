@@ -5,17 +5,17 @@ It is a way for me to remember and hopefully get others started.
 
 By python package:
 
-**pattern** [package download link](http://www.clips.ua.ac.be/pattern)
+**pattern**([package download link](http://www.clips.ua.ac.be/pattern))
  1. [twitter search](#pattern-example) 
  2. [google search example](#google-search-example)
 
-**bs4** [package download link](http://www.crummy.com/software/BeautifulSoup/bs4/download/)
+**bs4** ([package download link](http://www.crummy.com/software/BeautifulSoup/bs4/download/))
  1. [html to text parser](#html-to-text-example)
 
-**socks** [package download link](https://github.com/Anorov/PySocks)
+**socks** ([package download link](https://github.com/Anorov/PySocks))
  1. [connect to tor and print .onion site](#tor-connect-example)
 
-**scrapy** [package download link](http://scrapy.org/download/)
+**scrapy** ([package download link](http://scrapy.org/download/))
  1. [crawl all internal links for a domain](#scrapy-spider-example)
 
 ## Pattern Twitter Search Example
