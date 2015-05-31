@@ -44,7 +44,7 @@ diction = []
 subset = []
 lengthmin = 6
 numterms = 10
-fname = '/Users/mbpjc/projects/python-examples/assets/dictionary-list.html'
+fname = 'assets/dictionary-list.html'
 with open(fname) as f:
     diction = f.readlines()
     for term in diction:
