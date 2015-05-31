@@ -3,7 +3,7 @@ This is a collection of python examples I created for some key libraries in Pyth
 
 It is a way for me to remember and hopefully get others started.
 
-By python package:
+By python module:
 
 **pattern** ([package download link](http://www.clips.ua.ac.be/pattern))
  1. [twitter search](#pattern-example) 
@@ -17,6 +17,10 @@ By python package:
 
 **scrapy** ([package download link](http://scrapy.org/download/))
  1. [crawl all internal links for a domain](#scrapy-spider-example)
+
+By python 3 module:
+**urllib3** (package download via pip3 install urllib3 from homebrew osx brew install python3)
+1. [google mask search example](#google-mask-example)
 
 ## Pattern Twitter Search Example
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
@@ -95,6 +99,32 @@ THIS IS AN EXAMPLE by @jamescampbell
 Hello World
 I hope you enjoy this example.
 -------------------
+```
+
+## Google Mask Example
+This example does three things, 1. sets your search term, 2 . set your number of mask search terms, and 3. selects a random user agent for each search query.
+
+#### Run the Example:
+```
+$ python3 mask-search-example.py
+```
+Returns:
+```
+Hello, how many terms to hide in addition to actual search term? (max 5) ?: 3
+set search term: james campbell
+This is a mask term: balcony
+This is mask header: Dirty Dungeon Diksearch 69
+This is a mask term: unrenewed
+This is mask header: Internet Explorer but better
+This is a mask term: gantlets
+This is mask header: Mozilla/5.0
+Total results: 11000000
+Top 4 hits:
+  http://en.wikipedia.org/wiki/James_Campbell_(industrialist)
+  http://en.wikipedia.org/wiki/James_Campbell
+  http://www.campbellhigh.org/
+  http://www.jamescampbell.com/
+For more results, see http://www.google.com/search?oe=utf8&ie=utf8&source=uds&start=0&hl=en&q=james+campbell
 ```
 
 ## Scrapy Spider Example
