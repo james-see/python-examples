@@ -4,6 +4,7 @@
 # what: this example searches up to different random terms plus the term you actually want to mask what you are searching for
 # author: James Campbell
 # date: 2015-05-29
+# Note: MUST USE PYTHON 3 from terminal, e.g. python3 mask-search-example.py
 
 import json
 import urllib.request, urllib.parse
@@ -15,8 +16,8 @@ def searchG(searchfor):
 		randomuseragent = singlerando(useragents)
 		headers = { 'User-Agent' : randomuseragent }
 		if terms != searchfor: 
-			print ('This is a mask term: %s' % terms)
-			print ('This is mask header: %s' % headers['User-Agent'])
+			print('\n')
+			print ('This is a mask term: %s This is mask header: %s' % (terms,headers['User-Agent']))
 		query = urllib.parse.urlencode({'q': terms})
 		url = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&%s' % query
 		search_response_pre = urllib.request.Request(url,None,headers)
@@ -46,7 +47,7 @@ with open(fname) as f:
      if len(term) > lengthmin:
           subset.append(term.strip('\n'))
 
-# function to get a random term from the minlength dictionary in subset list
+# function to get a random term or terms from the minlength dictionary in subset list
 def rando(listofterms,num):
      i = 0
      while i < num:
