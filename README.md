@@ -19,6 +19,7 @@ By python module:
  1. [crawl all internal links for a domain](#scrapy-spider-example)
 
 By python 3 module:
+
 **urllib3** (package download via pip3 install urllib3 from homebrew osx brew install python3)
 1. [google mask search example](#google-mask-example)
 
