@@ -3,7 +3,7 @@ This is a collection of python examples I created for some key libraries in Pyth
 
 It is a way for me to remember and hopefully get others started.
 
-By python module:
+By python 2.7 module:
 
 **pattern** ([package download link](http://www.clips.ua.ac.be/pattern))
  1. [twitter search](#pattern-example) 
@@ -18,7 +18,7 @@ By python module:
 **scrapy** ([package download link](http://scrapy.org/download/))
  1. [crawl all internal links for a domain](#scrapy-spider-example)
 
-By python 3 module:
+By python 3.4 module:
 
 **urllib3** (package download via pip3 install urllib3 from homebrew osx brew install python3)
 1. [google mask search example](#google-mask-example)
