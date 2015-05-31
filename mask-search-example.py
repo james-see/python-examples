@@ -13,14 +13,13 @@ import random
 def searchG(searchfor):
 	searchlist.append(searchfor)
 	for terms in searchlist:
-		randomuseragent = singlerando(useragents)
-		headers = { 'User-Agent' : randomuseragent }
-		if terms != searchfor: 
-			print('\n')
+		randomuseragent = singlerando(useragents) # select a random user agent from list
+		headers = { 'User-Agent' : randomuseragent } # get random header from above
+		if terms != searchfor: # if the search term is not the one you care about, let the user know
 			print ('This is a mask term: %s This is mask header: %s' % (terms,headers['User-Agent']))
 		query = urllib.parse.urlencode({'q': terms})
-		url = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&%s' % query
-		search_response_pre = urllib.request.Request(url,None,headers)
+		url = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&%s' % query # GOOGLE ajax API string
+		search_response_pre = urllib.request.Request(url,None,headers) # key to get the random headers to work
 		search_response = urllib.request.urlopen(search_response_pre)
 		search_results = search_response.read().decode("utf8")
 		results = json.loads(search_results)
