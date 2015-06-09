@@ -20,9 +20,11 @@ By python 2.7 module:
 
 By python 3.4 module:
 **json** (package download via pip3 install json)
+
 1. [json to python object example](#json-to-python-object-example)
 
 **urllib3** (package download via pip3 install urllib3 from homebrew osx brew install python3)
+
 1. [google mask search example](#google-mask-example)
 
 ## Pattern Twitter Search Example
