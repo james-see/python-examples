@@ -19,8 +19,12 @@ By python 2.7 module:
  1. [crawl all internal links for a domain](#scrapy-spider-example)
 
 By python 3.4 module:
+**json** (package download via pip3 install json)
+
+1. [json to python object example](#json-to-python-object-example)
 
 **urllib3** (package download via pip3 install urllib3 from homebrew osx brew install python3)
+
 1. [google mask search example](#google-mask-example)
 
 ## Pattern Twitter Search Example
@@ -134,6 +138,14 @@ This example gets the list of all internal links for any domain by following all
 #### Run the Example:
 ```
 $ python spider.py -u jamescampbell.us
+```
+
+## Json to Python Object Example
+This example takes a json object and converts it to python and iterates through the values. It works for Python 3 or Python 2.7
+
+#### Run the Example:
+```
+$ python3 json-example.py 
 ```
 
 *More coming soon!*
