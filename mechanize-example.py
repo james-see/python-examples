@@ -15,4 +15,5 @@ for j in linklists:
 	print ('Base url: ' + j.base_url)
 	print ('Link url: ' + j.url) 
 	print ('Link text: ' + j.text)
+
 exit()
