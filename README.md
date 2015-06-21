@@ -21,7 +21,8 @@ It is a way for me to remember and hopefully get others started.
 **urllib2** ([package download link](http://pymotw.com/2/urllib2/))
  1. [access foursquare API](#foursquare-api-example)
 
-*By python 3.4 module:*
+*By python 3.4 module:* 
+
 **json** (package download via pip3 install json)
 
 1. [json to python object example](#json-to-python-object-example)
