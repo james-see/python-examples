@@ -1,4 +1,4 @@
-# djvu to pdf & pdf ocr script example
+# djvu to pdf script example
 # requirements = djvu2pdf (brew install djvu2pdf on osx with homebrew installed)
 import sys, os
 import subprocess
