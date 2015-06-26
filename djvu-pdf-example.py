@@ -1,18 +1,14 @@
 # djvu to pdf script example
 # requirements = djvu2pdf (brew install djvu2pdf on osx with homebrew installed)
 # or install it on Ubuntu / Debian sudo apt-get install djvulibre-bin ghostscript
-import sys, os
-import subprocess
-import fnmatch
-
-# globals
-
+import sys, os, subprocess, fnmatch
+# global variables (change to suit your needs)
 inputfolderpath = '/Users/mbpjc/projects/biblio/' # set this to your input folder path
 outputpath = '/Users/mbpjc/projects/biblio/output/' # set to output folder (must exist)
 operationtype = raw_input('Input from folder (1) or single file (2)?: ')
 
 # functions
-# this function finds specific files in a directory
+# this function finds specific files in a directory and sub directories
 def find_files(directory, pattern):
     for root, dirs, files in os.walk(directory):
         for basename in files:
@@ -50,3 +46,4 @@ elif operationtype == '2':
 
 elif operationtype == '':
 	exit('You hit enter without inputing anything, nice work exiting.')
+
