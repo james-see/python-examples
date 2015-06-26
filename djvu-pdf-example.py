@@ -23,6 +23,7 @@ def find_files(directory, pattern):
 # if you are doing this on an entire folder then
 if operationtype == '1':
 	i = 0
+	print ('Input directory & sub directory underneath set as %s' % inputfolderpath)
 	for filename in find_files(inputfolderpath,'*.djvu'):
 		print ('[*] Processing DJVU to PDF for %s...' % filename)
 		i = i + 1
@@ -37,8 +38,8 @@ if operationtype == '1':
 	exit('\n\"Sanity is madness put to good uses.\" - George Santayana\n')
 
 # if you are processing just a single file then
-if operationtype == '2':
-	filename = raw_input('What filename to process? (must be in same directory): ')
+elif operationtype == '2':
+	filename = raw_input('What filename to process? (must be in same directory as this command): ')
 	if 'djvu' in filename: 
 		print('Processing DJVU to PDF...')
 		p = subprocess.Popen(["djvu2pdf", filename], stdout=subprocess.PIPE) 
@@ -46,3 +47,6 @@ if operationtype == '2':
 		#subprocess.call(["djvu2pdf", filename])
 		print('Processing finished')
 		exit('Completed sucessfully')
+
+elif operationtype == '':
+	exit('You hit enter without inputing anything, nice work exiting.')
