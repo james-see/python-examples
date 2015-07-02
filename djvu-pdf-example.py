@@ -5,7 +5,7 @@ import sys, os, subprocess, fnmatch
 # global variables (change to suit your needs)
 inputfolderpath = '/Users/mbpjc/projects/biblio/' # set this to your input folder path
 outputpath = '/Users/mbpjc/projects/biblio/output/' # set to output folder (must exist)
-operationtype = raw_input('Input from folder (1) or single file (2)?: ')
+operationtype = raw_input('Input from folder (1) or single file (2)?: ') # decide what to do
 
 # functions
 # this function finds specific files in a directory and sub directories
@@ -24,7 +24,7 @@ if operationtype == '1':
 		print ('[*] Processing DJVU to PDF for %s...' % filename)
 		i = i + 1
 		inputfull = inputfolderpath+filename
-		outputfilename = filename[:-4]+'pdf'
+		outputfilename = filename[:-4]+i+'pdf' # make filename unique
 		outputfilepath = outputpath
 		p = subprocess.Popen(["djvu2pdf", inputfull], stdout=subprocess.PIPE) 
 		output, err = p.communicate()
@@ -46,4 +46,3 @@ elif operationtype == '2':
 
 elif operationtype == '':
 	exit('You hit enter without inputing anything, nice work exiting.')
-
