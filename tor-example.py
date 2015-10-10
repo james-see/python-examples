@@ -4,10 +4,11 @@
 
 import socks
 import socket
-import urllib2
+import urllib
 import argparse
 import random
 import sys
+import urllib.request # had to add for python 3.4 -jc
 
 # terminal arguments parser globals - do not change
 parser = argparse.ArgumentParser()
@@ -33,9 +34,24 @@ def getaddrinfo(*args):
 socket.getaddrinfo = getaddrinfo
 
 # test connect to DuckDuckGo .onion site
+headers = {'User-Agent': 'JAMES CAMPBELL jamescampbell.us SEARCH BOT! I FOUND YOU!!!!' }
+	#print ('trying request now...')
+req = urllib.request.Request(onionsite,None,headers)
 try:
-	sitehtml = urllib2.urlopen(onionsite).read()
-	print sitehtml
+	response = urllib.request.urlopen(req) # new python 3 code -jc
+	status = 'loaded successfully'
 except:
-	exit('Failed to visit site, check tor connection and settings')
+	status = 'failed loading'
+	currenturl = 'none'
+	html =  'none'
+try:
+	sitehtml = response.read()
+	print (sitehtml)
+except urllib.error.URLError as e: 
+	html = e.read().decode("utf8", 'ignore')
+	#html = e.partial
+	status = 'failed reading'
+	html = 'none'
+	currenturl = 'none'
+print (status)
 exit()
