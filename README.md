@@ -23,6 +23,10 @@ It is a way for me to remember and hopefully get others started.
 
 *By python 3.4 module:* 
 
+**exifread** (package download via pip3 install exifread)
+
+1. [read exif example](#exifread-example)
+
 **json** (package download via pip3 install json)
 
 1. [json to python object example](#json-to-python-object-example)
@@ -141,8 +145,15 @@ This example gets the list of all internal links for any domain by following all
 
 #### Run the Example:
 ```
-$ python spider.py -u jamescampbell.us
+$ python3 spider.py -u jamescampbell.us
 ```
+
+## Exifread Example
+This example gets the exif data from an image file
+
+#### Run the Example:
+```
+$ python3 exifread-example.py 
 
 ## Json to Python Object Example
 This example takes a json object and converts it to python and iterates through the values. It works for Python 3 or Python 2.7
