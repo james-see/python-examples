@@ -153,7 +153,78 @@ This example gets the exif data from an image file
 
 #### Run the Example:
 ```
-$ python3 exifread-example.py 
+$ python3 exif-reader.py assets/cat.jpg
+```
+
+#### Output:
+```
+Total tags found: 66
+Key: Interoperability InteroperabilityVersion, value [48, 49, 48, 48]
+Key: EXIF InteroperabilityOffset, value 36724
+Key: Image Software, value SLT-A57 v1.02
+Key: EXIF UserComment, value [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Key: Image Orientation, value Horizontal (normal)
+Key: Thumbnail JPEGInterchangeFormat, value 37012
+Key: Interoperability InteroperabilityIndex, value R98
+Key: Image ResolutionUnit, value Pixels/Inch
+Key: EXIF ExifImageWidth, value 4912
+Key: EXIF ComponentsConfiguration, value YCbCr
+Key: EXIF FNumber, value 28/5
+Key: Thumbnail Software, value SLT-A57 v1.02
+Key: EXIF DateTimeDigitized, value 2013:04:07 14:13:38
+Key: EXIF ExposureProgram, value Aperture Priority
+Key: EXIF DateTimeOriginal, value 2013:04:07 14:13:38
+Key: EXIF Sharpness, value Normal
+Key: EXIF RecommendedExposureIndex, value 3200
+Key: EXIF MakerNote, value [83, 79, 78, 89, 32, 68, 83, 67, 32, 0, 0, 0, 78, 0, 3, 16, 4, 0, 16, 0, ... ]
+Key: EXIF CustomRendered, value Normal
+Key: EXIF Saturation, value Normal
+Key: EXIF ExposureTime, value 1/80
+Key: Image Make, value SONY
+Key: EXIF ExifImageLength, value 3264
+Key: EXIF DigitalZoomRatio, value 1
+Key: Image Model, value SLT-A57
+Key: EXIF Contrast, value Normal
+Key: EXIF SensitivityType, value Recommended Exposure Index
+Key: Thumbnail Orientation, value Horizontal (normal)
+Key: Thumbnail YResolution, value 72
+Key: Thumbnail Model, value SLT-A57
+Key: Image PrintIM, value [80, 114, 105, 110, 116, 73, 77, 0, 48, 51, 48, 48, 0, 0, 3, 0, 2, 0, 1, 0, ... ]
+Key: Thumbnail Make, value SONY
+Key: EXIF CompressedBitsPerPixel, value 2
+Key: EXIF MeteringMode, value Pattern
+Key: EXIF MaxApertureValue, value 49/32
+Key: Image YCbCrPositioning, value Co-sited
+Key: EXIF BrightnessValue, value 303/320
+Key: EXIF FlashPixVersion, value 0100
+Key: EXIF WhiteBalance, value Auto
+Key: EXIF LensModel, value 50mm F1.7
+Key: Thumbnail YCbCrPositioning, value Co-sited
+Key: Image DateTime, value 2013:04:07 14:13:38
+Key: EXIF ExifVersion, value 0230
+Key: Thumbnail ImageDescription, value                                
+Key: Image ExifOffset, value 360
+Key: Thumbnail JPEGInterchangeFormatLength, value 7654
+Key: EXIF ExposureMode, value Auto Bracket
+Key: EXIF SceneType, value Directly Photographed
+Key: EXIF LensSpecification, value [50, 50, 17/10, 17/10]
+Key: Image XResolution, value 350
+Key: EXIF ExposureBiasValue, value 0
+Key: EXIF ColorSpace, value sRGB
+Key: EXIF ISOSpeedRatings, value 3200
+Key: EXIF SceneCaptureType, value Standard
+Key: EXIF FocalLengthIn35mmFilm, value 75
+Key: Image YResolution, value 350
+Key: Thumbnail DateTime, value 2013:04:07 14:13:38
+Key: EXIF FocalLength, value 50
+Key: Thumbnail Compression, value JPEG (old-style)
+Key: EXIF FileSource, value Digital Camera
+Key: EXIF Flash, value Flash did not fire, compulsory flash mode
+Key: Image ImageDescription, value                                
+Key: Thumbnail XResolution, value 72
+Key: Thumbnail ResolutionUnit, value Pixels/Inch
+Key: EXIF LightSource, value Unknown
+```
 
 ## Json to Python Object Example
 This example takes a json object and converts it to python and iterates through the values. It works for Python 3 or Python 2.7
