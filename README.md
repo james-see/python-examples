@@ -246,7 +246,114 @@ $ python 4sq-example.py
 ```
 What city do you want to search in? (no spaces, include country): London,UK
 What is the name of the venue to search?: Millenium Hotel
-{u'geocode': {u'parents': [], u'what': u'', u'where': u'london uk', u'feature': {u'highlightedName': u'<b>London</b>, Greater London, <b>UK</b>', u'displayName': u'London, Greater London, United Kingdom', u'name': u'London', u'longId': u'72057594040571679', u'cc': u'GB', u'id': u'geonameid:2643743', u'geometry': {u'center': {u'lat': 51.50853, u'lng': -0.12574}, u'bounds': {u'sw': {u'lat': 51.28467404417054, u'lng': -0.5085579279369435}, u'ne': {u'lat': 51.691643999655895, u'lng': 0.33418999705203406}}}, u'matchedName': u'London, Greater London, UK', u'woeType': 7, u'slug': u'london'}}, u'venues': [{u'verified': True, u'name': u'Millennium Hotel London Mayfair', u'referralId': u'v-1434850451', u'url': u'http://www.millenniumhotels.co.uk', u'storeId': u'', u'hereNow': {u'count': 0, u'groups': [], u'summary': u'Nobody here'}, u'specials': {u'count': 0, u'items': []}, u'contact': {u'facebookName': u'Millennium & Copthorne Hotels Europe', u'twitter': u'millenniumeu', u'phone': u'+442076299400', u'facebook': u'456685494411593', u'formattedPhone': u'+44 20 7629 9400', u'facebookUsername': u'MillenniumEU'}, u'location': {u'city': u'Mayfair', u'cc': u'GB', u'country': u'United Kingdom', u'postalCode': u'W1K 2HP', u'state': u'Greater London', u'formattedAddress': [u'44 Grosvenor Square', u'Mayfair', u'Greater London', u'W1K 2HP', u'United Kingdom'], u'address': u'44 Grosvenor Square', u'lat': 51.51086806955976, u'lng': -0.1512632169763817}, u'stats': {u'tipCount': 31, u'checkinsCount': 3586, u'usersCount': 1559}, u'id': u'4ac518b5f964a52090a020e3', u'categories': [{u'pluralName': u'Hotels', u'primary': True, u'name': u'Hotel', u'shortName': u'Hotel', u'id': u'4bf58dd8d48988d1fa931735', u'icon': {u'prefix': u'https://ss3.4sqi.net/img/categories_v2/travel/hotel_', u'suffix': u'.png'}}]}]}
+{
+    u'geocode': {
+        u'parents': [
+            
+        ],
+        u'what': u'',
+        u'where': u'londonuk',
+        u'feature': {
+            u'highlightedName': u'<b>London</b>,
+            GreaterLondon,
+            <b>UK</b>',
+            u'displayName': u'London,
+            GreaterLondon,
+            UnitedKingdom',
+            u'name': u'London',
+            u'longId': u'72057594040571679',
+            u'cc': u'GB',
+            u'id': u'geonameid: 2643743',
+            u'geometry': {
+                u'center': {
+                    u'lat': 51.50853,
+                    u'lng': -0.12574
+                },
+                u'bounds': {
+                    u'sw': {
+                        u'lat': 51.28467404417054,
+                        u'lng': -0.5085579279369435
+                    },
+                    u'ne': {
+                        u'lat': 51.691643999655895,
+                        u'lng': 0.33418999705203406
+                    }
+                }
+            },
+            u'matchedName': u'London,
+            GreaterLondon,
+            UK',
+            u'woeType': 7,
+            u'slug': u'london'
+        }
+    },
+    u'venues': [
+        {
+            u'verified': True,
+            u'name': u'MillenniumHotelLondonMayfair',
+            u'referralId': u'v-1434850451',
+            u'url': u'http: //www.millenniumhotels.co.uk',
+            u'storeId': u'',
+            u'hereNow': {
+                u'count': 0,
+                u'groups': [
+                    
+                ],
+                u'summary': u'Nobodyhere'
+            },
+            u'specials': {
+                u'count': 0,
+                u'items': [
+                    
+                ]
+            },
+            u'contact': {
+                u'facebookName': u'Millennium&CopthorneHotelsEurope',
+                u'twitter': u'millenniumeu',
+                u'phone': u'+442076299400',
+                u'facebook': u'456685494411593',
+                u'formattedPhone': u'+442076299400',
+                u'facebookUsername': u'MillenniumEU'
+            },
+            u'location': {
+                u'city': u'Mayfair',
+                u'cc': u'GB',
+                u'country': u'UnitedKingdom',
+                u'postalCode': u'W1K2HP',
+                u'state': u'GreaterLondon',
+                u'formattedAddress': [
+                    u'44GrosvenorSquare',
+                    u'Mayfair',
+                    u'GreaterLondon',
+                    u'W1K2HP',
+                    u'UnitedKingdom'
+                ],
+                u'address': u'44GrosvenorSquare',
+                u'lat': 51.51086806955976,
+                u'lng': -0.1512632169763817
+            },
+            u'stats': {
+                u'tipCount': 31,
+                u'checkinsCount': 3586,
+                u'usersCount': 1559
+            },
+            u'id': u'4ac518b5f964a52090a020e3',
+            u'categories': [
+                {
+                    u'pluralName': u'Hotels',
+                    u'primary': True,
+                    u'name': u'Hotel',
+                    u'shortName': u'Hotel',
+                    u'id': u'4bf58dd8d48988d1fa931735',
+                    u'icon': {
+                        u'prefix': u'https: //ss3.4sqi.net/img/categories_v2/travel/hotel_',
+                        u'suffix': u'.png'
+                    }
+                }
+            ]
+        }
+    ]
+}
 
 Lat/Long: 51.5108680696, -0.151263216976
 ```
