@@ -23,6 +23,10 @@ It is a way for me to remember and hopefully get others started.
 
 *By python 3.4 module:* 
 
+**nltk** (package download via pip3 install nltk)
+
+1. [sentiment analysis example](#sentiment-example)
+
 **exifread** (package download via pip3 install exifread)
 
 1. [read exif example](#exifread-example)
@@ -224,6 +228,14 @@ Key: Image ImageDescription, value
 Key: Thumbnail XResolution, value 72
 Key: Thumbnail ResolutionUnit, value Pixels/Inch
 Key: EXIF LightSource, value Unknown
+```
+
+## Sentiment Example
+This example takes a test list of tweets and returns positive or negative. It works in Python 3.
+
+#### Run the Example:
+```
+$ python3 sentiment-analysis-nltk-example.py testtweets.txt
 ```
 
 ## Json to Python Object Example
