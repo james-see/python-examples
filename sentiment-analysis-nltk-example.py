@@ -5,6 +5,7 @@
 # Updated: 2015-11-16
 # USE FOR PYTHON 3 only
 import nltk
+import sys
 
 pos_tweets = [('I love this car', 'positive'),
               ('This view is amazing', 'positive'),
@@ -15,7 +16,11 @@ pos_tweets = [('I love this car', 'positive'),
               ('Thank you','positive'),
               ('Hope you are doing well','positive'),
               ('I am very happy','positive'),
-              ('Good for you','positive')]
+              ('Good for you','positive'),
+              ('It is all good. I know about it and I accept it.','positive'),
+              ('This is really good!','positive'),
+              ('Tomorrow is going to be fun.','positive'),
+              ('Smiling all around.','positive')]
 
 neg_tweets = [('I do not like this car', 'negative'),
               ('This view is horrible', 'negative'),
@@ -26,7 +31,12 @@ neg_tweets = [('I do not like this car', 'negative'),
               ('This is not good','negative'),
               ('I am bothered by this','negative'),
               ('I am not connected with this','negative'),
-              ('Sadistic creep you ass. Die.','negative')]
+              ('Sadistic creep you ass. Die.','negative'),
+              ('All sorts of crazy and scary as hell.','negative'),
+              ('Not his emails, no.','negative'),
+              ('His father is dead. Returned obviously.','negative'),
+              ('He has a bomb.','negative'),
+              ('Too fast to be on foot. We cannot catch them.','negative')]
 
 tweets = []
 for (words, sentiment) in pos_tweets + neg_tweets:
@@ -59,7 +69,9 @@ classifier = nltk.NaiveBayesClassifier.train(training_set)
 runtweets = [] # setup to import a list of tweets here if you wish into a python list
 if len(sys.argv) > 1: # if parameter passed from command line for name of text file with list of tweets
     tweetfile = sys.argv[1]
-
+    with open(tweetfile, "r") as ins:
+    	for line in ins:
+    		runtweets.append(line)
 runtweets.append('I am a bad boy') # test tweet incase 
 poscount = 0
 negcount = 0
