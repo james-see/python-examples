@@ -238,6 +238,17 @@ This example takes a test list of tweets and returns positive or negative. It wo
 $ python3 sentiment-analysis-nltk-example.py testtweets.txt
 ```
 
+#### Output:
+```
+negative
+positive
+negative
+positive
+negative
+Positive count: 2
+Negative count: 3
+```
+
 ## Json to Python Object Example
 This example takes a json object and converts it to python and iterates through the values. It works for Python 3 or Python 2.7
 
