@@ -23,6 +23,10 @@ It is a way for me to remember and hopefully get others started.
 
 *By python 3.4 module:* 
 
+**urllib3** (pacakge download via pip3 install urllib3)
+
+1. [urllib3 proxymanager example](#proxymanager-example)
+
 **nltk** (package download via pip3 install nltk)
 
 1. [sentiment analysis example](#sentiment-example)
@@ -248,6 +252,17 @@ negative
 Positive count: 2
 Negative count: 3
 ```
+
+## Proxymanager Example
+This example uses urllib3 in Python 3 to connect through a privoxy connection and return status, headers, and content.
+
+#### Run the Example:
+```
+$ python3 urllib3-proxymanager-example.py
+```
+
+#### Output:
+
 
 ## Json to Python Object Example
 This example takes a json object and converts it to python and iterates through the values. It works for Python 3 or Python 2.7
