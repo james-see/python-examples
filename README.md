@@ -23,10 +23,6 @@ It is a way for me to remember and hopefully get others started.
 
 *By python 3.4 module:* 
 
-**urllib3** (pacakge download via pip3 install urllib3)
-
-1. [urllib3 proxymanager example](#proxymanager-example)
-
 **nltk** (package download via pip3 install nltk)
 
 1. [sentiment analysis example](#sentiment-example)
@@ -42,6 +38,7 @@ It is a way for me to remember and hopefully get others started.
 **urllib3** (package download via pip3 install urllib3 from homebrew osx brew install python3)
 
 1. [google mask search example](#google-mask-example)
+2. [urllib3 proxymanager example](#proxymanager-example)
 
 ## Pattern Twitter Search Example
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
