@@ -40,6 +40,10 @@ It is a way for me to remember and hopefully get others started.
 1. [google mask search example](#google-mask-example)
 2. [urllib3 proxymanager example](#proxymanager-example)
 
+**blockchain** (package downloa via pip3 install blockchain)
+
+1. [wallet query example](#bitcoin-wallet-example)
+
 ## Pattern Twitter Search Example
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
 
@@ -152,6 +156,15 @@ This example gets the list of all internal links for any domain by following all
 ```
 $ python3 spider.py -u jamescampbell.us
 ```
+
+## Bitcoin Wallet Example
+This example queries the blockchain.info API for an example wallet address and returns the ip address and dates for the transactions as well as the final wallet balance.
+
+### Run the Example:
+```
+$ python3 bitcoin-example-1.py
+```
+
 
 ## Exifread Example
 This example gets the exif data from an image file
