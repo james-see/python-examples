@@ -22,7 +22,8 @@ pos_tweets = [('I love this car', 'positive'),
               ('These are great apples today.', 'positive'),
               ('How about them apples? Thomas is a happy boy.', 'positive'),
               ('Thomas is very zen. He is well-mannered.', 'positive'),
-              ('happy and good lots of light!', 'positive')]
+              ('happy and good lots of light!', 'positive'),
+              ('I like this new iphone very much', 'positive')]
 
 neg_tweets = [('I do not like this car', 'negative'),
               ('This view is horrible', 'negative'),
