@@ -68,7 +68,9 @@ rain_tweets = [('this rain is craze today', 'rain'),
                ('That aspiration yours outfit make ends meet spite of the rainy weather this midsummer?: Edb', 'rain'),
                ('Glasgow\'s bright lights of Gordon st tonight #rain #Glasgow', 'rain'),
                ('Why is it raining? Because it always rains this time of year', 'rain'),
-               ('The forecast for this week\'s weather includes lots of rain!', 'rain')]
+               ('The forecast for this week\'s weather includes lots of rain!', 'rain'),
+               ('Morning Has Broken: Morning has BrokenAs I sit in my warm car in between rain squalls I am looking out', 'rain'),
+               ('Wind 2.0 mph SW. Barometer 1021.10 mb, Falling. Temperature 5.5 °C. Rain today 0.2 mm. Humidity 78%', 'rain')]
 
 tweets = []
 for (words, sentiment) in pos_tweets + neg_tweets + rain_tweets:
