@@ -8,10 +8,10 @@ import datetime
 from blockchain import blockexplorer
 # example address test
 address = blockexplorer.get_address('1SDude3hVWoAT2sFxy3JkH2VrcUXPM4PA')
-if len(sys.argv) > 1:
-    print (sys.argv[1])
+if len(sys.argv) > 1:  # you can pass a bitcoin address in from terminal
+    print(sys.argv[1])
     address = blockexplorer.get_address(sys.argv[1])
-    print (address)
+    print(address)
 # final balance
 print(address.final_balance)  # add decimal after first
 transactions = address.transactions
