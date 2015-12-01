@@ -29,7 +29,7 @@ It is a way for me to remember and hopefully get others started.
 
 **hashlib** (package is built-in)
 
-1. [sha 256 hash example](#sha-example
+1. [sha 256 hash example](#sha-example)
 
 **nltk** (package download via pip3 install nltk)
 
