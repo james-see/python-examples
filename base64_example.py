@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # hashing example in python 3
-import hashlib
-print(hashlib.algorithms_available)
+import base64
 example_html = """<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
       <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -101,6 +100,9 @@ GPU 0000:00:03.0
             var s_code=s.t();if(s_code)document.write(s_code)//--></script><script language="JavaScript" type="text/javascript"><!--
                 if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
                 //--></script><noscript><img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt=""></noscript><!--/DO NOT REMOVE/--><!-- End SiteCatalyst code version: H.25.2. --></body></html>"""
-
-hash_object = hashlib.sha256(example_html.encode('utf8'))
-print (hash_object.hexdigest())
+#  Encode that big string into base64
+based = base64.b64encode(example_html.encode('utf8'))
+#  Proof that it worked
+# print(based)
+#  Get it back
+print (base64.b64decode(based))
