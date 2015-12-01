@@ -23,6 +23,14 @@ It is a way for me to remember and hopefully get others started.
 
 *By python 3.4 module:* 
 
+**base64** (package is built-in)
+
+1. [base64 encode & decode example](#base64-example)
+
+**hashlib** (package is built-in)
+
+1. [sha 256 hash example](#sha-example
+
 **nltk** (package download via pip3 install nltk)
 
 1. [sentiment analysis example](#sentiment-example)
@@ -87,6 +95,17 @@ Returns:
 1.09% "sexy incompliancy"
 1.09% "sexy evaporators"
 1.09% "sexy cudgeler"</code>
+
+
+## base64 Example
+Converting data to base64 ensure a nice obsfuscation layer for data transport.
+
+#### Run the example:
+
+<code>$ python3 base64_example.py</code>
+
+This will output a html string that is encoded into base64.
+
 
 ## Html to Text Example
 Beautiful Soup is a great library to parse and select html or iterate through the DOM.
@@ -261,6 +280,15 @@ positive
 negative
 Positive count: 2
 Negative count: 3
+```
+
+## hashlib example
+The hashlib module generates hashes from strings. This example uses the sha256 hash algorithm.
+
+#### Run the Example:
+
+```
+$ python3 hashlib_example.py
 ```
 
 ## Proxymanager Example
