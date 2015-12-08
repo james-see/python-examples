@@ -2,7 +2,7 @@ import urllib
 import urllib.request
 from sys import exit
 from concurrent.futures import ThreadPoolExecutor
-link = "http://shmoocon.org"
+link = "https://jamescampbell.us"
 headers = {}
 headers['User-Agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
 p = 1
