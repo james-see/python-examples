@@ -19,5 +19,5 @@ def iteratoo():
 		print(loadedjson[value])
 
 if __name__ == '__main__':
-	print(timeit.timeit("itera()",setup="from __main__ import itera")
+	print(timeit.timeit("itera()",setup="from __main__ import itera"))
 exit()
