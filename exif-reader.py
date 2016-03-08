@@ -9,6 +9,11 @@ try:
     import iptcinfo
 except:
     exit('install iptcinfo via pip to have this work properly')
+
+try:
+    import py3exiv2
+except:
+    exit('install py3exiv2 via pip to have this work properly')
 # Open image file for reading (binary mode)
 path_name = 'assets/cat.jpg'
 try:
@@ -42,4 +47,11 @@ try:
 except Exception as e:
     if str(e) != "No IPTC data found.":
         raise
-
+print ('--------START OF PY3exiv2 DATA----------')
+data = py3exiv2.metadata.ImageMetadata(sys.argv[1])
+data.read()
+for key in data.exif_keys:
+    tag = data[key]
+    print(' %-40s%s' %(key, tag.value))
+print ('-------END PY3exiv2 DATA-----------')
+sys.exit()
