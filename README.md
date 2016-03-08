@@ -21,7 +21,11 @@ It is a way for me to remember and hopefully get others started.
 **urllib2** ([package download link](http://pymotw.com/2/urllib2/))
  1. [access foursquare API](#foursquare-api-example)
 
-*By python 3.4 module:* 
+*By python 3.x module:* 
+
+**hug** (install by `pip3 install hug --upgrade`)
+
+1. [hug api access example] (#hug-example)
 
 **base64** (package is built-in)
 
@@ -95,6 +99,18 @@ Returns:
 1.09% "sexy incompliancy"
 1.09% "sexy evaporators"
 1.09% "sexy cudgeler"</code>
+
+
+## hug example
+hug is a great easy-to-use api to help route things on your web app
+
+#### Run the example:
+
+<code>$ python3 hug_api_example.py</code>
+
+This will output hug and start a listener process on 127.0.0.1:8000
+
+Then you can go to http://localhost:8000/happy_birthday?name=Hug&age=1 and see the output.
 
 
 ## base64 Example
