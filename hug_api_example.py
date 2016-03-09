@@ -4,9 +4,10 @@
 import hug
 import redis
 # import MySQLdb
-
-r = redis.StrictRedis(host='127.0.0.1',port=6379)
-
+try:
+    r = redis.StrictRedis(host='127.0.0.1',port=6379)
+except:
+    print("\n warning! ----- redis not running -----\n\n")
 @hug.get('/happy_birthday')
 
 def happy_birthday(name, age:hug.types.number=1):
