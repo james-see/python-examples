@@ -1,6 +1,7 @@
 # from https://github.com/timothycrosley/hug
 # install pip3 install hug --upgrade
 # A basic (single function) API written using Hug
+# example call http://127.0.0.1:8000/redis_call?ape=123456&rname=phrase
 import hug
 import redis
 # import MySQLdb
