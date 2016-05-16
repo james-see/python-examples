@@ -75,6 +75,11 @@ save_classifier = open("tweetposneg.pickle","wb")
 pickle.dump(classifier, save_classifier)
 save_classifier.close()
 
+# optional load from classifier that was saved previously
+# classifier_f = open("naivebayes.pickle", "rb")
+# classifier = pickle.load(classifier_f)
+# classifier_f.close()
+
 runtweets = []  # setup to import a list of tweets here if you wish into a python list
 if len(sys.argv) > 1:  # if param passed 4 name of text file w/ list of tweets
     tweetfile = sys.argv[1]
