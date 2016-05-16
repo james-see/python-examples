@@ -70,6 +70,11 @@ word_features = get_word_features(get_words_in_tweets(tweets))
 training_set = nltk.classify.apply_features(extract_features, tweets)
 classifier = nltk.NaiveBayesClassifier.train(training_set)
 
+# optional to save your classifier so you can load it elsewhere without having to rebuild training set every time
+save_classifier = open("tweetposneg.pickle","wb")
+pickle.dump(classifier, save_classifier)
+save_classifier.close()
+
 runtweets = []  # setup to import a list of tweets here if you wish into a python list
 if len(sys.argv) > 1:  # if param passed 4 name of text file w/ list of tweets
     tweetfile = sys.argv[1]
