@@ -13,5 +13,5 @@ except:
 # set API key
 quandl.ApiConfig.api_key = mysecretkey # get free key at quandl.com
 data = quandl.get("APPL")
-
+print ('Total days of stock data available: {}'.format(len(data)))
 #
