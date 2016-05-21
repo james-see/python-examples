@@ -23,9 +23,13 @@ It is a way for me to remember and hopefully get others started.
 
 ## *By python 3.x module:* 
 
+**quandl** (install by `pip3 install quandl --upgrade`)
+
+1. [quandl api access example](#quandl-example)
+
 **hug** (install by `pip3 install hug --upgrade`)
 
-1. [hug api access example] (#hug-example)
+1. [hug api access example](#hug-example)
 
 **base64** (package is built-in)
 
@@ -460,6 +464,20 @@ This is a link:
  Help Spread DuckDuckGo!
 This is a link:
  Take a Tour
+```
+
+## Quandl Example   
+This example gets the stocks from AAPL into a dataframe and prints it.   
+
+#### Run the Example:
+```
+$ python3 quandl-example.py
+```
+
+#### Output:
+
+```
+$ AAPL stock latest price: $94
 ```
 
 ## Json to Python Object Example
