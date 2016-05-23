@@ -477,7 +477,9 @@ $ python3 quandl-example.py
 #### Output:
 
 ```
-$ AAPL stock latest price: $94
+$ first date: 2001-12-31
+$ Total days of stock data available: 4
+$ [Finished in 1.6s]
 ```
 
 ## Json to Python Object Example
