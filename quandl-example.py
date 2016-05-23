@@ -8,10 +8,10 @@
 import quandl
 try: from configs import *
 except:
-    print ('no configs file set')
-    mysecretkey = 'yoursecretkeyfromquandl.com'
+    print ('no configs file set, create a file called configs.py and add var to it like myqkey = "whatever"')
+    myqkey = 'yoursecretkeyfromquandl.com'
 # set API key
-quandl.ApiConfig.api_key = mysecretkey # get free key at quandl.com
-data = quandl.get("APPL")
+quandl.ApiConfig.api_key = myqkey # get free key at quandl.com
+data = quandl.get("WIKI/AAPL")
 print ('Total days of stock data available: {}'.format(len(data)))
 #
