@@ -35,6 +35,10 @@ It is a way for me to remember and hopefully get others started.
 
 1. [base64 encode & decode example](#base64-example)
 
+**http.server** (module is built-in)
+
+1. [web server example](#server-example)
+
 **hashlib** (package is built-in)
 
 1. [sha 256 hash example](#sha-example)
@@ -186,6 +190,14 @@ Top 4 hits:
   http://www.campbellhigh.org/
   http://www.jamescampbell.com/
 For more results, see http://www.google.com/search?oe=utf8&ie=utf8&source=uds&start=0&hl=en&q=james+campbell
+```
+
+## Server Example   
+This example starts an http server on localhost:10010 and returns data when you visit the page
+
+#### Run the Example:   
+```
+$ python3 server-example.py
 ```
 
 ## Scrapy Spider Example
