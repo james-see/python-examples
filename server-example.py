@@ -18,7 +18,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        self.wfile.write(bytes("<html><head><title>Title goes here.</title></head>", "utf-8"))
+        self.wfile.write(bytes("<html><head><title>MY PYTHON WEB SERVER PAGE!</title></head>", "utf-8"))
         self.wfile.write(bytes("<body style='font-family:monospace;'><p>This is a test.</p>", "utf-8"))
         # you can use if else to check path and do custom things based on path accessed
         if self.path == '/win': self.wfile.write(bytes("<p>YOU WIN! @ path %s</p>" % self.path, "utf-8"))
