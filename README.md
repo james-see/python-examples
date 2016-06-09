@@ -23,6 +23,10 @@ It is a way for me to remember and hopefully get others started.
 
 ## *By python 3.x module:* 
 
+**argparse** (install by `pip3 install argparse --upgrade`)
+
+1. [argparse example](#argparse-example)
+
 **quandl** (install by `pip3 install quandl --upgrade`)
 
 1. [quandl api access example](#quandl-example)
@@ -625,6 +629,32 @@ What is the name of the venue to search?: Millenium Hotel
 
 Lat/Long: 51.5108680696, -0.151263216976
 ```
+
+## argparse Example   
+This example sets some basic args. 
+
+#### Run the Example:
+
+```
+$ python3 argparse.py -h
+```
+Returns:
+
+```
+usage: argparse example [-h] [-a] [-v] [--verbose]
+
+Example on how to use argparse
+
+positional arguments:
+  +a             Turn A on
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -a             Turn A off
+  -v, --version  show program's version number and exit
+  --verbose      verbose flag
+```
+
 
 *More coming soon!*
 
