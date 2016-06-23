@@ -47,26 +47,31 @@ It is a way for me to remember and hopefully get others started.
 
 1. [sha 256 hash example](#sha-example)
 
-**nltk** (package download via pip3 install nltk)
+**nltk** (module download via pip3 install nltk)
 
 1. [sentiment analysis example](#sentiment-example)
 
-**exifread** (package download via pip3 install exifread)
+**exifread** (module download via pip3 install exifread)
 
 1. [read exif example](#exifread-example)
 
-**json** (package download via pip3 install json)
+**json** (module download via pip3 install json)
 
 1. [json to python object example](#json-to-python-object-example)
 
-**urllib3** (package download via pip3 install urllib3 from homebrew osx brew install python3)
+**urllib3** (module download via pip3 install urllib3 from homebrew osx brew install python3)
 
 1. [google mask search example](#google-mask-example)
 2. [urllib3 proxymanager example](#proxymanager-example)
 
-**blockchain** (package downloa via pip3 install blockchain)
+**blockchain** (module download via pip3 install blockchain)
 
 1. [wallet query example](#bitcoin-wallet-example)
+
+**shodan** (module download via pip install shodan)
+
+1. [shodan count example](#shodan-count-example)
+2. [google lat/long and shodan enrichment geo search example](#google-geo-and-shodan-example)
 
 ## Pattern Twitter Search Example
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
@@ -653,6 +658,37 @@ optional arguments:
   -a             Turn A off
   -v, --version  show program's version number and exit
   --verbose      verbose flag
+```
+
+## Shodan Count Example   
+This example connects to shodan api via your configs.py file with proper api key variable set and then queries for nginx in Glasgow, GB.
+
+#### Run the Example:   
+```
+python3 shodan-example.py
+```
+
+#### Returns:
+
+```
+Results found: 246
+[Finished in 0.6s]
+```
+
+## Google GEO and Shodan Example   
+This example takes an address, gets the lat/long, and searches in shodan for matches near that location.
+
+#### Run the Example:   
+```
+python3 get-geo-example.py
+```
+
+#### Returns:
+
+```
+geo:58.98691099999999,-2.960873,3
+Results found: 572
+[Finished in 0.7s]
 ```
 
 
