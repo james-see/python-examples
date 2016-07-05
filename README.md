@@ -23,6 +23,10 @@ It is a way for me to remember and hopefully get others started.
 
 ## *By python 3.x module:* 
 
+**rethinkdb** (install by `pip3 install rethinkdb --upgrade`)
+
+1. [rethinkdb example](#rethinkdb-example)
+
 **argparse** (install by `pip3 install argparse --upgrade`)
 
 1. [argparse example](#argparse-example)
@@ -690,6 +694,16 @@ geo:58.98691099999999,-2.960873,3
 Results found: 572
 [Finished in 0.7s]
 ```
+
+## RethinkDB Example
+This example takes pastebin archive daily json data into a test table in rethinkdb and pulls out values from it.
+
+#### Run the Example:    
+```
+python3 rethink-example.py
+```
+
+#### Returns:
 
 
 *More coming soon!*
