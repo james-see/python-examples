@@ -25,10 +25,11 @@ print('\nLat/Long for %s: %s, %s \n' % (urllib.unquote(queryer),lat,lng)) # prin
 
 # globals Instagram API
 instaclientid = '35b999a6d51344cc98ebb061da538999'
+instaaccess_token='290277.35b999a.e2423222efa04c058b0e9b95cbf77c07'
 instalat = lat # bring in var from foursquare call
 instalong = lng # bring in var from foursquare call
 instacount = '50'
-instageosearch = 'https://api.instagram.com/v1/media/search?count='+instacount+'&lat='+instalat+'&lng='+instalong+'&client_id='+instaclientid
+instageosearch = 'https://api.instagram.com/v1/media/search?count='+instacount+'&lat='+instalat+'&lng='+instalong+'&access_token='+instaaccess_token
 instarequest = urllib2.urlopen(instageosearch)
 instadataconvert = json.loads(instarequest.read())
 # test print(instadataconvert) # raw json return from instagram search api
