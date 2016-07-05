@@ -15,6 +15,7 @@ from configs import *
 
 address = "4 Ferry Terminal Bldg, Kirkwall, Orkney KW15 1HU, UK"
 
+
 encodedAddress = urllib.parse.quote_plus(address)
 data = urllib.request.urlopen("http://maps.googleapis.com/maps/api/geocode/json?address=" + encodedAddress + '&sensor=false').read().decode('utf-8')
 location = json.loads(data)['results'][0]['geometry']['location']
@@ -29,7 +30,7 @@ shodan_api_key = globalshodankey  # set in configs.py
 try: api = shodan.Shodan(shodan_api_key)
 except: exit('make sure you have the shodan key setup in configs.py as globalshodankey = "yourkey"')
 
-fullquerystring = 'geo:'+str(lat)+','+str(lng)+',3'
+fullquerystring = 'geo:'+str(lat)+','+str(lng)+',5'
 print(fullquerystring)
 results = api.count(fullquerystring)
 if int(results['total']) == 0:

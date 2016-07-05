@@ -3,7 +3,7 @@
 # Date: June 23rd 2016
 # Date Updated:
 # What: Shodan example
-
+import sys
 from configs import *  # have a configs.py file with shodan api key
 
 try: import shodan
