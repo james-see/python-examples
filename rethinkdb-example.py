@@ -10,7 +10,11 @@ import rethinkdb as r  # standard nomenclature to use
 import urllib.request
 import json
 
-url = 'http://psbdmp.com/api/dump/daily'
+# for url implementation instead of json file (comment out example file open below -jc
+# url = 'http://psbdmp.com/api/dump/daily'
+# data = urllib.request.urlopen(url)
+# d = json.loads(data.read().decode('utf-8-sig'))
+
 """
 json keys: id, data, datahash, tags, addedtime, viewed, deleted, unixtime, banned, leakedemails,
 info, total, dumped, formated, removed, textdata, spID
@@ -18,7 +22,7 @@ info, total, dumped, formated, removed, textdata, spID
 # open example file
 with open('pastedumpexample.json','rU',encoding='utf-8') as json_data:
     d = json.load(json_data)
-# data = urllib.request.urlopen(url).read()
+
 i = 0
 
 # list of tables to check if they exist
@@ -29,7 +33,6 @@ for table in tables:
 		r.db('test').table_create(table).run(conn)
 
 for datarow in d['data']:
-	#print(datarow['id'])
     try: ider = datarow['id']
     except: ider = ''
     try: dataer = datarow['data']
