@@ -77,6 +77,11 @@ It is a way for me to remember and hopefully get others started.
 1. [shodan count example](#shodan-count-example)
 2. [google lat/long and shodan enrichment geo search example](#google-geo-and-shodan-example)
 
+**websockify** (module download via pip(3) install websockify)
+
+1. [websockify example](#websockify-example)
+
+
 ## Pattern Twitter Search Example
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
 
@@ -704,6 +709,16 @@ python3 rethink-example.py
 ```
 
 #### Returns:
+
+
+## Websockify Example   
+This example uses websockify.   
+```
+python3 websockify-example.py :8015 :80
+```
+
+#### Returns:
+
 
 
 *More coming soon!*
