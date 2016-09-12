@@ -23,6 +23,10 @@ It is a way for me to remember and hopefully get others started.
 
 ## *By python 3.x module:* 
 
+**fuzzywuzzy** (install by `pip3 install fuzzywuzzy --upgrade`)
+
+1. [fuzzywuzzy](#fuzzywuzzy-example)
+
 **rethinkdb** (install by `pip3 install rethinkdb --upgrade`)
 
 1. [rethinkdb example](#rethinkdb-example)
@@ -182,6 +186,18 @@ THIS IS AN EXAMPLE by @jamescampbell
 Hello World
 I hope you enjoy this example.
 -------------------
+```
+
+## FuzzyWuzzy Example   
+This example searches for 'cowboy' and returns Dallas Cowboys as the closest match from the list available.
+
+#### Run the Example:   
+```
+$ python3 fuzzywuzzy-example.py
+```
+Returns:   
+```
+Dallas Cowboys, 90
 ```
 
 ## Google Mask Example
