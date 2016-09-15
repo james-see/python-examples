@@ -14,4 +14,4 @@ argparse
 fuzzywuzzy
 scrapy
 pattern
-urllib2
+
