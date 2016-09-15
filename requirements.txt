@@ -1,3 +1,17 @@
 BeautifulSoup4
 pysocks
 hug
+rethinkdb
+quandl
+nltk
+exifread
+blockchain
+websockify
+shodan
+urllib3
+json
+argparse
+fuzzywuzzy
+scrapy
+pattern
+urllib2
