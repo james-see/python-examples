@@ -9,7 +9,6 @@ blockchain
 websockify
 shodan
 urllib3
-json
 argparse
 fuzzywuzzy
 scrapy
