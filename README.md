@@ -24,7 +24,7 @@ It is a way for me to remember and hopefully get others started.
 
 1. [argparse example](#argparse-example)
 
-**bs4** ([package download link](http://www.crummy.com/software/BeautifulSoup/bs4/download/))
+**bs4** ([package download link](http://www.crummy.com/software/BeautifulSoup/bs4/download/))   
 1. [html to text parser](#html-to-text-example)
 
 **fuzzywuzzy** (install by `pip3 install fuzzywuzzy --upgrade`)
