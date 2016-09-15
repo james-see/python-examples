@@ -9,9 +9,6 @@ It is a way for me to remember and hopefully get others started.
  1. [twitter search](#pattern-example) 
  2. [google search example](#google-search-example)
 
-**bs4** ([package download link](http://www.crummy.com/software/BeautifulSoup/bs4/download/))
- 1. [html to text parser](#html-to-text-example)
-
 **socks** ([package download link](https://github.com/Anorov/PySocks))
  1. [connect to tor and print .onion site](#tor-connect-example)
 
@@ -23,6 +20,13 @@ It is a way for me to remember and hopefully get others started.
 
 ## *By python 3.x module:* 
 
+**argparse** (install by `pip3 install argparse --upgrade`)
+
+1. [argparse example](#argparse-example)
+
+**bs4** ([package download link](http://www.crummy.com/software/BeautifulSoup/bs4/download/))
+1. [html to text parser](#html-to-text-example)
+
 **fuzzywuzzy** (install by `pip3 install fuzzywuzzy --upgrade`)
 
 1. [fuzzywuzzy](#fuzzywuzzy-example)
@@ -30,10 +34,6 @@ It is a way for me to remember and hopefully get others started.
 **rethinkdb** (install by `pip3 install rethinkdb --upgrade`)
 
 1. [rethinkdb example](#rethinkdb-example)
-
-**argparse** (install by `pip3 install argparse --upgrade`)
-
-1. [argparse example](#argparse-example)
 
 **quandl** (install by `pip3 install quandl --upgrade`)
 
