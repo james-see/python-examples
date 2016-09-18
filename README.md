@@ -5,14 +5,14 @@ This is a collection of python examples I created for some key libraries in Pyth
 
 It is a way for me to remember and hopefully get others started.
 
-~~## *By python 2.7 module:*~~
+~~## *By python 2.7 module:*~~ REMOVED! There are better things in Python 3.x. There is now no reason not to just start your Python journey in Python 3. Onward and upward.
 
-**pattern** ([package download link](http://www.clips.ua.ac.be/pattern))
- 1. [twitter search](#pattern-example) 
- 2. [google search example](#google-search-example)
+~~**pattern** ([package download link](http://www.clips.ua.ac.be/pattern))~~
+ ~~1. [twitter search](#pattern-example) ~~
+ ~~2. [google search example](#google-search-example)~~
 
-**urllib2** ([package download link](http://pymotw.com/2/urllib2/))
- 1. [access foursquare API](#foursquare-api-example)
+~~**urllib2** ([package download link](http://pymotw.com/2/urllib2/))~~
+ ~~1. [access foursquare API](#foursquare-api-example)~~
 
 ## *By python 3.x module:* 
 
