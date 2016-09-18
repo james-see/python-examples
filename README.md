@@ -9,9 +9,6 @@ It is a way for me to remember and hopefully get others started.
  1. [twitter search](#pattern-example) 
  2. [google search example](#google-search-example)
 
-**socks** ([package download link](https://github.com/Anorov/PySocks))
- 1. [connect to tor and print .onion site](#tor-connect-example)
-
 **scrapy** ([package download link](http://scrapy.org/download/))
  1. [crawl all internal links for a domain](#scrapy-spider-example)
 
@@ -77,6 +74,9 @@ It is a way for me to remember and hopefully get others started.
 **blockchain** (module download via pip3 install blockchain)
 
 1. [wallet query example](#bitcoin-wallet-example)
+
+**PySocks** ([package download link](https://github.com/Anorov/PySocks))   
+ 1. [connect to tor and print .onion site](#tor-connect-example)
 
 **shodan** (module download via pip install shodan)
 
