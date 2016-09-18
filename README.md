@@ -1,3 +1,5 @@
+![travis build status](https://travis-ci.org/jamesacampbell/python-examples.svg)
+
 # python-examples
 This is a collection of python examples I created for some key libraries in Python that I use all the time. 
 
