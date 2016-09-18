@@ -5,14 +5,11 @@ This is a collection of python examples I created for some key libraries in Pyth
 
 It is a way for me to remember and hopefully get others started.
 
-## *By python 2.7 module:*
+~~## *By python 2.7 module:*~~
 
 **pattern** ([package download link](http://www.clips.ua.ac.be/pattern))
  1. [twitter search](#pattern-example) 
  2. [google search example](#google-search-example)
-
-**scrapy** ([package download link](http://scrapy.org/download/))
- 1. [crawl all internal links for a domain](#scrapy-spider-example)
 
 **urllib2** ([package download link](http://pymotw.com/2/urllib2/))
  1. [access foursquare API](#foursquare-api-example)
@@ -88,6 +85,10 @@ It is a way for me to remember and hopefully get others started.
 **websockify** (module download via pip(3) install websockify)
 
 1. [websockify example](#websockify-example)
+
+**scrapy** ([package download link](http://scrapy.org/download/))   
+
+1. [crawl all internal links for a domain](#scrapy-spider-example)
 
 
 ## Pattern Twitter Search Example
