@@ -1,15 +1,14 @@
-# pattern-example-webcrawl.py
-# pattern library example crawling jamescampbell.us
+#!/usr/bin/python3
+# getting all links example crawling jamescampbell.us
 # author: James Campbell
 # Date Created: 2015 05 22
-# to install pattern, it is simple via pip: pip install pattern
 
 import sys # need this to pass arguments at the command line
 from termcolor import colored # awesome color library for printing colored text in the terminal
 import argparse, random
-from scrapy.selector import HtmlXPathSelector
-from scrapy.spider import BaseSpider
-from scrapy.http import Request
+from scrapy.spiders import CrawlSpider, Rule
+from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor
+from scrapy.item import Item, Field
 
 # terminal arguments parser globals - do not change
 parser = argparse.ArgumentParser()
@@ -30,19 +29,22 @@ if results.url != None: # if search terms set then change from default to that
 DOMAIN = domainer
 URL = 'https://%s' % DOMAIN
 
-class MySpider(BaseSpider):
-    name = DOMAIN
-    allowed_domains = [DOMAIN]
-    start_urls = [
-        URL
-    ]
-
-    def parse(self, response):
-        hxs = HtmlXPathSelector(response)
-        for url in hxs.select('//a/@href').extract():
-            if not url.startswith('http://'):
-                url= URL + url 
-            print colored(url,'green')
-            yield Request(url, callback=self.parse)
 
 
+class MyItem(Item):
+    url= Field()
+
+
+class someSpider(CrawlSpider):
+    name = 'crawltest'
+    allowed_domains = ['jamescampbell.us']
+    start_urls = ['https://jamescampbell.us']
+    rules = (Rule(LxmlLinkExtractor(allow=()), callback='parse_obj', follow=True),)
+
+    def parse_obj(self,response):
+        item = MyItem()
+        item['url'] = []
+        for link in LxmlLinkExtractor(allow=(),deny = self.allowed_domains).extract_links(response):
+            item['url'].append(link.url)
+            print (link.url)
+        return item
