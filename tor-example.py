@@ -1,14 +1,17 @@
 # tor connect example code
 # author: James Campbell
 # date: 2015 05 17
+# date updated: 2016 09 18 confirmed working (make sure to not use privoxy settings or will break) using python3 
 
+import urllib
+import urllib.request # had to add for python 3.4 -jc
 import socks
 import socket
-import urllib
+#import socket
 import argparse
 import random
 import sys
-import urllib.request # had to add for python 3.4 -jc
+
 
 # terminal arguments parser globals - do not change
 parser = argparse.ArgumentParser()
@@ -24,9 +27,8 @@ if results.onion != None: # if search terms set in terminal then change from def
 #TOR SETUP GLOBAL Vars
 SOCKS_PORT = 9050  # TOR proxy port that is default from torrc, change to whatever torrc is configured to
 
-# Set socks proxy and wrap the urllib module
-socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, '127.0.0.1', SOCKS_PORT) # sets default proxy for connect
-socket.socket = socks.socksocket # sets default socket to be the sockipy socket
+socks.set_default_proxy(socks.SOCKS5, "127.0.0.1",SOCKS_PORT)
+socket.socket = socks.socksocket
 
 # Perform DNS resolution through the socket
 def getaddrinfo(*args):
@@ -37,13 +39,8 @@ socket.getaddrinfo = getaddrinfo
 headers = {'User-Agent': 'JAMES CAMPBELL jamescampbell.us SEARCH BOT! I FOUND YOU!!!!' }
 	#print ('trying request now...')
 req = urllib.request.Request(onionsite,None,headers)
-try:
-	response = urllib.request.urlopen(req) # new python 3 code -jc
-	status = 'loaded successfully'
-except:
-	status = 'failed loading'
-	currenturl = 'none'
-	html =  'none'
+response = urllib.request.urlopen(req) # new python 3 code -jc
+status = 'loaded successfully'
 try:
 	sitehtml = response.read()
 	print (sitehtml)
