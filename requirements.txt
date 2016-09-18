@@ -12,5 +12,5 @@ urllib3
 argparse
 fuzzywuzzy
 scrapy
-
+pytest
 
