@@ -2,6 +2,7 @@
 import time
 import requests
 from bs4 import BeautifulSoup
+from tqdm import tqdm
 
 diction = []
 subset = []
@@ -15,15 +16,17 @@ with open(fname) as f:
 #parser = argparse.ArgumentParser(description='Get Google Count.')
 #parser.add_argument('word', help='word to count')
 #args = parser.parse_args()
-
-for site in subset:
+tsubset = tqdm(subset,total=len(subset))
+report = ' domain name   |   total number of hits \n-------------------------------------------\n'
+for site in tsubset:
+	tsubset.set_description("Processing %s" % site)
 	r = requests.get('http://www.google.com/search',
 	                 params={'q':'"site:'+site+'"',
 	                         "tbs":"li:1"}
 	                )
 
 	soup = BeautifulSoup(r.text, 'html.parser')
-	print (site, soup.find('div',{'id':'resultStats'}).text)
 	time.sleep(3)
-
+	report = report+site+' '+soup.find('div',{'id':'resultStats'}).text+'\n'
+print(report)
 exit("finis.")
