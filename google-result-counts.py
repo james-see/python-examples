@@ -37,6 +37,6 @@ for site in tsubset:
 	try: totaler = totaler + int(re.sub("[^0-9]", "", results))
 	except: totaler = totaler
 #print(report) # old table format
-print tabulate(reporter,headers="keys",tablefmt="pipe") # awesome using tabulate
+print (tabulate(reporter,headers="keys",tablefmt="pipe")) # awesome using tabulate
 print('total pages: {}'.format(totaler))
 exit("finis.")
