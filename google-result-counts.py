@@ -1,13 +1,16 @@
 import re
 import time
 import requests
+import random
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 from tabulate import tabulate
+from proxies import *
+from useragents import *
 
 diction = []
 subset = []
-fname = 'list.txt'
+fname = 'active.txt'
 with open(fname) as f:
 	diction = f.readlines()
 	for term in diction:
@@ -25,11 +28,12 @@ for site in tsubset:
 	tsubset.set_description("Processing %s" % site)
 	r = requests.get('http://www.google.com/search',
 	                 params={'q':'"site:'+site+'"',
-	                         "tbs":"li:1"}
+	                         "tbs":"li:1"},proxies={'https' : random.choice(proxies)},headers={'User-Agent':random.choice(useragents)}
 	                )
-
 	soup = BeautifulSoup(r.text, 'html.parser')
-	time.sleep(1)
+	randwait = random.uniform(5,10)
+	print("waiting {} seconds...".format(randwait))
+	time.sleep(randwait)
 	reporter["site_name"].append(site)
 	results = soup.find('div',{'id':'resultStats'}).text
 	reporter["results"].append(results)
