@@ -8,7 +8,7 @@ from nltk.util import ngrams
 import re, string
 
 def get_ngrams(text, n ):
-    l = word_tokenize(text,n)
+    l = ngrams(word_tokenize(text),n)
     ll = [x for x in l if not re.fullmatch('[' + string.punctuation + ']+', x)]
     return [ ' '.join(grams) for grams in ll]
 
