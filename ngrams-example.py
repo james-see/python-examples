@@ -5,7 +5,7 @@
 
 from nltk.tokenize import word_tokenize
 from nltk.util import ngrams
-import re
+import re, string
 
 def get_ngrams(text, n ):
     l = word_tokenize(text)
