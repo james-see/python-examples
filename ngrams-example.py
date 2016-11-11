@@ -11,4 +11,5 @@ def get_ngrams(text, n ):
     return [ ' '.join(grams) for grams in n_grams]
 
 ngramer = get_ngrams("This is a sentence to parse out ngrams for it.",4)
-print(ngramer)
+for gram in ngramer:
+    print(gram)
