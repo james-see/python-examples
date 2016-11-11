@@ -9,7 +9,7 @@ import re, string
 
 def get_ngrams(text, n ):
     l = word_tokenize(text)
-    ll = [x for x in l if not re.fullmatch('[' + string.punctuation + ']+', x)]
+    ll = [x for x in l if not re.fullmatch('[' + string.punctuation() + ']+', x)]
     n_grams = ngrams(word_tokenize(ll), n)
     return [ ' '.join(grams) for grams in n_grams]
 
