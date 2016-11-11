@@ -7,7 +7,7 @@ from nltk.tokenize import word_tokenize
 from nltk.util import ngrams
 
 def get_ngrams(text, n ):
-    l = nltk.word_tokenize(text)
+    l = word_tokenize(text)
     ll = [x for x in l if not re.fullmatch('[' + string.punctuation + ']+', x)]
     n_grams = ngrams(word_tokenize(ll), n)
     return [ ' '.join(grams) for grams in n_grams]
