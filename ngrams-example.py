@@ -2,7 +2,7 @@
 # Author: James Campbell
 # Date: November 11 2016
 # What: Example using nltk tokenize and ngrams
-
+import nltk
 from nltk.tokenize import word_tokenize
 from nltk.util import ngrams
 import re, string
