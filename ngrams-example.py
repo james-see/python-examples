@@ -8,8 +8,9 @@ from nltk.util import ngrams
 import re, string
 
 def get_ngrams(text, n ):
-    l = ngrams(word_tokenize(text),n)
+    l = word_tokenize(text)
     ll = [x for x in l if not re.fullmatch('[' + string.punctuation + ']+', x)]
+    ll = ngrams(ll,n)
     return [ ' '.join(grams) for grams in ll]
 
 ngramer = get_ngrams("This is a sentence to parse out ngrams for it.",4)
