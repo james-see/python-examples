@@ -13,7 +13,7 @@ app = Flask(__name__)
 def index():
 	global result
 	hoster = result.hostname
-	return "<body style='font-family:monospace;'><p>Hi Grandma! {}</p></body>".format(hoster)
+	return "<body style='font-family:monospace;'><p>Hi Grandma! {}</p><pre>{}</pre</body>".format(hoster,pubkey)
 
 
 print(' * Connecting to tor')
