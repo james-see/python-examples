@@ -16,6 +16,10 @@ It is a way for me to remember and hopefully get others started.
 
 ## *By python 3.x module:* 
 
+**pdfquery** (install by `pip3 install pdfquery --upgrade`)
+
+1. [pdfquery example](#pdfquery-example)
+
 **PyPDF2** (install by `pip3 install PyPDF2 --upgrade`)
 
 1. [pdf merge example](#pdf-merge-example)
@@ -93,6 +97,16 @@ It is a way for me to remember and hopefully get others started.
 **scrapy** ([package download link](http://scrapy.org/download/))   
 
 1. [crawl all internal links for a domain](#scrapy-spider-example)
+
+
+## pdfquery Example   
+This example takes in the first argument the name of the pdf you want to get text from and prints the text found in the pdf to the screen.
+
+#### Run the example:
+
+<code>$ python3 pdfquery-example.py mypdf.pdf</code>
+
+This will output the text of the pdf to stdout if it contains any.
 
 
 ## PDF Merge Example   
