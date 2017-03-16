@@ -16,6 +16,10 @@ It is a way for me to remember and hopefully get others started.
 
 ## *By python 3.x module:* 
 
+**PyPDF2** (install by `pip3 install PyPDF2 --upgrade`)
+
+1. [pdf merge example](#pdf-merge-example)
+
 **argparse** (install by `pip3 install argparse --upgrade`)
 
 1. [argparse example](#argparse-example)
@@ -90,6 +94,19 @@ It is a way for me to remember and hopefully get others started.
 
 1. [crawl all internal links for a domain](#scrapy-spider-example)
 
+
+## PDF Merge Example   
+This example reads in a list of pdfs, you can specify the prefix of the list of pdfs using the `-p` argument or default is read\_. So for example, read_001.pdf, read_002.pdf would automatically get merged into a single pdf called merged.pdf. You can also set the output name via the `-o` argument. 
+
+#### Run the example:
+
+To get the help file:
+
+<code>$ python3 merge-pdfs-example.py -h</code>
+
+To run it on a list of pdfs with prefix `test` and output `final.pdf`:
+
+<code>$ python3 merge-pdfs-example.py -p test -o final.pdf</code>
 
 ## Pattern Twitter Search Example
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
