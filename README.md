@@ -16,6 +16,10 @@ It is a way for me to remember and hopefully get others started.
 
 ## *By python 3.x module:* 
 
+**http.server** (built-in to python3)   
+
+1. [http example](#http-example)
+
 **pdfquery** (install by `pip3 install pdfquery --upgrade`)
 
 1. [pdfquery example](#pdfquery-example)
@@ -98,6 +102,14 @@ It is a way for me to remember and hopefully get others started.
 
 1. [crawl all internal links for a domain](#scrapy-spider-example)
 
+## http.server Example     
+This example runs a web server to http://127.0.0.1:8000. Go to http://127.0.0.1:8000/web.html to verify it is working.
+
+#### Run the example:     
+
+<code>$ python3 example-http-server.py</code>   
+
+This will output that it is running on port 8000.
 
 ## pdfquery Example   
 This example takes in the first argument the name of the pdf you want to get text from and prints the text found in the pdf to the screen.
