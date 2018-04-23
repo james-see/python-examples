@@ -2,7 +2,7 @@
 # Date: November 18 2015
 # What: Example Facial recognition
 #!usr/bin/python requires python 2.7 for this to work
-# Example: run python opencv_facial_recognition_example.py abba.png haarcascade_frontalface_default.xml
+# Example: run python opencv_facial_recognition-example.py abba.png haarcascade_frontalface_default.xml
 # nomenclature is python [script] [image to recognize] [classifier to use]
 import cv2
 import sys

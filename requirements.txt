@@ -13,4 +13,4 @@ argparse
 fuzzywuzzy
 scrapy
 pytest
-
+termcolor

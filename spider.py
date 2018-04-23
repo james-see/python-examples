@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 #!/usr/bin/python3
 # getting all links example crawling jamescampbell.us
 # author: James Campbell
@@ -5,6 +6,7 @@
 
 import sys # need this to pass arguments at the command line
 from termcolor import colored # awesome color library for printing colored text in the terminal
+
 import argparse, random
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor
@@ -48,3 +50,5 @@ class someSpider(CrawlSpider):
             item['url'].append(link.url)
             print (link.url)
         return item
+
+someSpider()

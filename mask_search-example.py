@@ -4,7 +4,7 @@
 # what: this example searches up to different random terms plus the term you actually want to mask what you are searching for
 # author: James Campbell
 # date: 2015-05-29
-# Note: MUST USE PYTHON 3 from terminal, e.g. python3 mask-search-example.py
+# Note: MUST USE PYTHON 3 from terminal, e.g. python3 mask_search-example.py
 
 import json
 import urllib.request, urllib.parse
