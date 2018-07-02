@@ -1,6 +1,7 @@
 """Example using pyzillow."""
 from pyzillow.pyzillow import ZillowWrapper, GetDeepSearchResults, GetUpdatedPropertyDetails
 import argparse
+from pprint import pprint
 # arguments
 parser = argparse.ArgumentParser(description='zillow data example')
 parser.add_argument('-a', '--address', help='address to search', default='1947 N Upland St, Arlington, VA, 22207', required=False)
@@ -48,10 +49,10 @@ def main():
     zillow_data = get_wrapper()
     result = search_address(zillow_data)
     if args.verbose:
-        print(result.zillow_id)
+        pprint(vars(result))
     all_details = get_details(result.zillow_id)
     if args.verbose:
-        print(all_details.rooms)
+        pprint(vars(all_details))
 
 if __name__ == "__main__":
     main()
