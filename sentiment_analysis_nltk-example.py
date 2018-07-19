@@ -7,6 +7,7 @@
 import nltk
 import sys
 from sys import exit
+import pickle
 
 pos_tweets = [('I love this car', 'positive'),
               ('This view is amazing', 'positive'),
