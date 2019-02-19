@@ -40,6 +40,4 @@ if __name__=="__main__":
     app.config['UPLOAD_FOLDER'] = "flaskme/"
     app.run(port=6969, debug=True)
 
-# run curl http://localhost:6969
-# run curl -X POST -F file=@"/path/to/my/file/test.txt" http://localhost:6969/print_filename
-
+# run curl -X POST localhost:6969/upload -F file=@"assets/archive_name.tar.gz" -i
