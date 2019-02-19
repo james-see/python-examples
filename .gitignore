@@ -9,6 +9,9 @@ __pycache__/
 # C extensions
 *.so
 
+# paths created
+flaskme/
+
 # Distribution / packaging
 .Python
 env/
