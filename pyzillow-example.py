@@ -1,11 +1,14 @@
 """Example using pyzillow."""
+"""You need a zillow api key: https://www.zillow.com/howto/api/APIOverview.htm"""
 from pyzillow.pyzillow import ZillowWrapper, GetDeepSearchResults, GetUpdatedPropertyDetails
 import argparse
 from pprint import pprint
 # arguments
 parser = argparse.ArgumentParser(description='zillow data example')
-parser.add_argument('-a', '--address', help='address to search', default='1947 N Upland St, Arlington, VA, 22207', required=False)
-parser.add_argument('-v', '--verbose', help='print more stuff', action='store_true')
+parser.add_argument('-a', '--address', help='address to search',
+                    default='1943 N Upland St, Arlington, VA, 22207', required=False)
+parser.add_argument('-v', '--verbose',
+                    help='print more stuff', action='store_true')
 parser.add_argument('-z', '--zipcode', help='zipcode', default=22207)
 parser.add_argument('--apikey', help='zillow api key')
 args = parser.parse_args()
@@ -27,7 +30,8 @@ def get_wrapper():
 
 def search_address(zillow_data):
     """Get results from address input and zipcode input."""
-    deep_search_response = zillow_data.get_deep_search_results(address, zipcode)
+    deep_search_response = zillow_data.get_deep_search_results(
+        address, zipcode)
     result = GetDeepSearchResults(deep_search_response)
     if args.verbose:
         print(result)
@@ -37,7 +41,8 @@ def search_address(zillow_data):
 def get_details(zillow_id):
     """Get updated detailed property data."""
     zillow_data = get_wrapper()
-    updated_property_details_response = zillow_data.get_updated_property_details(zillow_id)
+    updated_property_details_response = zillow_data.get_updated_property_details(
+        zillow_id)
     result = GetUpdatedPropertyDetails(updated_property_details_response)
     if args.verbose:
         print(result)
@@ -53,6 +58,7 @@ def main():
     all_details = get_details(result.zillow_id)
     if args.verbose:
         pprint(vars(all_details))
+
 
 if __name__ == "__main__":
     main()

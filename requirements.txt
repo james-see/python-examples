@@ -18,3 +18,5 @@ pycld2
 pyicu
 polyglot
 tika
+pyzillow
+geotext
