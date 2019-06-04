@@ -2,6 +2,7 @@
 #!/usr/bin/python3
 # Author: James Campbell
 # Date: 03-15-2017
+# Last Modified 06-03-2019
 # What: take a pdf and get text from it using pdfquery
 import sys
 import pdfquery
@@ -17,18 +18,6 @@ else:
 pdf = pdfquery.PDFQuery(pdffile)
 pdf.load()
 text = pdf.pq.text()
-#with open('discordia.pkl', 'wb') as f:
-#	pickle.dump(text, f)
-#exit()
-def getran(tex):
-	texter = random.choice(tex)
-	if len(texter) < 140 and len(texter) > 0:
-		return texter
-	else:
-		global text
-		globular = getran(text)
-	return globular
-#print(getran(text))
 if text != '':
 	print(text)
 else:
