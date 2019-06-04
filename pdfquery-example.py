@@ -6,8 +6,6 @@
 # What: take a pdf and get text from it using pdfquery
 import sys
 import pdfquery
-import random
-import pickle
 
 # globals
 if sys.argv[1] == None: 
