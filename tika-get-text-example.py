@@ -4,5 +4,5 @@
 # What: get text from a PDF
 from tika import parser
 import sys
-raw = parser.from_file(f"{sys.argv[1]}")
-print(raw)
+text = parser.from_file(f"{sys.argv[1]}")
+print(text)
