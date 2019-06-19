@@ -4,5 +4,6 @@
 # What: get text from a PDF
 import sys
 import textract
+
 text = textract.process(f"{sys.argv[1]}")
 print(text)
