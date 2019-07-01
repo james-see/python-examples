@@ -35,7 +35,8 @@ def main():
             getcontent(instauser)
         else:
             print('Thanks for playing.')
-            exit()
+            raise SystemExit(0)
 
 if __name__ == "__main__":
     main()
+    raise SystemExit(0)

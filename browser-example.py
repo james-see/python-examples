@@ -46,3 +46,4 @@ def crawl(site):
 
 
 crawl(base_url)
+raise SystemExit(0)
