@@ -1,29 +1,24 @@
-from PIL import Image, ExifTags
+"""Show how to get exif data."""
 import sys
-try:
-    import exifread
-except:
-    exit('install exifread via pip to have this work properly')
-# pip install iptcinfo
-try:
-    import iptcinfo
-except:
-    exit('install iptcinfo via pip to have this work properly')
+from PIL import Image, ExifTags
 
 try:
-    import py3exiv2
-except:
-    exit('install py3exiv2 via pip to have this work properly')
+    import exifread
+except ModuleNotFoundError as e:
+    print(e, "pip3 install this!")
+    exit(1)
+try:
+    import iptcinfo
+except ModuleNotFoundError as e:
+    print(e, "pip3 install this!")
+    exit(1)
+
 # Open image file for reading (binary mode)
 path_name = 'assets/cat.jpg'
 try:
-    f = sys.argv[1] # check to see if image in command line
+    f = sys.argv[1]  # check to see if image in command line
     f = open(f, 'rb')
-except:
-    try:
-        f = open(path_name, 'rb')
-    except:
-        exit('failed to open file, check path settings or put full path and image')
+
 # Return Exif tags
 tags = exifread.process_file(f)
 totaltags = len(tags)

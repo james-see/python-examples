@@ -95,3 +95,13 @@ ENV/
 .ropeproject
 configs.py
 .cache*
+
+# stupid vscode bs
+.vscode
+.vscode/*
+
+# any extraneous output bs
+*.pdf
+*.djvu
+*.wav
+*.doc
