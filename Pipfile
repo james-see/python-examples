@@ -29,6 +29,8 @@ ExifRead = "*"
 Scrapy = "*"
 tabulate = "*"
 tqdm = "*"
+redis = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"

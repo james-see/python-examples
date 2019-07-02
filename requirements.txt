@@ -20,4 +20,6 @@ tika
 pyzillow
 geotext
 tabulate
-tqdm
+tdqm
+redis
+psycopg2-binary

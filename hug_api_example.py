@@ -1,11 +1,13 @@
-# from https://github.com/timothycrosley/hug
-# install pip3 install hug --upgrade
-# A basic (single function) API written using Hug
-# Make sure you have redis installed via pip and redis-cli can connect
-# example add data first: http://127.0.0.1:8000/redis_add?ape=123456&rname=phrase
-# example call http://127.0.0.1:8000/redis_call?ape=123456&rname=phrase
+"""A basic (single function) API written using Hug."""
 import hug
+
 import redis
+"""
+Make sure you have redis installed via pip and redis-cli can connect
+example add data first: http://127.0.0.1:8000/redis_add?ape=123456&rname=phrase
+example call http://127.0.0.1:8000/redis_call?ape=123456&rname=phrase
+"""
+
 # import MySQLdb
 try:
     r = redis.StrictRedis(host='127.0.0.1', port=6379)
