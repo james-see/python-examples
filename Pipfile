@@ -27,6 +27,8 @@ PySocks = "*"
 Quandl = "*"
 ExifRead = "*"
 Scrapy = "*"
+tabulate = "*"
+tqdm = "*"
 
 [requires]
 python_version = "3.7"

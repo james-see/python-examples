@@ -1,7 +1,7 @@
-#!/usr/bin/python3
-# base 64 encoding example in python3
+"""Base 64 encoding example in python3."""
 import hashlib
-print(hashlib.algorithms_available)
+print("Available algorithms:\n")
+print(hashlib.algorithms_available, '\n')
 example_html = """<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
       <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -103,4 +103,4 @@ GPU 0000:00:03.0
                 //--></script><noscript><img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt=""></noscript><!--/DO NOT REMOVE/--><!-- End SiteCatalyst code version: H.25.2. --></body></html>"""
 
 hash_object = hashlib.sha256(example_html.encode('utf8'))
-print (hash_object.hexdigest())
+print(hash_object.hexdigest(),'\n')
