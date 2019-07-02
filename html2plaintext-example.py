@@ -30,6 +30,6 @@ testhtml = """
 
 print('\n\n[*-*]Before html with text:\n------------------')
 print(testhtml)
-print('------------------\n\n\n\n[*-*]After cleanMe() function:\n-------------------')
+print('------------------\n\n\n\n[*-*]After cleanMe() function:\n------------')
 print(cleanMe(testhtml))
 print('-------------------\n\n')

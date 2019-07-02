@@ -103,4 +103,4 @@ GPU 0000:00:03.0
                 //--></script><noscript><img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt=""></noscript><!--/DO NOT REMOVE/--><!-- End SiteCatalyst code version: H.25.2. --></body></html>"""
 
 hash_object = hashlib.sha256(example_html.encode('utf8'))
-print(hash_object.hexdigest(),'\n')
+print(hash_object.hexdigest(), '\n')

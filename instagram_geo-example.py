@@ -1,4 +1,4 @@
-# python example to connect and retrieve values from foursquare API then
+"""Python example to connect and retrieve values from foursquare API."""
 # the example gets instagram users associated with that location's lat/long
 # Facebook killed Instagram's API so the second part does not work at all
 # Date Updated: 1 July 2019
@@ -30,19 +30,4 @@ print("This example was killed by Facebook killing API's. Complain to Facebook."
 # globals Instagram API
 # instaclientid = '35b999a6d51344cc98ebb061da538999'
 # instaaccess_token='290277.35b999a.e2423222efa04c058b0e9b95cbf77c07'
-# instalat = lat # bring in var from foursquare call
-# instalong = lng # bring in var from foursquare call
-# instacount = '50'
-# instageosearch = 'https://api.instagram.com/v1/media/search?count='+instacount+'&lat='+instalat+'&lng='+instalong+'&access_token='+instaaccess_token
-# instarequest = urllib2.urlopen(instageosearch)
-# instadataconvert = json.loads(instarequest.read())
-# # test print(instadataconvert) # raw json return from instagram search api
-# # test print str(instadataconvert['data'][0]['user']) # print first user found in json
-# print ('Instagram users found at that location:\n')
-# i = 0
-# for instauser in instadataconvert['data']: # data is the main json object in instagram's callback
-# 	username = instauser['user']['username'] # 'user' is the main json object in the data array
-# 	i = i + 1
-# 	print (username)
-# print ('Total users found: %s' % (i))
-# exit('\n\"It is not clear that intelligence has any long-term survival value - Stephen Hawking\"\n') # always end on a high note ;)
+#
