@@ -22,7 +22,7 @@ def find_files(directory, pattern):
 
 if operationtype == '1':
     i = 0
-    print(f"Input directory & sub directory underneath set as {inputfolderpath}")
+    print(f"Input dir & sub directory underneath set as {inputfolderpath}")
     for filename in find_files(inputfolderpath, '*.djvu'):
         print(f"[*] Processing DJVU to PDF for {filename}...")
         i = i + 1
@@ -47,7 +47,8 @@ elif operationtype == '2':
     else:
         print('No djvu file to process, running sample')
         print('Processing DJVU to PDF...')
-        p = subprocess.Popen(["djvu2pdf", "assets/example.djvu"], stdout=subprocess.PIPE)
+        p = subprocess.Popen(["djvu2pdf", "assets/example.djvu"],
+                             stdout=subprocess.PIPE)
         output, err = p.communicate()
         print('Processing finished')
         exit('Completed sucessfully')

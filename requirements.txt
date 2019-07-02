@@ -15,7 +15,6 @@ scrapy
 pytest
 termcolor
 pycld2
-pyicu
 polyglot
 tika
 pyzillow

@@ -1,7 +1,7 @@
 """Show how to get exif data and iptc data from various libraries."""
 import sys
-from PIL import Image, ExifTags
 
+from PIL import Image
 
 try:
     import exifread
@@ -39,4 +39,3 @@ try:
 except Exception as e:
     if str(e) != "No IPTC data found.":
         raise
-

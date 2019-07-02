@@ -1,0 +1,32 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+beautifulsoup4 = "*"
+hug = "*"
+rethinkdb = "*"
+nltk = "*"
+blockchain = "*"
+websockify = "*"
+shodan = "*"
+urllib3 = "*"
+argparse = "*"
+fuzzywuzzy = "*"
+pytest = "*"
+termcolor = "*"
+pycld2 = "*"
+polyglot = "*"
+tika = "*"
+pyzillow = "*"
+geotext = "*"
+PySocks = "*"
+Quandl = "*"
+ExifRead = "*"
+Scrapy = "*"
+
+[requires]
+python_version = "3.7"
