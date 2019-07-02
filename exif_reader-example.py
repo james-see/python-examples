@@ -34,10 +34,9 @@ try:
     print('-------IPTC DATA FOUND-------')
     for k, v in info._data.items():
         print(k, v)
-    info['city'] = 'poop'
-    info.save('~/iptcout.jpg')
+    info['city'] = '#magistræde #🇩🇰'
+    info.save()
 except Exception as e:
     if str(e) != "No IPTC data found.":
         raise
 
-sys.exit()
