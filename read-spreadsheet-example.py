@@ -12,7 +12,7 @@ def find_files(directory, pattern):
                 yield filename
 
 
-filename = 'test.xls'
+filename = 'assets/test.xls'
 header = 1
 outputfilename = ''
 pathoffile = ''
