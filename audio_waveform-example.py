@@ -1,12 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import wave
-import sys
-import pyaudio  # to install pyaudio on osx: brew install portaudio then pip install --allow-external pyaudio --allow-unverified pyaudio pyaudio
-import speech_recognition as sr  # pip install speechrecognition
-from termcolor import colored
+# to install pyaudio on osx: brew install portaudio then pip
+# install --allow-external pyaudio --allow-unverified pyaudio pyaudio
 import pyaudio
-import wave
+import speech_recognition as sr  # pip install speechrecognition
 
 r = sr.Recognizer()
 with sr.Microphone() as source:  # use the default microphone as the audio source

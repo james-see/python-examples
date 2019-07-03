@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bcd82659e2d6b7051cadf76832a46916221a769a3a19adc497b879367334795e"
+            "sha256": "5a06946073ba290fc1bde35017a47a265e5ffe8ab8d3b44475333cac9900534b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -143,12 +143,26 @@
             ],
             "version": "==0.4.1"
         },
+        "configparser": {
+            "hashes": [
+                "sha256:8be81d89d6e7b4c0d4e44bcc525845f6da25821de80cb5e06e7e0238a2899e32",
+                "sha256:da60d0014fd8c55eb48c1c5354352e363e2d30bbf7057e5e171a468390184c75"
+            ],
+            "version": "==3.7.4"
+        },
         "constantly": {
             "hashes": [
                 "sha256:586372eb92059873e29eba4f9dec8381541b4d3834660707faf8ba59146dfc35",
                 "sha256:dd2fa9d6b1a51a83f0d7dd76293d734046aa176e384bf6e33b7e44880eb37c5d"
             ],
             "version": "==15.1.0"
+        },
+        "crayons": {
+            "hashes": [
+                "sha256:41f0843815a8e3ac6fb445b7970d8b9c766e6f164092d84e7ea809b4c91418ec",
+                "sha256:8edcadb7f197e25f2cc094aec5bf7f1b6001d3f76c82d56f8d46f6fb1405554f"
+            ],
+            "version": "==0.2.0"
         },
         "cryptography": {
             "hashes": [
@@ -687,6 +701,13 @@
             ],
             "version": "==0.1.7"
         },
+        "webdriver-manager": {
+            "hashes": [
+                "sha256:92f01a5b0f6b71860f5093256d5f27e10e95fcaec9fb0cd4a8d4607fa06364ac"
+            ],
+            "index": "pypi",
+            "version": "==1.7"
+        },
         "websockify": {
             "hashes": [
                 "sha256:547d3d98c5081f2dc2872a2e4a3aef33e0ee5141d5f6209204aab2f4a41548d2"
@@ -862,7 +883,8 @@
         },
         "wrapt": {
             "hashes": [
-                "sha256:565a021fd19419476b9362b05eeaa094178de64f8361e44468f9e9d7843901e1"
+                "sha256:565a021fd19419476b9362b05eeaa094178de64f8361e44468f9e9d7843901e1",
+                "sha256:d8d1a0a1f692d800cc83b5fa57f03955bcd21909c4d171e3d18b34f2cebea220"
             ],
             "version": "==1.11.2"
         }

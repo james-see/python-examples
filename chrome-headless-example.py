@@ -1,10 +1,6 @@
 from selenium import webdriver
-
-# lets ask the user for an instagram user to look up
-# globals
+from webdriver_manager.chrome import ChromeDriverManager
 instauser = "default"
-
-# functions
 
 
 def getuser():
@@ -18,25 +14,25 @@ def getcontent(instauser):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
-    driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     driver.get('https://www.instagram.com/{}/'.format(instauser))
     print(driver.title)
     userdata = driver.execute_script("return _sharedData.entry_data.ProfilePage[0].graphql.user")
     # print all of the data
-    print(f"User ID: {userdata['id']}\nBiography: {userdata['biography']}\nFriends: {userdata['edge_followed_by']['count']}\nFollowing: {userdata['edge_follow']['count']}")
+    print(f"User ID: {userdata['id']}\n\
+        Biography: {userdata['biography']}\n\
+            Friends: {userdata['edge_followed_by']['count']}\n\
+                Following: {userdata['edge_follow']['count']}")
 
 
 def main():
     """Run the program."""
-    global instauser
-    while instauser != 'q':
-        instauser = getuser()
-        if instauser != 'q':
-            getcontent(instauser)
-        else:
-            print('Thanks for playing.')
-            raise SystemExit(0)
+    instauser = getuser()
+    if instauser != 'q':
+        getcontent(instauser)
+    else:
+        print('Thanks for playing.')
+
 
 if __name__ == "__main__":
     main()
-    raise SystemExit(0)

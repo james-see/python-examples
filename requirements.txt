@@ -26,4 +26,4 @@ psycopg2-binary
 tika
 pypdf2
 pinboard
-pinapi
+webdriver_manager

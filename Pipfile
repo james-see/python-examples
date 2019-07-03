@@ -37,6 +37,7 @@ psycopg2-binary = "*"
 autopep8 = "*"
 pypdf2 = "*"
 pinboard = "*"
+webdriver-manager = "*"
 
 [requires]
 python_version = "3.7"
