@@ -10,20 +10,27 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 hostPort = 10010
 
 customPort = input("Default port 10010, hit enter or type custom one now: ")
-if customPort != '': hostPort = int(customPort)
+if customPort != '':
+    hostPort = int(customPort)
 hostName = "localhost"
+
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        self.wfile.write(bytes("<html><head><title>MY PYTHON WEB SERVER PAGE!</title></head>", "utf-8"))
-        self.wfile.write(bytes("<body style='font-family:monospace;'><p>This is a test.</p>", "utf-8"))
+        self.wfile.write(
+            bytes("<html><head><title>MY PYTHON WEB SERVER PAGE!</title></head>", "utf-8"))
+        self.wfile.write(
+            bytes("<body style='font-family:monospace;'><p>This is a test.</p>", "utf-8"))
         # you can use if else to check path and do custom things based on path accessed
-        if self.path == '/win': self.wfile.write(bytes("<p>YOU WIN! @ path %s</p>" % self.path, "utf-8"))
-        else: self.wfile.write(bytes("<p>You accessed path: %s</p>" % self.path, "utf-8"))
+        if self.path == '/win':
+            self.wfile.write(bytes("<p>YOU WIN! @ path %s</p>" % self.path, "utf-8"))
+        else:
+            self.wfile.write(bytes("<p>You accessed path: %s</p>" % self.path, "utf-8"))
         self.wfile.write(bytes("</body></html>", "utf-8"))
+
 
 myServer = HTTPServer((hostName, hostPort), MyServer)
 print(time.asctime(), "Server Starts - %s:%s" % (hostName, hostPort))
@@ -36,12 +43,4 @@ except KeyboardInterrupt:
 
 myServer.server_close()
 print(time.asctime(), "Server Stops - %s:%s" % (hostName, hostPort))
-
-#Handler = SimpleHTTPServer.SimpleHTTPRequestHandler(path='/Users/jclabpro/projects/testweb/')
-#httpd = SocketServer.TCPServer(("", PORT), Handler)
-#httpd.path = '/Users/jclabpro/projects/testweb/'
-#print("serving at port {}".format(PORT))
-#httpd.serve_forever()
-
-# can also do this from the command line via
 # python3 -m http.server 10010 --bind 127.0.0.1

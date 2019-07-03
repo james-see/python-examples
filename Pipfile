@@ -38,6 +38,8 @@ autopep8 = "*"
 pypdf2 = "*"
 pinboard = "*"
 webdriver-manager = "*"
+scapy = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"

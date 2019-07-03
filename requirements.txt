@@ -27,3 +27,5 @@ tika
 pypdf2
 pinboard
 webdriver_manager
+scapy
+matplotlib
