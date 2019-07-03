@@ -1,9 +1,5 @@
 """Example using cvlib."""
-"""Documentation: https://github.com/arunponnusamy/cvlib"""
-try:
-    import cvlib as cv
-except:
-    exit("must pip3 install cvlib first")
+import cvlib as cv
 from cvlib.object_detection import draw_bbox
 import cv2
 
