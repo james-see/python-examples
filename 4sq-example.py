@@ -35,4 +35,7 @@ lat = str(
 lng = str(
     dataconvert["response"]["venues"][0]["location"]["lng"]
 )  # foursquare response longitude
-print(f"Lat/Long: {lat}, {lng}")  # print lat long only
+print(f"\nLat/Long: {lat}, {lng}")  # print lat long only
+quantmapstring = f"https://www.qwant.com/maps/#map=20.08/{lat}/{lng}"
+print(f"Here is the quant map page for that location:\n {quantmapstring}")
+print("Right click on link and open in browser to view the location.\n")
