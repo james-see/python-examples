@@ -1,8 +1,5 @@
 # read values from a spreadsheet
-
-import sys
 import os
-import subprocess
 import fnmatch
 import xlrd
 
@@ -32,7 +29,7 @@ curr_cell = -1
 while curr_row < num_rows:
     curr_row += 1
     row = worksheet.row(curr_row)
-    print 'Row:', curr_row
+    print('Row:', curr_row)
     outputfilename = worksheet.cell_value(curr_row, 0)
     pathoffile = worksheet.cell_value(curr_row, 1)
     print('Filename: %s\nPath: %s' % (outputfilename, pathoffile))

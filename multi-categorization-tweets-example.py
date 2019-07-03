@@ -77,16 +77,19 @@ for (words, sentiment) in pos_tweets + neg_tweets + rain_tweets:
     words_filtered = [e.lower() for e in words.split() if len(e) >= 2]
     tweets.append((words_filtered, sentiment))
 
+
 def get_words_in_tweets(tweets):
     all_words = []
     for (words, sentiment) in tweets:
-      all_words.extend(words)
+        all_words.extend(words)
     return all_words
+
 
 def get_word_features(wordlist):
     wordlist = nltk.FreqDist(wordlist)
     word_features = wordlist.keys()
     return word_features
+
 
 def extract_features(document):
     document_words = set(document)
@@ -94,6 +97,7 @@ def extract_features(document):
     for word in word_features:
         features['contains(%s)' % word] = (word in document_words)
     return features
+
 
 word_features = get_word_features(get_words_in_tweets(tweets))
 
@@ -104,8 +108,8 @@ runtweets = []  # setup to import a list of tweets here if you wish into a pytho
 if len(sys.argv) > 1:  # if param passed 4 name of text file w/ list of tweets
     tweetfile = sys.argv[1]
     with open(tweetfile, "r") as ins:
-      for line in ins:
-        runtweets.append(line)
+        for line in ins:
+            runtweets.append(line)
 runtweets.append('I am a bad boy')  # should be negative
 runtweets.append('rain today')  # should be rain
 runtweets.append('so stupid')  # should be negative
@@ -116,13 +120,13 @@ poscount = 0
 negcount = 0
 raincount = 0
 for tweett in runtweets:
-  valued = classifier.classify(extract_features(tweett.split()))
-  print (valued)
-  if valued == 'negative':
-    negcount = negcount + 1
-  if valued == 'positive':
-    poscount = poscount + 1
-  if valued == 'rain':
-    raincount = raincount + 1
-print ('Positive count: %s \nNegative count: %s \nRain count: %s' % (poscount, negcount, raincount))
+    valued = classifier.classify(extract_features(tweett.split()))
+    print(valued)
+    if valued == 'negative':
+        negcount = negcount + 1
+    if valued == 'positive':
+        poscount = poscount + 1
+    if valued == 'rain':
+        raincount = raincount + 1
+print('Positive count: %s \nNegative count: %s \nRain count: %s' % (poscount, negcount, raincount))
 exit()

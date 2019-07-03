@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "57bfdd462cdcf06f70e8259c29f9a339200cfae0b56a772b5d7ac0503f57c705"
+            "sha256": "bcd82659e2d6b7051cadf76832a46916221a769a3a19adc497b879367334795e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -387,6 +387,13 @@
             ],
             "version": "==1.5.1"
         },
+        "pinboard": {
+            "hashes": [
+                "sha256:82d87bf08e0c00faa339568b0053b49d3afb09f47e389b346389236f4de12f42"
+            ],
+            "index": "pypi",
+            "version": "==2.1.8"
+        },
         "pluggy": {
             "hashes": [
                 "sha256:0825a152ac059776623854c1543d65a4ad408eb3d33ee114dff91e57ec6ae6fc",
@@ -503,6 +510,13 @@
                 "sha256:9b6323ef4ab914af344ba97510e966d64ba91055d6b9afa6b30799340e89cc03"
             ],
             "version": "==2.4.0"
+        },
+        "pypdf2": {
+            "hashes": [
+                "sha256:e28f902f2f0a1603ea95ebe21dff311ef09be3d0f0ef29a3e44a932729564385"
+            ],
+            "index": "pypi",
+            "version": "==1.26.0"
         },
         "pysocks": {
             "hashes": [

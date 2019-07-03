@@ -3,9 +3,7 @@
 # Date: 2017-03-07
 # Date Updated: 2019-06-19
 # What: combine a list of pdfs into one pdf from assets/testpdf1.pdf & testpdf2.pdf
-import glob
 from PyPDF2 import PdfFileMerger, PdfFileReader
-import sys
 
 filenames = ["assets/testpdf1.pdf", "assets/testpdf2.pdf"]
 merger = PdfFileMerger()

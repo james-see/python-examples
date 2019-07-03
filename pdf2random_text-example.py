@@ -1,34 +1,32 @@
 
+from PyPDF2 import PdfFileWriter, PdfFileReader
 import sys
 # globals
-if sys.argv[1] == None: 
-	pdffile = 'book1.pdf'
+if sys.argv[1] is None:
+    pdffile = 'book1.pdf'
 else:
-	pdffile = sys.argv[1]
+    pdffile = sys.argv[1]
 
-from PyPDF2 import PdfFileWriter, PdfFileReader
 
 output = PdfFileWriter()
 input1 = PdfFileReader(open(pdffile, "rb"))
 
 # print how many pages input1 has:
-print ("pdf has %d pages." % input1.getNumPages())
-print (input1.getDocumentInfo())
-print (input1.getXmpMetadata())
+print("pdf has %d pages." % input1.getNumPages())
+print(input1.getDocumentInfo())
+print(input1.getXmpMetadata())
 if input1.isEncrypted:
-	print('encrypted')
+    print('encrypted')
 else:
-	print('not encrypted')
+    print('not encrypted')
 i = 4
 content = ""
 while i < 6:
-	texter = input1.getPage(i).extractText()
-	#print(texter)
-	i = i + 1
-	content +=  texter + "\n"
-	content = " ".join(content.replace("\xa0", " ").strip().split())
-#content.encode("ascii", "ignore")
-#print(content.encode("ascii", "ignore"))
+    texter = input1.getPage(i).extractText()
+    # print(texter)
+    i = i + 1
+    content += texter + "\n"
+    content = " ".join(content.replace("\xa0", " ").strip().split())
 # add page 1 from input1 to output document, unchanged
 output.addPage(input1.getPage(0))
 
@@ -59,12 +57,6 @@ output.addPage(page5)
 # comment the the encription lines, if that's the case, to try this out
 output.addJS("this.print({bUI:true,bSilent:false,bShrinkToFit:true});")
 
-# encrypt your new PDF and add a password
-#password = "secret"
-#output.encrypt(password)
-
 # finally, write "output" to document-output.pdf
 outputStream = open("PyPDF2-output.pdf", "wb")
 output.write(outputStream)
-
-

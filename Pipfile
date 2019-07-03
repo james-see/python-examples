@@ -35,6 +35,8 @@ tqdm = "*"
 redis = "*"
 psycopg2-binary = "*"
 autopep8 = "*"
+pypdf2 = "*"
+pinboard = "*"
 
 [requires]
 python_version = "3.7"
