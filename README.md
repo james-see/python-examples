@@ -9,11 +9,11 @@ It is a way for me to remember and hopefully get others started.
 
 Start your Python journey in Python 3. Onward and upward.
 
-**urllib** ([package download link](http://pymotw.com/2/urllib2/))
+**urllib** (built-in to python3)
 
 1. [access foursquare API](#foursquare-api-example)
 
-## *By python 3.x module:*
+## *By python 3.x package:*
 
 **http.server** (built-in to python3)
 
@@ -56,7 +56,7 @@ Start your Python journey in Python 3. Onward and upward.
 
 1. [base64 encode & decode example](#base64-example)
 
-**http.server** (module is built-in)
+**http.server** (package is built-in)
 
 1. [web server example](#server-example)
 
@@ -64,24 +64,24 @@ Start your Python journey in Python 3. Onward and upward.
 
 1. [sha 256 hash example](#sha-example)
 
-**nltk** (module download via pip3 install nltk)
+**nltk** (package download via pip3 install nltk)
 
 1. [sentiment analysis example](#sentiment-example)
 
-**exifread** (module download via pip3 install exifread)
+**exifread** (package download via pip3 install exifread)
 
 1. [read exif example](#exifread-example)
 
-**json** (module download via pip3 install json)
+**json** (package download via pip3 install json)
 
 1. [json to python object example](#json-to-python-object-example)
 
-**urllib3** (module download via pip3 install urllib3 from homebrew osx brew install python3)
+**urllib3** (package download via pip3 install urllib3 from homebrew osx brew install python3)
 
 1. [google mask search example](#google-mask-example)
 2. [urllib3 proxymanager example](#proxymanager-example)
 
-**blockchain** (module download via pip3 install blockchain)
+**blockchain** (package download via pip3 install blockchain)
 
 1. [wallet query example](#bitcoin-wallet-example)
 
@@ -89,12 +89,12 @@ Start your Python journey in Python 3. Onward and upward.
 
  1. [connect to tor and print .onion site](#tor-connect-example)
 
-**shodan** (module download via pip install shodan)
+**shodan** (package download via pip install shodan)
 
 1. [shodan count example](#shodan-count-example)
 2. [google lat/long and shodan enrichment geo search example](#google-geo-and-shodan-example)
 
-**websockify** (module download via pip(3) install websockify)
+**websockify** (package download via pip(3) install websockify)
 
 1. [websockify example](#websockify-example)
 
@@ -160,7 +160,7 @@ python3 pattern-example-twitter.py -s 'Hello World'
 
 Tor (The Onion Router) has a particular socks port and connection setup that needs configured to connect in Python. This example shows you how. You must already have [Tor](http://torproject.org/download) installed.
 
-*Note:* You need to install the Socksipy module for this to work, which has an actively maintained fork in [PySocks](https://github.com/Anorov/PySocks). It is easy if you already have pip (and if you don't have pip you should). <code>$ pip install PySocks</code>
+*Note:* You need to install the Socksipy package for this to work, which has an actively maintained fork in [PySocks](https://github.com/Anorov/PySocks). It is easy if you already have pip (and if you don't have pip you should). <code>$ pip install PySocks</code>
 
 Then make sure your code (like the example) has <code>import socks</code>.
 
@@ -426,7 +426,7 @@ Negative count: 3
 
 ## hashlib example
 
-The hashlib module generates hashes from strings. This example uses the sha256 hash algorithm.
+The hashlib package generates hashes from strings. This example uses the sha256 hash algorithm.
 
 ### Run the Example
 
