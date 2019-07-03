@@ -1,7 +1,8 @@
 <a href='https://travis-ci.org/jamesacampbell/python-examples'>![travis build status](https://travis-ci.org/jamesacampbell/python-examples.svg)</a>
+[![CircleCI](https://circleci.com/gh/jamesacampbell/python-examples/tree/master.svg?style=svg)](https://circleci.com/gh/jamesacampbell/python-examples/tree/master)
 
 # python-examples
-This is a collection of python examples I created for some key libraries in Python that I use all the time. 
+This is a collection of python examples I created for some key libraries in Python that I use all the time.
 
 It is a way for me to remember and hopefully get others started.
 
@@ -14,9 +15,9 @@ It is a way for me to remember and hopefully get others started.
 ~~**urllib2** ([package download link](http://pymotw.com/2/urllib2/))~~
  ~~1. [access foursquare API](#foursquare-api-example)~~
 
-## *By python 3.x module:* 
+## *By python 3.x module:*
 
-**http.server** (built-in to python3)   
+**http.server** (built-in to python3)
 
 1. [http example](#http-example)
 
@@ -32,9 +33,9 @@ It is a way for me to remember and hopefully get others started.
 
 1. [argparse example](#argparse-example)
 
-**bs4** ([package download link](http://www.crummy.com/software/BeautifulSoup/bs4/download/))   
+**bs4** ([package download link](http://www.crummy.com/software/BeautifulSoup/bs4/download/))
 
-1. [html to text parser](#html-to-text-example)   
+1. [html to text parser](#html-to-text-example)
 2. [email parser](#email-parser-example)
 
 **fuzzywuzzy** (install by `pip3 install fuzzywuzzy --upgrade`)
@@ -86,7 +87,7 @@ It is a way for me to remember and hopefully get others started.
 
 1. [wallet query example](#bitcoin-wallet-example)
 
-**PySocks** ([package download link](https://github.com/Anorov/PySocks))   
+**PySocks** ([package download link](https://github.com/Anorov/PySocks))
  1. [connect to tor and print .onion site](#tor-connect-example)
 
 **shodan** (module download via pip install shodan)
@@ -98,20 +99,20 @@ It is a way for me to remember and hopefully get others started.
 
 1. [websockify example](#websockify-example)
 
-**scrapy** ([package download link](http://scrapy.org/download/))   
+**scrapy** ([package download link](http://scrapy.org/download/))
 
 1. [crawl all internal links for a domain](#scrapy-spider-example)
 
-## http.server Example     
+## http.server Example
 This example runs a web server to http://127.0.0.1:8000. Go to http://127.0.0.1:8000/web.html to verify it is working.
 
-#### Run the example:     
+#### Run the example:
 
-<code>$ python3 example-http-server.py</code>   
+<code>$ python3 example-http-server.py</code>
 
 This will output that it is running on port 8000.
 
-## pdfquery Example   
+## pdfquery Example
 This example takes in the first argument the name of the pdf you want to get text from and prints the text found in the pdf to the screen.
 
 #### Run the example:
@@ -121,8 +122,8 @@ This example takes in the first argument the name of the pdf you want to get tex
 This will output the text of the pdf to stdout if it contains any.
 
 
-## PDF Merge Example   
-This example reads in a list of pdfs, you can specify the prefix of the list of pdfs using the `-p` argument or default is read\_. So for example, read_001.pdf, read_002.pdf would automatically get merged into a single pdf called merged.pdf. You can also set the output name via the `-o` argument. 
+## PDF Merge Example
+This example reads in a list of pdfs, you can specify the prefix of the list of pdfs using the `-p` argument or default is read\_. So for example, read_001.pdf, read_002.pdf would automatically get merged into a single pdf called merged.pdf. You can also set the output name via the `-o` argument.
 
 #### Run the example:
 
@@ -139,12 +140,12 @@ The first example I created is pattern-example-twitter.py. Pattern is a great li
 
 This twitter example connects to twitter and searches either a random string or terms you set via the terminal with the -s 'search terms'.
 
-Terminal Example: 
+Terminal Example:
 
  <code>$ python pattern-example-twitter.py -s 'Hello World'</code>
 
 ## Tor Connect Example
-Tor (The Onion Router) has a particular socks port and connection setup that needs configured to connect in Python. This example shows you how. You must already have [Tor](http://torproject.org/download) installed. 
+Tor (The Onion Router) has a particular socks port and connection setup that needs configured to connect in Python. This example shows you how. You must already have [Tor](http://torproject.org/download) installed.
 
 *Note:* You need to install the Socksipy module for this to work, which has an actively maintained fork in [PySocks](https://github.com/Anorov/PySocks). It is easy if you already have pip (and if you don't have pip you should). <code>$ pip install PySocks</code>
 
@@ -236,20 +237,20 @@ I hope you enjoy this example.
 -------------------
 ```
 
-## FuzzyWuzzy Example   
+## FuzzyWuzzy Example
 This example searches for 'cowboy' and returns Dallas Cowboys as the closest match from the list available.
 
-#### Run the Example:   
+#### Run the Example:
 ```
 $ python3 fuzzywuzzy-example.py
 ```
-Returns:   
+Returns:
 ```
 Dallas Cowboys, 90
 ```
 
 ## Google Mask Example
-This example used to do three things, 1. sets your search term, 2 . set your number of mask search terms, and 3. selects a random user agent for each search query. Google killed their API for this, so byebye. 
+This example used to do three things, 1. sets your search term, 2 . set your number of mask search terms, and 3. selects a random user agent for each search query. Google killed their API for this, so byebye.
 
 #### Run the Example:
 ```
@@ -260,10 +261,10 @@ Returns:
 doesn't work anymore because google killed their API
 ```
 
-## Server Example   
+## Server Example
 This example starts an http server on localhost:10010 and returns data when you visit the page
 
-#### Run the Example:   
+#### Run the Example:
 ```
 $ python3 server-example.py
 ```
@@ -339,7 +340,7 @@ Key: EXIF LensModel, value 50mm F1.7
 Key: Thumbnail YCbCrPositioning, value Co-sited
 Key: Image DateTime, value 2013:04:07 14:13:38
 Key: EXIF ExifVersion, value 0230
-Key: Thumbnail ImageDescription, value                                
+Key: Thumbnail ImageDescription, value
 Key: Image ExifOffset, value 360
 Key: Thumbnail JPEGInterchangeFormatLength, value 7654
 Key: EXIF ExposureMode, value Auto Bracket
@@ -357,7 +358,7 @@ Key: EXIF FocalLength, value 50
 Key: Thumbnail Compression, value JPEG (old-style)
 Key: EXIF FileSource, value Digital Camera
 Key: EXIF Flash, value Flash did not fire, compulsory flash mode
-Key: Image ImageDescription, value                                
+Key: Image ImageDescription, value
 Key: Thumbnail XResolution, value 72
 Key: Thumbnail ResolutionUnit, value Pixels/Inch
 Key: EXIF LightSource, value Unknown
@@ -546,8 +547,8 @@ This is a link:
  Take a Tour
 ```
 
-## Quandl Example   
-This example gets the stocks from AAPL into a dataframe and prints it.   
+## Quandl Example
+This example gets the stocks from AAPL into a dataframe and prints it.
 
 #### Run the Example:
 ```
@@ -567,7 +568,7 @@ This example takes a json object and converts it to python and iterates through 
 
 #### Run the Example:
 ```
-$ python3 json-example.py 
+$ python3 json-example.py
 ```
 
 ## Foursquare API Example
@@ -585,7 +586,7 @@ What is the name of the venue to search?: Millenium Hotel
 {
     u'geocode': {
         u'parents': [
-            
+
         ],
         u'what': u'',
         u'where': u'londonuk',
@@ -633,14 +634,14 @@ What is the name of the venue to search?: Millenium Hotel
             u'hereNow': {
                 u'count': 0,
                 u'groups': [
-                    
+
                 ],
                 u'summary': u'Nobodyhere'
             },
             u'specials': {
                 u'count': 0,
                 u'items': [
-                    
+
                 ]
             },
             u'contact': {
@@ -694,8 +695,8 @@ What is the name of the venue to search?: Millenium Hotel
 Lat/Long: 51.5108680696, -0.151263216976
 ```
 
-## argparse Example   
-This example sets some basic args. 
+## argparse Example
+This example sets some basic args.
 
 #### Run the Example:
 
@@ -719,10 +720,10 @@ optional arguments:
   --verbose      verbose flag
 ```
 
-## Shodan Count Example   
+## Shodan Count Example
 This example connects to shodan api via your configs.py file with proper api key variable set and then queries for nginx in Glasgow, GB.
 
-#### Run the Example:   
+#### Run the Example:
 ```
 python3 shodan-example.py
 ```
@@ -734,10 +735,10 @@ Results found: 246
 [Finished in 0.6s]
 ```
 
-## Google GEO and Shodan Example   
+## Google GEO and Shodan Example
 This example takes an address, gets the lat/long, and searches in shodan for matches near that location.
 
-#### Run the Example:   
+#### Run the Example:
 ```
 python3 get-geo-example.py
 ```
@@ -753,7 +754,7 @@ Results found: 572
 ## RethinkDB Example
 This example takes pastebin archive daily json data into a test table in rethinkdb and pulls out values from it.
 
-#### Run the Example:    
+#### Run the Example:
 ```
 python3 rethink-example.py
 ```
@@ -761,8 +762,8 @@ python3 rethink-example.py
 #### Returns:
 
 
-## Websockify Example   
-This example uses websockify.   
+## Websockify Example
+This example uses websockify.
 ```
 python3 websockify-example.py :8015 :80
 ```
