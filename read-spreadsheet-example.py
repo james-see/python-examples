@@ -1,7 +1,11 @@
 # read values from a spreadsheet
 
-import sys, os, subprocess, fnmatch
+import sys
+import os
+import subprocess
+import fnmatch
 import xlrd
+
 
 def find_files(directory, pattern):
     for root, dirs, files in os.walk(directory):
@@ -10,7 +14,8 @@ def find_files(directory, pattern):
                 filename = basename
                 yield filename
 
-filename='test.xls'
+
+filename = 'test.xls'
 header = 1
 outputfilename = ''
 pathoffile = ''
@@ -20,14 +25,14 @@ worksheet = workbook.sheet_by_name('Sheet1')
 num_rows = worksheet.nrows - 1
 num_cells = worksheet.ncols - 1
 if header == 1:
-	curr_row = 0
+    curr_row = 0
 else:
-	curr_row = -1
+    curr_row = -1
 curr_cell = -1
 while curr_row < num_rows:
-	curr_row += 1
-	row = worksheet.row(curr_row)
-	print 'Row:', curr_row
-	outputfilename = worksheet.cell_value(curr_row, 0)
-	pathoffile = worksheet.cell_value(curr_row, 1)
-	print ('Filename: %s\nPath: %s' % (outputfilename, pathoffile))
+    curr_row += 1
+    row = worksheet.row(curr_row)
+    print 'Row:', curr_row
+    outputfilename = worksheet.cell_value(curr_row, 0)
+    pathoffile = worksheet.cell_value(curr_row, 1)
+    print('Filename: %s\nPath: %s' % (outputfilename, pathoffile))

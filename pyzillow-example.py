@@ -1,8 +1,8 @@
 """Example using pyzillow."""
-"""You need a zillow api key: https://www.zillow.com/howto/api/APIOverview.htm"""
 from pyzillow.pyzillow import ZillowWrapper, GetDeepSearchResults, GetUpdatedPropertyDetails
 import argparse
 from pprint import pprint
+"""You need a zillow api key: https://www.zillow.com/howto/api/APIOverview.htm"""
 # arguments
 parser = argparse.ArgumentParser(description='zillow data example')
 parser.add_argument('-a', '--address', dest='address', help='address to search',
