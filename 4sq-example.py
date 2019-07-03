@@ -1,5 +1,4 @@
 # python example to connect and retrieve values from foursquare API
-import urllib  # needed to do urlencode
 import json  # the API call returns JSON formatted data
 import datetime as dt  # need date in v= or the api call doesn't work
 from urllib.parse import quote
