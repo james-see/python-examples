@@ -40,6 +40,8 @@ pinboard = "*"
 webdriver-manager = "*"
 scapy = "*"
 matplotlib = "*"
+xlrd = "*"
+pyicu = "*"
 
 [requires]
 python_version = "3.7"

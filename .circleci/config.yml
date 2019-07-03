@@ -10,6 +10,7 @@ jobs:
       - checkout  # checkout source code to working directory
       - run:
           command: |  # use pipenv to install dependencies
+            sudo apt-get install python-numpy libicu-dev
             sudo pip install pipenv
             mkdir reports
             pipenv install

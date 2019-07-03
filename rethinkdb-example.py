@@ -1,13 +1,14 @@
-#!/usr/bin/python3
 """
 Author: James Campbell
 Date: July 3rd 2016
-Date Updated: July 4th 2016
+Date Updated: 3 July 2019
 What: RethinkDB python example create and put data into it from pastebin site.
 Documentation on RethinkDB: https://rethinkdb.com/api/python/
+Pre: Must brew install rethinkdb and start it up first
 """
-import rethinkdb as r  # standard nomenclature to use
 import json
+import rethinkdb as rdb
+r = rdb.RethinkDB()
 
 # for url implementation instead of json file (comment out example file open below -jc
 # url = 'http://psbdmp.com/api/dump/daily'
@@ -19,14 +20,14 @@ json keys: id, data, datahash, tags, addedtime, viewed, deleted, unixtime, banne
 info, total, dumped, formated, removed, textdata, spID
 """
 # open example file
-with open('pastedumpexample.json', 'rU', encoding='utf-8') as json_data:
+with open('assets/pastedumpexample.json', 'rU', encoding='utf-8') as json_data:
     d = json.load(json_data)
 
 i = 0
 
 # list of tables to check if they exist
 tables = ['hellopaste']  # you can check multiple tables here by adding more in list
-conn = r.connect('localhost', 28015).repl()
+conn = r.connect('127.0.0.1', 28015).repl()
 for table in tables:
     if not r.db('test').table_list().contains(table).run(conn):
         r.db('test').table_create(table).run(conn)

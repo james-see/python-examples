@@ -1,3 +1,4 @@
+# requires pyicu and pycld2 and pre-req brew install icu4c
 from polyglot.detect import Detector
 
 arabic_text = u"""
