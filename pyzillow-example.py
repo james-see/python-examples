@@ -5,12 +5,13 @@ import argparse
 from pprint import pprint
 # arguments
 parser = argparse.ArgumentParser(description='zillow data example')
-parser.add_argument('-a', '--address', help='address to search',
+parser.add_argument('-a', '--address', dest='address', help='address to search',
                     default='1943 N Upland St, Arlington, VA, 22207', required=False)
-parser.add_argument('-v', '--verbose',
+parser.add_argument('-v', '--verbose', dest='verbose',
                     help='print more stuff', action='store_true')
-parser.add_argument('-z', '--zipcode', help='zipcode', default=22207)
-parser.add_argument('--apikey', help='zillow api key')
+parser.add_argument('-z', '--zipcode', dest='zipcode',
+                    help='zipcode', default=22207)
+parser.add_argument('--apikey', help='zillow api key', required=True)
 args = parser.parse_args()
 
 

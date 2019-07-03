@@ -1,9 +1,8 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-# OBSKURA DOCUMENTATION
+"""List of user agent strings for fun and profit."""
 # DATE: April 4th 2015
-# AUTHOR: James C
-# What: This is the list of useragents as a python list. Use it as for useragents import *
+# Date Updated 2 July 2019
+# AUTHOR: James Campbell
+# What: This is the list of useragents as a python list. Use it as from useragents import useragents
 
 useragents = ["Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.1) Gecko/20060111 Firefox/1.5.0.1",
 "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)",
