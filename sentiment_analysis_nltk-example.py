@@ -6,7 +6,6 @@
 # USE FOR PYTHON 3 only
 import nltk
 import sys
-from sys import exit
 import pickle
 
 pos_tweets = [('I love this car', 'positive'),
@@ -77,7 +76,7 @@ classifier = nltk.NaiveBayesClassifier.train(training_set)
 
 # optional to save your classifier so you can load it
 # elsewhere without having to rebuild training set every time
-save_classifier = open("tweetposneg.pickle", "wb")
+save_classifier = open("assets/tweetposneg.pickle", "wb")
 pickle.dump(classifier, save_classifier)
 save_classifier.close()
 
@@ -103,4 +102,3 @@ for tweett in runtweets:
     else:
         poscount = poscount + 1
         print('Positive count: %s \nNegative count: %s' % (poscount, negcount))
-    exit()
