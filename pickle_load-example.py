@@ -2,7 +2,7 @@
 import pickle
 import random
 
-with open('discordia.pkl', 'rb') as f:
+with open('assets/discordia.pkl', 'rb') as f:
     discordia = pickle.load(f)
 
 

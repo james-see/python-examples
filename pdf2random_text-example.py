@@ -2,8 +2,8 @@
 from PyPDF2 import PdfFileWriter, PdfFileReader
 import sys
 # globals
-if sys.argv[1] is None:
-    pdffile = 'book1.pdf'
+if len(sys.argv) < 2:
+    pdffile = 'assets/fw9.pdf'
 else:
     pdffile = sys.argv[1]
 
