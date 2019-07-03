@@ -2,7 +2,8 @@
 # Date: November 18 2015
 # Updated: 11 April 2019
 # What: Example Facial recognition
-# Example: run python opencv_facial_recognition-example.py abba.png haarcascade_frontalface_default.xml
+# Example: run python opencv_facial_recognition-example.py
+# assets/abba.png assets/haarcascade_frontalface_default.xml
 # nomenclature is python [script] [image to recognize] [classifier to use]
 import cv2
 import sys
