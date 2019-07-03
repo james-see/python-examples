@@ -1,19 +1,17 @@
+# python-examples
+
 <a href='https://travis-ci.org/jamesacampbell/python-examples'>![travis build status](https://travis-ci.org/jamesacampbell/python-examples.svg)</a>
 [![CircleCI](https://circleci.com/gh/jamesacampbell/python-examples/tree/master.svg?style=svg)](https://circleci.com/gh/jamesacampbell/python-examples/tree/master)
 
-# python-examples
 This is a collection of python examples I created for some key libraries in Python that I use all the time.
 
 It is a way for me to remember and hopefully get others started.
 
-~~## *By python 2.7 module:*~~ REMOVED! There are better things in Python 3.x. There is now no reason not to just start your Python journey in Python 3. Onward and upward.
+Start your Python journey in Python 3. Onward and upward.
 
-~~**pattern** ([package download link](http://www.clips.ua.ac.be/pattern))~~
- ~~1. [twitter search](#pattern-example) ~~
- ~~2. [google search example](#google-search-example)~~
+**urllib** ([package download link](http://pymotw.com/2/urllib2/))
 
-~~**urllib2** ([package download link](http://pymotw.com/2/urllib2/))~~
- ~~1. [access foursquare API](#foursquare-api-example)~~
+1. [access foursquare API](#foursquare-api-example)
 
 ## *By python 3.x module:*
 
@@ -88,6 +86,7 @@ It is a way for me to remember and hopefully get others started.
 1. [wallet query example](#bitcoin-wallet-example)
 
 **PySocks** ([package download link](https://github.com/Anorov/PySocks))
+
  1. [connect to tor and print .onion site](#tor-connect-example)
 
 **shodan** (module download via pip install shodan)
@@ -104,71 +103,91 @@ It is a way for me to remember and hopefully get others started.
 1. [crawl all internal links for a domain](#scrapy-spider-example)
 
 ## http.server Example
+
 This example runs a web server to http://127.0.0.1:8000. Go to http://127.0.0.1:8000/web.html to verify it is working.
 
-#### Run the example:
+#### Run the example
 
-<code>$ python3 example-http-server.py</code>
+```python3
+python3 example-http-server.py
+```
 
 This will output that it is running on port 8000.
 
 ## pdfquery Example
+
 This example takes in the first argument the name of the pdf you want to get text from and prints the text found in the pdf to the screen.
 
-#### Run the example:
+### Run the example
 
-<code>$ python3 pdfquery-example.py mypdf.pdf</code>
+```python3
+python3 pdfquery-example.py mypdf.pdf
+```
 
 This will output the text of the pdf to stdout if it contains any.
 
-
 ## PDF Merge Example
+
 This example reads in a list of pdfs, you can specify the prefix of the list of pdfs using the `-p` argument or default is read\_. So for example, read_001.pdf, read_002.pdf would automatically get merged into a single pdf called merged.pdf. You can also set the output name via the `-o` argument.
 
-#### Run the example:
+### Run the example
 
 To get the help file:
 
-<code>$ python3 merge-pdfs-example.py -h</code>
+```python3
+python3 merge-pdfs-example.py -h
+```
 
 To run it on a list of pdfs with prefix `test` and output `final.pdf`:
 
-<code>$ python3 merge-pdfs-example.py -p test -o final.pdf</code>
+```python3
+python3 merge-pdfs-example.py -p test -o final.pdf
+```
 
 ## Pattern Twitter Search Example
+
 The first example I created is pattern-example-twitter.py. Pattern is a great library that is installed via pip and can query Google, Twitter, etc. out of the box.
 
 This twitter example connects to twitter and searches either a random string or terms you set via the terminal with the -s 'search terms'.
 
-Terminal Example:
+Terminal Example
 
- <code>$ python pattern-example-twitter.py -s 'Hello World'</code>
+```python3
+python3 pattern-example-twitter.py -s 'Hello World'
+```
 
 ## Tor Connect Example
+
 Tor (The Onion Router) has a particular socks port and connection setup that needs configured to connect in Python. This example shows you how. You must already have [Tor](http://torproject.org/download) installed.
 
 *Note:* You need to install the Socksipy module for this to work, which has an actively maintained fork in [PySocks](https://github.com/Anorov/PySocks). It is easy if you already have pip (and if you don't have pip you should). <code>$ pip install PySocks</code>
 
 Then make sure your code (like the example) has <code>import socks</code>.
 
-#### Run the example:
+### Run the tor connect example
 
 Just simply run it from the terminal window:
 
-<code>$ python tor-example.py</code>
+```python3
+python tor-example.py
+```
 
 This will return the DuckDuckGo .onion html as proof that it is working.
 
 ## Google Search Example
+
 The Google seach portion of the pattern library was very useful. This example shows you that you can compare the popularity of phrases or sets of terms together using percentages and the sort() command. It selects 10 random words to search on from the imported included dictionary list that is in the assets folder. This doesn't work anymore. Thanks for nothing Google.
 
-#### Run the example:
+### Run the example
 
-<code>$ python pattern-example-google.py -c 'sexy'</code>
+```python3
+python3 pattern-example-google.py -c 'sexy'
+```
 
 Returns:
 
-<code>89.13% "sexy seemed"
+```python3
+89.13% "sexy seemed"
 2.17% "sexy impassive"
 1.09% "sexy spiegels"
 1.09% "sexy slumping"
@@ -178,43 +197,52 @@ Returns:
 1.09% "sexy incompliancy"
 1.09% "sexy evaporators"
 1.09% "sexy cudgeler"</code>
-
+```
 
 ## hug example
+
 hug is a great easy-to-use api to help route things on your web app
 
-#### Run the example:
+### Run the example
 
-<code>$ python3 hug_api_example.py</code>
+```python3
+python3 hug_api_example.py
+```
 
 This will output hug and start a listener process on 127.0.0.1:8000
 
 Then you can go to http://localhost:8000/happy_birthday?name=Hug&age=1 and see the output.
 
-
 ## base64 Example
+
 Converting data to base64 ensure a nice obsfuscation layer for data transport.
 
-#### Run the example:
+### Run the base64 example
 
-<code>$ python3 base64_example.py</code>
+```python3
+python3 base64_example.py
+```
 
 This will output a html string that is encoded into base64.
 
-
 ## Html to Text Example
+
 Beautiful Soup is a great library to parse and select html or iterate through the DOM.
 For this example to work you need to install Beautiful Soup via pip:
-```
-$ pip install bs4
+
+```python3
+pip install bs4
 ```
 
-#### Run the example:
+### Run the Example
 
-<code>$ python example-html2plaintext.py</code>
-
-Returns:
+```python3
+python3 example-html2plaintext.py
 ```
+
+#### Returns
+
+```python3
 [*-*]Before html with text:
 ------------------
 <!DOCTYPE HTML>
@@ -238,64 +266,74 @@ I hope you enjoy this example.
 ```
 
 ## FuzzyWuzzy Example
+
 This example searches for 'cowboy' and returns Dallas Cowboys as the closest match from the list available.
 
-#### Run the Example:
+### Run the Example
+
+```python3
+python3 fuzzywuzzy-example.py
 ```
-$ python3 fuzzywuzzy-example.py
-```
-Returns:
-```
+
+#### Returns
+
+```python3
 Dallas Cowboys, 90
 ```
 
 ## Google Mask Example
+
 This example used to do three things, 1. sets your search term, 2 . set your number of mask search terms, and 3. selects a random user agent for each search query. Google killed their API for this, so byebye.
 
-#### Run the Example:
-```
-$ python3 mask-search-example.py
-```
-Returns:
-```
+### Run the Example
+
+```python3
 doesn't work anymore because google killed their API
 ```
 
 ## Server Example
+
 This example starts an http server on localhost:10010 and returns data when you visit the page
 
-#### Run the Example:
-```
-$ python3 server-example.py
+### Run the Example
+
+```python3
+python3 server-example.py
 ```
 
 ## Scrapy Spider Example
+
 This example gets the list of all internal links for any domain by following all internal homepage links and their links.
 
-#### Run the Example:
-```
-$ python3 spider.py -u jamescampbell.us
+### Run the Example
+
+```python3
+python3 spider.py -u jamescampbell.us
 ```
 
 ## Bitcoin Wallet Example
+
 This example queries the blockchain.info API for an example wallet address and returns the ip address and dates for the transactions as well as the final wallet balance.
 
-### Run the Example:
-```
-$ python3 bitcoin-example-1.py
-```
+### Run the Example
 
+```python3
+python3 bitcoin-example-1.py
+```
 
 ## Exifread Example
+
 This example gets the exif data from an image file
 
-#### Run the Example:
-```
-$ python3 exif-reader.py assets/cat.jpg
+### Run the Example
+
+```python3
+python3 exif-reader.py assets/cat.jpg
 ```
 
-#### Output:
-```
+#### Output
+
+```python3
 Total tags found: 66
 Key: Interoperability InteroperabilityVersion, value [48, 49, 48, 48]
 Key: EXIF InteroperabilityOffset, value 36724
@@ -365,15 +403,18 @@ Key: EXIF LightSource, value Unknown
 ```
 
 ## Sentiment Example
+
 This example takes a test list of tweets and returns positive or negative. It works in Python 3.
 
-#### Run the Example:
-```
-$ python3 sentiment-analysis-nltk-example.py testtweets.txt
+### Run the Example
+
+```python3
+python3 sentiment-analysis-nltk-example.py testtweets.txt
 ```
 
-#### Output:
-```
+### Output
+
+```python3
 negative
 positive
 negative
@@ -384,24 +425,28 @@ Negative count: 3
 ```
 
 ## hashlib example
+
 The hashlib module generates hashes from strings. This example uses the sha256 hash algorithm.
 
-#### Run the Example:
+### Run the Example
 
-```
-$ python3 hashlib_example.py
+```python3
+python3 hashlib_example.py
 ```
 
 ## Proxymanager Example
+
 This example uses urllib3 in Python 3 to connect through a privoxy connection and return status, headers, and content.
 
-#### Run the Example:
-```
-$ python3 urllib3-proxymanager-example.py
+### Run the Example
+
+```python3
+python3 urllib3-proxymanager-example.py
 ```
 
-#### Output:
-```
+#### Output
+
+```python3
 200
 HTTPHeaderDict({'Content-Length': '5255', 'Proxy-Connection': 'keep-alive', 'ETag': '"564e8118-1487"', 'Server': 'nginx', 'Cache-Control': 'no-cache', 'Expires': 'Fri, 20 Nov 2015 02:15:59 GMT', 'Accept-Ranges': 'bytes', 'Content-Type': 'text/html; charset=UTF-8', 'Connection': 'keep-alive', 'Date': 'Fri, 20 Nov 2015 02:16:00 GMT'})
 <!DOCTYPE html>
@@ -440,7 +485,7 @@ HTTPHeaderDict({'Content-Length': '5255', 'Proxy-Connection': 'keep-alive', 'ETa
 <meta property="og:site_name" content="DuckDuckGo" />
 
 
-	<title>DuckDuckGo</title>
+    <title>DuckDuckGo</title>
 <meta property="og:title" content="DuckDuckGo" />
 <meta name="twitter:title" value="DuckDuckGo">
 
@@ -450,7 +495,7 @@ HTTPHeaderDict({'Content-Length': '5255', 'Proxy-Connection': 'keep-alive', 'ETa
 
   </head>
   <body id="pg-index" class="page-index body--home">
-	<script type="text/javascript">
+    <script type="text/javascript">
 var settings_js_version = "/s1847.js",
     locale = "en_US";
 </script>
@@ -464,69 +509,69 @@ var settings_js_version = "/s1847.js",
 
 
 
-	<div class="site-wrapper  site-wrapper--home  js-site-wrapper">
+    <div class="site-wrapper  site-wrapper--home  js-site-wrapper">
 
-		<div class="site-wrapper-border"></div>
-
-
-
-			<div class="header-wrap--home  js-header-wrap"></div>
-
-			<div id="" class="content-wrap--home">
-			  <div id="content_homepage" class="content--home">
-				<div class="cw--c">
-							<div class="logo-wrap--home">
-			<a id="logo_homepage_link" class="logo_homepage" href="/about">
-				About DuckDuckGo
-				<span class="logo_homepage__tt">Duck it!</span>
-			</a>
-		</div>
-
-					<div class="search-wrap--home">
-								<form id="search_form_homepage" class="search  search--home  js-search-form" name="x" method="POST" action="/html">
-			<input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="1" value="">
-			<input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="2" value="S" />
-			<input id="search_form_input_clear" class="search__clear  empty  js-search-clear" type="button" tabindex="3" value="X" />
-			<div id="search_elements_hidden" class="search__hidden  js-search-hidden"></div>
-			<span class="search__overlay  js-search-overlay"></span>
-		</form>
-
-					</div>
+        <div class="site-wrapper-border"></div>
 
 
 
+            <div class="header-wrap--home  js-header-wrap"></div>
 
-		<!-- en_US All Settings -->
+            <div id="" class="content-wrap--home">
+              <div id="content_homepage" class="content--home">
+                <div class="cw--c">
+                            <div class="logo-wrap--home">
+            <a id="logo_homepage_link" class="logo_homepage" href="/about">
+                About DuckDuckGo
+                <span class="logo_homepage__tt">Duck it!</span>
+            </a>
+        </div>
+
+                    <div class="search-wrap--home">
+                                <form id="search_form_homepage" class="search  search--home  js-search-form" name="x" method="POST" action="/html">
+            <input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="1" value="">
+            <input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="2" value="S" />
+            <input id="search_form_input_clear" class="search__clear  empty  js-search-clear" type="button" tabindex="3" value="X" />
+            <div id="search_elements_hidden" class="search__hidden  js-search-hidden"></div>
+            <span class="search__overlay  js-search-overlay"></span>
+        </form>
+
+                    </div>
+
+
+
+
+        <!-- en_US All Settings -->
 <noscript>
-	<div class="tag-home">
-		The search engine that doesn't track you.
-		<span class="tag-home__links">
-			<span class="js-homepage-cta"><a href="/spread" class="tag-home__link">Help Spread DuckDuckGo!</a> <span class="tag-home__links__sep">|</span> </span><a href="/tour" class="tag-home__link">Take a Tour</a>
-		</span>
-	</div>
+    <div class="tag-home">
+        The search engine that doesn't track you.
+        <span class="tag-home__links">
+            <span class="js-homepage-cta"><a href="/spread" class="tag-home__link">Help Spread DuckDuckGo!</a> <span class="tag-home__links__sep">|</span> </span><a href="/tour" class="tag-home__link">Take a Tour</a>
+        </span>
+    </div>
 </noscript>
 <div class="tag-home  tag-home--slide  no-js__hide  js-tag-home"></div>
-		<div id="error_homepage"></div>
+        <div id="error_homepage"></div>
 
 
 
 
-				</div> <!-- cw -->
-			 </div> <!-- content_homepage //-->
-		  </div> <!-- content_wrapper_homepage //-->
-		  <div id="footer_homepage" class="foot-home  js-foot-home"></div>
+                </div> <!-- cw -->
+             </div> <!-- content_homepage //-->
+          </div> <!-- content_wrapper_homepage //-->
+          <div id="footer_homepage" class="foot-home  js-foot-home"></div>
 
 <script type="text/javascript">
-	{function seterr(str) {
-		var error=document.getElementById('error_homepage');
-		error.innerHTML=str;
-		$(error).css('display','block');
-	}
-	var err=new RegExp('[\?\&]e=([^\&]+)');var errm=new Array();errm['2']='no search';errm['3']='search too long';errm['4']='not UTF\u002d8 encoding';if (err.test(window.location.href)) seterr('Oops, '+(errm[RegExp.$1]?errm[RegExp.$1]:'there was an error.')+' &nbsp;Please try again');};if (ip) setTimeout('nuo(1)',250);nip(1)
+    {function seterr(str) {
+        var error=document.getElementById('error_homepage');
+        error.innerHTML=str;
+        $(error).css('display','block');
+    }
+    var err=new RegExp('[\?\&]e=([^\&]+)');var errm=new Array();errm['2']='no search';errm['3']='search too long';errm['4']='not UTF\u002d8 encoding';if (err.test(window.location.href)) seterr('Oops, '+(errm[RegExp.$1]?errm[RegExp.$1]:'there was an error.')+' &nbsp;Please try again');};if (ip) setTimeout('nuo(1)',250);nip(1)
 
-	if (kurl) {
-	  document.getElementById("logo_homepage_link").href += (document.getElementById("logo_homepage_link").href.indexOf('?')==-1 ? '?t=i' : '') + kurl;
-	}
+    if (kurl) {
+      document.getElementById("logo_homepage_link").href += (document.getElementById("logo_homepage_link").href.indexOf('?')==-1 ? '?t=i' : '') + kurl;
+    }
 </script>
 
 
@@ -538,8 +583,8 @@ var settings_js_version = "/s1847.js",
 
 This is a link:
 
-				About DuckDuckGo
-				Duck it!
+                About DuckDuckGo
+                Duck it!
 
 This is a link:
  Help Spread DuckDuckGo!
@@ -548,39 +593,47 @@ This is a link:
 ```
 
 ## Quandl Example
+
 This example gets the stocks from AAPL into a dataframe and prints it.
 
-#### Run the Example:
-```
-$ python3 quandl-example.py
+### Run the Example
+
+```python3
+python3 quandl-example.py
 ```
 
-#### Output:
+#### Output
 
-```
-$ first date: 2001-12-31
-$ Total days of stock data available: 4
-$ [Finished in 1.6s]
+```python3
+first date: 2001-12-31
+Total days of stock data available: 4
+[Finished in 1.6s]
 ```
 
 ## Json to Python Object Example
+
 This example takes a json object and converts it to python and iterates through the values. It works for Python 3 or Python 2.7
 
-#### Run the Example:
-```
-$ python3 json-example.py
+### Run the Example
+
+```python3
+python3 json-example.py
 ```
 
 ## Foursquare API Example
-This example connects to Foursquare and asks for a city, country input and venue name and returns back the JSON and the Latitude and Longitude.
 
-#### Run the Example:
-```
-$ python 4sq-example.py
+This example connects to Foursquare and asks for a city, country input and venue name and returns back the JSON and the Latitude and Longitude as well as the link to display the Qwant Map zoomed into that location
+
+### Run the Example
+
+```python3
+python 4sq-example.py
 ```
 
-#### Output:
-```
+#### Output
+
+```python3
+
 What city do you want to search in? (no spaces, include country): London,UK
 What is the name of the venue to search?: Millenium Hotel
 {
@@ -696,16 +749,18 @@ Lat/Long: 51.5108680696, -0.151263216976
 ```
 
 ## argparse Example
+
 This example sets some basic args.
 
-#### Run the Example:
+### Run the Example
 
+```python3
+python3 argparse.py -h
 ```
-$ python3 argparse.py -h
-```
+
 Returns:
 
-```
+```python3
 usage: argparse example [-h] [-a] [-v] [--verbose]
 
 Example on how to use argparse
@@ -721,56 +776,60 @@ optional arguments:
 ```
 
 ## Shodan Count Example
+
 This example connects to shodan api via your configs.py file with proper api key variable set and then queries for nginx in Glasgow, GB.
 
-#### Run the Example:
-```
+### Run the Example
+
+```python3
 python3 shodan-example.py
 ```
 
-#### Returns:
+#### Returns
 
-```
+```python3
 Results found: 246
 [Finished in 0.6s]
 ```
 
 ## Google GEO and Shodan Example
+
 This example takes an address, gets the lat/long, and searches in shodan for matches near that location.
 
-#### Run the Example:
-```
+### Run the Example
+
+```python3
 python3 get-geo-example.py
 ```
 
-#### Returns:
+#### Returns
 
-```
+```python3
 geo:58.98691099999999,-2.960873,3
 Results found: 572
 [Finished in 0.7s]
 ```
 
 ## RethinkDB Example
+
 This example takes pastebin archive daily json data into a test table in rethinkdb and pulls out values from it.
 
-#### Run the Example:
-```
+### Run the rethinkdb Example
+
+```python3
 python3 rethink-example.py
 ```
 
-#### Returns:
-
+### Returns rethink stuff
 
 ## Websockify Example
+
 This example uses websockify.
-```
+
+```python3
 python3 websockify-example.py :8015 :80
 ```
 
-#### Returns:
-
-
+### Returns
 
 *More coming soon!*
-
