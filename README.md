@@ -159,7 +159,7 @@ Just simply run it from the terminal window:
 This will return the DuckDuckGo .onion html as proof that it is working.
 
 ## Google Search Example
-The Google seach portion of the pattern library is very useful. This example shows you that you can compare the popularity of phrases or sets of terms together using percentages and the sort() command. It selects 10 random words to search on from the imported included dictionary list that is in the assets folder.
+The Google seach portion of the pattern library was very useful. This example shows you that you can compare the popularity of phrases or sets of terms together using percentages and the sort() command. It selects 10 random words to search on from the imported included dictionary list that is in the assets folder. This doesn't work anymore. Thanks for nothing Google.
 
 #### Run the example:
 
