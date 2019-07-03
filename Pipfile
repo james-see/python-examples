@@ -42,6 +42,7 @@ scapy = "*"
 matplotlib = "*"
 xlrd = "*"
 pyicu = "*"
+pprint = "*"
 
 [requires]
 python_version = "3.7"

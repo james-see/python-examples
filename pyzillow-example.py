@@ -1,7 +1,8 @@
-"""Example using pyzillow."""
+"""Example using pyzillow, requires free zillow api key."""
 from pyzillow.pyzillow import ZillowWrapper, GetDeepSearchResults, GetUpdatedPropertyDetails
 import argparse
 from pprint import pprint
+from configs import zillowapi  # set your zillowapi='yourapikey' in configs.py file
 """You need a zillow api key: https://www.zillow.com/howto/api/APIOverview.htm"""
 # arguments
 parser = argparse.ArgumentParser(description='zillow data example')
@@ -11,16 +12,11 @@ parser.add_argument('-v', '--verbose', dest='verbose',
                     help='print more stuff', action='store_true')
 parser.add_argument('-z', '--zipcode', dest='zipcode',
                     help='zipcode', default=22207)
-parser.add_argument('--apikey', help='zillow api key', required=True)
+parser.add_argument('--apikey', help='zillow api key', required=False, default=zillowapi)
 args = parser.parse_args()
-
-
-# globals
 
 address = args.address
 zipcode = args.zipcode
-
-# functions
 
 
 def get_wrapper():
@@ -63,4 +59,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    exit('success')
+
