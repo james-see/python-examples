@@ -249,7 +249,7 @@ Dallas Cowboys, 90
 ```
 
 ## Google Mask Example
-This example does three things, 1. sets your search term, 2 . set your number of mask search terms, and 3. selects a random user agent for each search query.
+This example used to do three things, 1. sets your search term, 2 . set your number of mask search terms, and 3. selects a random user agent for each search query. Google killed their API for this, so byebye. 
 
 #### Run the Example:
 ```
@@ -257,21 +257,7 @@ $ python3 mask-search-example.py
 ```
 Returns:
 ```
-Hello, how many terms to hide in addition to actual search term? (max 5) ?: 3
-set search term: james campbell
-This is a mask term: balcony
-This is mask header: Dirty Dungeon Diksearch 69
-This is a mask term: unrenewed
-This is mask header: Internet Explorer but better
-This is a mask term: gantlets
-This is mask header: Mozilla/5.0
-Total results: 11000000
-Top 4 hits:
-  http://en.wikipedia.org/wiki/James_Campbell_(industrialist)
-  http://en.wikipedia.org/wiki/James_Campbell
-  http://www.campbellhigh.org/
-  http://www.jamescampbell.com/
-For more results, see http://www.google.com/search?oe=utf8&ie=utf8&source=uds&start=0&hl=en&q=james+campbell
+doesn't work anymore because google killed their API
 ```
 
 ## Server Example   
