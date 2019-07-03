@@ -11,8 +11,9 @@ jobs:
       - run:
           command: |  # use pipenv to install dependencies
             sudo pip install pipenv
+            mkdir reports
             pipenv install
-            pipenv run py.test --junitxml=/reports/pytest/pytest-report.xml
+            pipenv run py.test --junitxml=reports/pytest/pytest-report.xml
       - save_cache:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
@@ -20,7 +21,7 @@ jobs:
             - "/usr/local/bin"
             - "/usr/local/lib/python3.7/site-packages"
       - store_test_results:
-          path: /reports
+          path: reports
 
 
 
