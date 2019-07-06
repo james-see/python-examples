@@ -102,6 +102,10 @@ Start your Python journey in Python 3. Onward and upward.
 
 1. [crawl all internal links for a domain](#scrapy-spider-example)
 
+**iptcinfo3** (download via pip3 install iptcinfo3)
+
+1. [iptcinfo3 example](#iptcinfo3-example)
+
 ## http.server Example
 
 This example runs a web server to http://127.0.0.1:8000. Go to http://127.0.0.1:8000/web.html to verify it is working.
