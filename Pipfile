@@ -44,6 +44,7 @@ xlrd = "*"
 pyicu = "*"
 pprint = "*"
 iptcinfo3 = "*"
+bpython = "*"
 
 [requires]
 python_version = "3.7"

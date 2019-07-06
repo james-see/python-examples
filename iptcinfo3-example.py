@@ -3,16 +3,15 @@ What: IPTCINFO3 example
 Author: James Campbell
 Date: 5 July 2019
 """
-import sys
-
 import iptcinfo3
 
-im = open(sys.argv[1])
 try:
-    info = iptcinfo3.IPTCInfo(sys.argv[1])
+    info = iptcinfo3.IPTCInfo('assets/guy881.jpg', inp_charset="cp1250",
+                              out_charset='cp1250', force=True)
     print('-------IPTC DATA FOUND-------')
+    print(info.packedIIMData())
     for k, v in info._data.items():
-        print(k, v)
+        print(f"KEY: {k} VALUE: {str(v)}")
     # info['city'] = '#magistræde #🇩🇰'
     # info.save()
 except Exception as e:
