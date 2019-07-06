@@ -43,6 +43,7 @@ matplotlib = "*"
 xlrd = "*"
 pyicu = "*"
 pprint = "*"
+iptcinfo3 = "*"
 
 [requires]
 python_version = "3.7"

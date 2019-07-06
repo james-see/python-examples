@@ -32,3 +32,4 @@ matplotlib
 xlrd
 pyicu
 pprint
+iptcinfo3
