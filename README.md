@@ -106,6 +106,10 @@ Start your Python journey in Python 3. Onward and upward.
 
 1. [iptcinfo3 example](#iptcinfo3-example)
 
+**imaplib** (build-in python3x)
+
+1. [imaplib example](#imaplib-example)
+
 ## http.server Example
 
 This example runs a web server to http://127.0.0.1:8000. Go to http://127.0.0.1:8000/web.html to verify it is working.
@@ -835,5 +839,21 @@ python3 websockify-example.py :8015 :80
 ```
 
 ### Returns
+
+???
+
+## Imaplib Example
+
+This example uses imaplib.
+
+### Run the imaplib example
+
+```python3
+python3 imaplib-example.py [your gmail] [your password]
+```
+
+### Returns
+
+Latest unread mail from account and continues to run until you `CTRL+C`
 
 *More coming soon!*

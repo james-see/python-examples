@@ -45,6 +45,7 @@ pyicu = "*"
 pprint = "*"
 iptcinfo3 = "*"
 bpython = "*"
+html2text = "*"
 
 [requires]
 python_version = "3.7"
