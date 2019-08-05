@@ -1,9 +1,14 @@
-import datetime
-import smtplib
+"""
+What: Connect and get unread mail from imap example
+Author: James Campbell
+Date: 5 August 2019
+"""
 import time
 import imaplib
 import email
 import sys
+import os
+import html2text
 # -------------------------------------------------
 #
 # Utility to read email from Gmail Using Python
@@ -14,27 +19,24 @@ FROM_EMAIL = "scfith@gmail.com"
 FROM_PWD = sys.argv[1]
 SMTP_SERVER = "imap.gmail.com"
 SMTP_PORT = 993
-
-import email
-import imaplib
-import os
-import html2text
-import time
-detach_dir = 'locationWhereYouWantToSaveYourAttachments'
+detach_dir = '~/Downloads'
 
 
 def get_body(email_message):
+    """Get body of email message."""
     for payload in email_message.get_payload():
         break
     return payload.get_payload()
 
 
 def two_way_email(server, uname, pwd):
+    """Fetch and read latest unseen messages."""
     username = uname
     password = pwd
+    readonly = True
     mail = imaplib.IMAP4_SSL(server)
     mail.login(username, password)
-    mail.select("inbox")
+    mail.select("inbox", readonly)
     try:
         result, data = mail.uid('search', None, '(UNSEEN)')
         inbox_item_list = data[0].split()
