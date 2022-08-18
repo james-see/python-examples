@@ -42,14 +42,12 @@ webdriver-manager = "*"
 scapy = "*"
 matplotlib = "*"
 xlrd = "*"
-pyicu = "*"
-pprint = "*"
 iptcinfo3 = "*"
 bpython = "*"
 html2text = "*"
 
 [requires]
-python_version = "3.7.7"
+python_version = "3.9.7"
 
 [pipenv]
 allow_prereleases = true

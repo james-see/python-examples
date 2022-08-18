@@ -29,7 +29,4 @@ pinboard
 webdriver_manager
 scapy
 matplotlib
-xlrd
-pyicu
-pprint
 iptcinfo3
