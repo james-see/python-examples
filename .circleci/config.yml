@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/python-examples
     docker:
-      - image: circleci/python:3.7 # every job must define an image for the docker executor and subsequent jobs may define a different image.
+      - image: circleci/python:3.9.7 # every job must define an image for the docker executor and subsequent jobs may define a different image.
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
