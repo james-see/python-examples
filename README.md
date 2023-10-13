@@ -1,14 +1,3 @@
-# python-examples
-
-<a href='https://travis-ci.org/jamesacampbell/python-examples'>![travis build status](https://travis-ci.org/jamesacampbell/python-examples.svg)</a>
-[![CircleCI](https://circleci.com/gh/jamesacampbell/python-examples/tree/master.svg?style=svg)](https://circleci.com/gh/jamesacampbell/python-examples/tree/master)
-
-This is a collection of python examples I created for some key libraries in Python that I use all the time.
-
-It is a way for me to remember and hopefully get others started.
-
-Start your Python journey in Python 3. Onward and upward.
-
 **urllib** (built-in to python3)
 
 1. [access foursquare API](#foursquare-api-example)
