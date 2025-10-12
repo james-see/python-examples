@@ -1,13 +1,60 @@
 # python-examples
 
-<a href='https://travis-ci.org/jamesacampbell/python-examples'>![travis build status](https://travis-ci.org/jamesacampbell/python-examples.svg)</a>
-[![CircleCI](https://circleci.com/gh/jamesacampbell/python-examples/tree/master.svg?style=svg)](https://circleci.com/gh/jamesacampbell/python-examples/tree/master)
+[![CI](https://github.com/james-see/python-examples/workflows/Tests/badge.svg)](https://github.com/james-see/python-examples/actions)
+[![CodeQL](https://github.com/james-see/python-examples/workflows/CodeQL/badge.svg)](https://github.com/james-see/python-examples/actions)
 
 This is a collection of python examples I created for some key libraries in Python that I use all the time.
 
 It is a way for me to remember and hopefully get others started.
 
 Start your Python journey in Python 3. Onward and upward.
+
+## 🚀 Quick Start
+
+This project uses [uv](https://github.com/astral-sh/uv) for modern Python package management.
+
+### Prerequisites
+
+- Python 3.12 or higher
+- uv package manager (install via `curl -LsSf https://astral.sh/uv/install.sh | sh`)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/james-see/python-examples.git
+cd python-examples
+
+# Install dependencies
+uv sync --dev
+
+# Run tests
+uv run pytest
+
+# Run linting
+uv run flake8
+```
+
+### Development
+
+```bash
+# Add new dependencies
+uv add package-name
+
+# Run a specific example
+uv run python example-name.py
+
+# Format code
+uv run black .
+uv run isort .
+```
+
+## 🛠️ Project Structure
+
+- **python-examples/**: Main package containing all example scripts
+- **assets/**: Sample data files for examples
+- **tests/**: Test files
+- **.github/workflows/**: GitHub Actions for CI/CD
 
 **urllib** (built-in to python3)
 
@@ -19,36 +66,36 @@ Start your Python journey in Python 3. Onward and upward.
 
 1. [http example](#http-example)
 
-**pdfquery** (install by `pip3 install pdfquery --upgrade`)
+**pdfquery** (install by `uv add pdfquery`)
 
 1. [pdfquery example](#pdfquery-example)
 
-**PyPDF2** (install by `pip3 install PyPDF2 --upgrade`)
+**PyPDF2** (install by `uv add PyPDF2`)
 
 1. [pdf merge example](#pdf-merge-example)
 
-**argparse** (install by `pip3 install argparse --upgrade`)
+**argparse** (built-in to python3)
 
 1. [argparse example](#argparse-example)
 
-**bs4** ([package download link](http://www.crummy.com/software/BeautifulSoup/bs4/download/))
+**bs4** (install via `uv add beautifulsoup4`)
 
 1. [html to text parser](#html-to-text-example)
 2. [email parser](#email-parser-example)
 
-**fuzzywuzzy** (install by `pip3 install fuzzywuzzy --upgrade`)
+**fuzzywuzzy** (install by `uv add fuzzywuzzy`)
 
 1. [fuzzywuzzy](#fuzzywuzzy-example)
 
-**rethinkdb** (install by `pip3 install rethinkdb --upgrade`)
+**rethinkdb** (install by `uv add rethinkdb`)
 
 1. [rethinkdb example](#rethinkdb-example)
 
-**quandl** (install by `pip3 install quandl --upgrade`)
+**quandl** (install by `uv add quandl`)
 
 1. [quandl api access example](#quandl-example)
 
-**hug** (install by `pip3 install hug --upgrade`)
+**hug** (install by `uv add hug`)
 
 1. [hug api access example](#hug-example)
 
@@ -64,24 +111,24 @@ Start your Python journey in Python 3. Onward and upward.
 
 1. [sha 256 hash example](#sha-example)
 
-**nltk** (package download via pip3 install nltk)
+**nltk** (install via `uv add nltk`)
 
 1. [sentiment analysis example](#sentiment-example)
 
-**exifread** (package download via pip3 install exifread)
+**exifread** (install via `uv add exifread`)
 
 1. [read exif example](#exifread-example)
 
-**json** (package download via pip3 install json)
+**json** (built-in to python3)
 
 1. [json to python object example](#json-to-python-object-example)
 
-**urllib3** (package download via pip3 install urllib3 from homebrew osx brew install python3)
+**urllib3** (install via `uv add urllib3`)
 
 1. [google mask search example](#google-mask-example)
 2. [urllib3 proxymanager example](#proxymanager-example)
 
-**blockchain** (package download via pip3 install blockchain)
+**blockchain** (install via `uv add blockchain`)
 
 1. [wallet query example](#bitcoin-wallet-example)
 
@@ -89,12 +136,12 @@ Start your Python journey in Python 3. Onward and upward.
 
  1. [connect to tor and print .onion site](#tor-connect-example)
 
-**shodan** (package download via pip install shodan)
+**shodan** (install via `uv add shodan`)
 
 1. [shodan count example](#shodan-count-example)
 2. [google lat/long and shodan enrichment geo search example](#google-geo-and-shodan-example)
 
-**websockify** (package download via pip(3) install websockify)
+**websockify** (install via `uv add websockify`)
 
 1. [websockify example](#websockify-example)
 
@@ -102,7 +149,7 @@ Start your Python journey in Python 3. Onward and upward.
 
 1. [crawl all internal links for a domain](#scrapy-spider-example)
 
-**iptcinfo3** (download via pip3 install iptcinfo3)
+**iptcinfo3** (install via `uv add iptcinfo3`)
 
 1. [iptcinfo3 example](#iptcinfo3-example)
 
@@ -116,8 +163,8 @@ This example runs a web server to http://127.0.0.1:8000. Go to http://127.0.0.1:
 
 #### Run the example
 
-```python3
-python3 example-http-server.py
+```bash
+uv run python example-http-server.py
 ```
 
 This will output that it is running on port 8000.
@@ -128,8 +175,8 @@ This example takes in the first argument the name of the pdf you want to get tex
 
 ### Run the example
 
-```python3
-python3 pdfquery-example.py mypdf.pdf
+```bash
+uv run python pdfquery-example.py mypdf.pdf
 ```
 
 This will output the text of the pdf to stdout if it contains any.
@@ -142,14 +189,14 @@ This example reads in a list of pdfs, you can specify the prefix of the list of 
 
 To get the help file:
 
-```python3
-python3 merge-pdfs-example.py -h
+```bash
+uv run python merge-pdfs-example.py -h
 ```
 
 To run it on a list of pdfs with prefix `test` and output `final.pdf`:
 
-```python3
-python3 merge-pdfs-example.py -p test -o final.pdf
+```bash
+uv run python merge-pdfs-example.py -p test -o final.pdf
 ```
 
 ## Pattern Twitter Search Example
@@ -236,10 +283,10 @@ This will output a html string that is encoded into base64.
 ## Html to Text Example
 
 Beautiful Soup is a great library to parse and select html or iterate through the DOM.
-For this example to work you need to install Beautiful Soup via pip:
+For this example to work you need to install Beautiful Soup:
 
-```python3
-pip install bs4
+```bash
+uv add beautifulsoup4
 ```
 
 ### Run the Example
