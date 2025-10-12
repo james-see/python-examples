@@ -21,6 +21,8 @@ dependencies = [
     "fuzzywuzzy>=0.18.0",
     "scrapy>=2.12.0",
     "pytest>=8.3.0",
+    # Security note: pip 25.2 has known tarfile vulnerability (GHSA-4xh5-x5gv-qwph)
+    # scrapy 2.13.3 has old DoS vulnerability (PYSEC-2017-83) - consider if needed
     "termcolor>=2.4.0",
     "pycld2>=0.41",
     "polyglot>=16.7.4",
@@ -49,6 +51,7 @@ dev-dependencies = [
     "black>=24.0.0",
     "flake8>=7.0.0",
     "isort>=5.13.0",
+    "pip-audit>=2.9.0",
 ]
 
 [build-system]
