@@ -5,6 +5,8 @@
 import fnmatch
 import os
 import subprocess
+import shutil
+from pathlib import Path
 # global variables (change to suit your needs)
 inputfolderpath = '~'  # set to import folder path
 outputpath = '~'  # set to output folder (must exist)
@@ -26,32 +28,67 @@ if operationtype == '1':
     for filename in find_files(inputfolderpath, '*.djvu'):
         print(f"[*] Processing DJVU to PDF for {filename}...")
         i = i + 1
-        inputfull = inputfolderpath+filename
-        outputfilename = filename[:-4]+i+'pdf'  # make filename unique
-        outputfilepath = outputpath
-        p = subprocess.Popen(["djvu2pdf", inputfull], stdout=subprocess.PIPE)
+        inputfull = os.path.join(inputfolderpath, filename)
+        # Validate that the file exists and is a regular file
+        if not os.path.isfile(inputfull):
+            print(f"[!] Skipping {filename} - not a valid file")
+            continue
+        outputfilename = f"{filename[:-5]}_{i}.pdf"  # make filename unique
+        outputfilepath = os.path.join(outputpath, outputfilename)
+        # Use list for subprocess to avoid shell injection
+        p = subprocess.Popen(
+            ["djvu2pdf", inputfull],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
         output, err = p.communicate()
-        subprocess.call(["mv", outputfilename, outputfilepath])
+        # Use shutil.move instead of shell command for better security
+        if p.returncode == 0 and os.path.exists(outputfilename):
+            shutil.move(outputfilename, outputfilepath)
         print('[-] Processing finished for %s' % filename)
     print(f"[--] processed {i} file(s) [--]")
     exit('\n\"Sanity is madness put to good uses.\" - George Santayana\n')
 
 elif operationtype == '2':
     filename = input('What filename to process? (leave blank for example): ')
-    if 'djvu' in filename:
+    if filename and 'djvu' in filename:
+        # Validate filename to prevent path traversal
+        safe_path = Path(filename).resolve()
+        if not safe_path.is_file() or not str(safe_path).endswith('.djvu'):
+            print('[!] Invalid file or not a .djvu file')
+            exit('Invalid input')
         print('Processing DJVU to PDF...')
-        p = subprocess.Popen(["djvu2pdf", filename], stdout=subprocess.PIPE)
+        p = subprocess.Popen(
+            ["djvu2pdf", str(safe_path)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
         output, err = p.communicate()
-        print('Processing finished')
-        exit('Completed sucessfully')
+        if p.returncode == 0:
+            print('Processing finished')
+            exit('Completed successfully')
+        else:
+            print(f'[!] Error processing file: {err.decode() if err else "Unknown error"}')
+            exit('Failed')
     else:
         print('No djvu file to process, running sample')
         print('Processing DJVU to PDF...')
-        p = subprocess.Popen(["djvu2pdf", "assets/example.djvu"],
-                             stdout=subprocess.PIPE)
+        sample_file = Path("assets/example.djvu")
+        if not sample_file.is_file():
+            print('[!] Sample file not found')
+            exit('Sample file missing')
+        p = subprocess.Popen(
+            ["djvu2pdf", str(sample_file)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
         output, err = p.communicate()
-        print('Processing finished')
-        exit('Completed sucessfully')
+        if p.returncode == 0:
+            print('Processing finished')
+            exit('Completed successfully')
+        else:
+            print(f'[!] Error: {err.decode() if err else "Unknown error"}')
+            exit('Failed')
 
 
 elif operationtype == '':
