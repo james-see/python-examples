@@ -36,10 +36,14 @@ jobs:
       run: |
         # Ignore vulnerabilities we can't control or are being fixed by dependabot
         # pip: GHSA-4xh5-x5gv-qwph - Runner environment pip, not in our control
-        # fonttools: GHSA-jc8q-39xc-w3v7 - Being fixed by dependabot PR #27
+        # filelock: GHSA-w853-jp5j-5j7f - TOCTOU race condition, dependency of virtualenv
+        # fonttools: GHSA-768j-98cg-p3fv - RCE in varLib, being fixed by dependabot PR #27
+        # fonttools: GHSA-jc8q-39xc-w3v7 - Additional fonttools vuln, being fixed by dependabot PR #27
         # scrapy: PYSEC-2017-83 - Old DoS from 2017, low severity, informational only
         uv run pip-audit --desc \
           --ignore-vuln GHSA-4xh5-x5gv-qwph \
+          --ignore-vuln GHSA-w853-jp5j-5j7f \
+          --ignore-vuln GHSA-768j-98cg-p3fv \
           --ignore-vuln GHSA-jc8q-39xc-w3v7 \
           --ignore-vuln PYSEC-2017-83
 
