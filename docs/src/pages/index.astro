@@ -2,35 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 
 const examples = [
-	// LLM & AI
-	{
-		title: 'openai_gpt-example.py',
-		description: 'Chat completions, streaming, function calling, JSON mode with GPT-4',
-		category: 'LLM & AI',
-		tags: ['openai', 'gpt', 'chat', 'streaming'],
-		difficulty: 'intermediate'
-	},
-	{
-		title: 'anthropic_claude-example.py',
-		description: 'Claude 3.5 integration with vision, streaming, and extended thinking',
-		category: 'LLM & AI',
-		tags: ['anthropic', 'claude', 'vision', 'ai'],
-		difficulty: 'intermediate'
-	},
-	{
-		title: 'langchain-example.py',
-		description: 'LangChain framework: chains, memory, RAG, and prompt templates',
-		category: 'LLM & AI',
-		tags: ['langchain', 'rag', 'agents', 'chains'],
-		difficulty: 'advanced'
-	},
-	{
-		title: 'instructor-example.py',
-		description: 'Type-safe structured outputs from LLMs using Pydantic',
-		category: 'LLM & AI',
-		tags: ['instructor', 'pydantic', 'structured', 'validation'],
-		difficulty: 'intermediate'
-	},
 	// Network & APIs
 	{
 		title: 'grpcio-example.py',
@@ -142,10 +113,10 @@ const totalExamples = examples.length;
 	<div class="abstract">
 		<div class="abstract-title">Abstract</div>
 		<p>
-			This repository presents a comprehensive collection of Python examples demonstrating
-			modern development patterns, from cutting-edge LLM integrations to classic data processing.
-			Each example prioritizes security, type safety, and real-world applicability. 
-			Built for developers who value clarity, efficiency, and getting things done.
+			A curated collection of practical Python code examples covering web APIs, data processing,
+			security tools, web scraping, and file manipulation. Each example is production-ready with
+			proper error handling, security considerations, and clear documentation. Built by a developer
+			who automates everything and believes good examples are better than lengthy tutorials.
 		</p>
 	</div>
 
@@ -204,17 +175,27 @@ cd python-examples
 # Install dependencies (using uv)
 uv sync --dev
 
-# Run an example
+# Run any example
 cd python-examples
-python openai_gpt-example.py</code></pre>
+python requests-example.py</code></pre>
 
-	<h2>Features</h2>
+	<h2>Why This Collection?</h2>
 	<ul style="font-family: var(--font-sans); font-size: 1rem; line-height: 2; margin-left: 2rem;">
-		<li><strong>Modern Python 3.12+</strong> - Leveraging latest language features</li>
-		<li><strong>Type Safety</strong> - Pydantic models and type hints throughout</li>
-		<li><strong>Security First</strong> - Input validation, secure defaults, CodeQL verified</li>
-		<li><strong>Production Ready</strong> - Error handling, logging, and best practices</li>
-		<li><strong>Well Documented</strong> - Clear docstrings and usage examples</li>
+		<li><strong>Copy-Paste Ready</strong> - Working code you can use immediately</li>
+		<li><strong>Security Focused</strong> - Input validation, secure defaults, CodeQL verified</li>
+		<li><strong>Modern Python 3.12+</strong> - Using latest features and best practices</li>
+		<li><strong>Real-World Examples</strong> - Actual use cases, not toy demos</li>
+		<li><strong>No Fluff</strong> - Code first, explanations when needed</li>
+	</ul>
+
+	<h2>Popular Examples</h2>
+	<ul style="font-family: var(--font-sans); font-size: 1rem; line-height: 2; margin-left: 2rem;">
+		<li><strong>gRPC</strong> - Modern RPC framework with protocol buffers</li>
+		<li><strong>Flask</strong> - Web API with secure file uploads</li>
+		<li><strong>Scrapy</strong> - Web scraping at scale</li>
+		<li><strong>Tor Integration</strong> - Anonymous network access</li>
+		<li><strong>Shodan API</strong> - Internet device search and OSINT</li>
+		<li><strong>OpenCV</strong> - Computer vision and face detection</li>
 	</ul>
 
 	<footer class="site-footer">
