@@ -56,6 +56,86 @@ uv run isort .
 - **tests/**: Test files
 - **.github/workflows/**: GitHub Actions for CI/CD
 
+## 🤖 LLM & AI Examples
+
+Modern examples for working with Large Language Models and AI workflows.
+
+### API Configuration
+
+Create a `.env` file in the project root (see `.env.example` for template):
+
+```bash
+OPENAI_API_KEY=sk-...
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+### Available Examples
+
+**OpenAI GPT** (`openai_gpt-example.py`)
+- Chat completions with GPT-4 and GPT-3.5
+- Streaming responses
+- Function calling (tool use)
+- System prompts and conversation memory
+- JSON mode for structured outputs
+- [Get API key](https://platform.openai.com/api-keys)
+
+**Anthropic Claude** (`anthropic_claude-example.py`)
+- Claude 3.5 Sonnet, Opus, and Haiku
+- Streaming and multi-turn conversations
+- Vision capabilities
+- Extended thinking for complex reasoning
+- Response prefill for guided outputs
+- [Get API key](https://console.anthropic.com/)
+
+**LangChain** (`langchain-example.py`)
+- Prompt templates and chains
+- Conversation memory
+- Structured output parsing with Pydantic
+- RAG (Retrieval-Augmented Generation) patterns
+- Few-shot prompting
+- Sequential chains
+- [LangChain Docs](https://python.langchain.com/)
+
+**Instructor** (`instructor-example.py`)
+- Type-safe structured outputs
+- Pydantic model validation
+- List and nested model extraction
+- Classification and sentiment analysis
+- Chain of thought reasoning
+- Streaming structured outputs
+- [Instructor Docs](https://python.useinstructor.com/)
+
+### Dependencies
+
+```bash
+# Install all LLM dependencies
+uv sync
+
+# Or install specific packages
+uv add openai anthropic langchain langchain-openai instructor python-dotenv
+```
+
+### Usage Examples
+
+```bash
+# OpenAI GPT examples
+cd python-examples
+python openai_gpt-example.py
+
+# Anthropic Claude examples
+python anthropic_claude-example.py
+
+# LangChain framework
+python langchain-example.py
+
+# Instructor for structured outputs
+python instructor-example.py
+```
+
+---
+
+## 📚 Classic Python Examples
+
 **urllib** (built-in to python3)
 
 1. [access foursquare API](#foursquare-api-example)
