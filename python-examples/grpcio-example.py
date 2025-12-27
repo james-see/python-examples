@@ -10,12 +10,14 @@ Requirements:
     pip install grpcio grpcio-tools
 
 Setup:
-    Before running, generate the gRPC Python code from the proto file:
-    python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. python-examples/grpc_example.proto
+    Navigate to the python-examples directory and run setup:
+    cd python-examples
+    python grpcio-example.py setup
 
 To run:
-    1. Start the server: python grpcio-example.py server
-    2. In another terminal, run the client: python grpcio-example.py client
+    cd python-examples
+    1. Terminal 1: python grpcio-example.py server
+    2. Terminal 2: python grpcio-example.py client
 
 Note: This example uses insecure channels for simplicity. In production,
 use secure channels with TLS/SSL certificates.
@@ -28,15 +30,26 @@ from concurrent import futures
 import time
 import subprocess
 
-# Check if proto files are generated, if not, generate them
-if not os.path.exists('python-examples/grpc_example_pb2.py'):
-    print("Generating gRPC Python code from proto file...")
+# Check if proto files are generated in the same directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+proto_file = os.path.join(script_dir, 'grpc_example_pb2.py')
+
+if not os.path.exists(proto_file):
+    print("gRPC proto files not found. Attempting to generate...")
+    proto_source = os.path.join(script_dir, 'grpc_example.proto')
+    
+    if not os.path.exists(proto_source):
+        print(f"Error: Proto file not found at {proto_source}")
+        sys.exit(1)
+    
     try:
         subprocess.run([
             sys.executable, '-m', 'grpc_tools.protoc',
-            '-I.', '--python_out=.', '--grpc_python_out=.',
-            'python-examples/grpc_example.proto'
-        ], check=True)
+            f'-I{script_dir}',
+            f'--python_out={script_dir}',
+            f'--grpc_python_out={script_dir}',
+            proto_source
+        ], check=True, cwd=script_dir)
         print("Generated successfully!\n")
     except subprocess.CalledProcessError as e:
         print(f"Error generating proto files: {e}")
@@ -44,19 +57,16 @@ if not os.path.exists('python-examples/grpc_example_pb2.py'):
         sys.exit(1)
 
 # Import generated proto classes
+# Note: proto files should be generated in the same directory as this script
 try:
-    from python-examples import grpc_example_pb2
-    from python-examples import grpc_example_pb2_grpc
+    import grpc_example_pb2
+    import grpc_example_pb2_grpc
 except ImportError:
-    # Try alternative import path
-    try:
-        sys.path.insert(0, 'python-examples')
-        import grpc_example_pb2
-        import grpc_example_pb2_grpc
-    except ImportError:
-        print("Error: Failed to import generated gRPC modules.")
-        print("Please ensure the proto files are generated correctly.")
-        sys.exit(1)
+    print("Error: gRPC proto files not found.")
+    print("Please run: python grpcio-example.py setup")
+    print("Or manually generate with:")
+    print("  python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. python-examples/grpc_example.proto")
+    sys.exit(1)
 
 
 # Server implementation
@@ -171,13 +181,23 @@ if __name__ == '__main__':
     
     if command == 'setup':
         print("Generating gRPC Python code from proto file...")
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        proto_source = os.path.join(script_dir, 'grpc_example.proto')
+        
+        if not os.path.exists(proto_source):
+            print(f"✗ Error: Proto file not found at {proto_source}")
+            sys.exit(1)
+        
         try:
             subprocess.run([
                 sys.executable, '-m', 'grpc_tools.protoc',
-                '-I.', '--python_out=.', '--grpc_python_out=.',
-                'python-examples/grpc_example.proto'
-            ], check=True)
+                f'-I{script_dir}',
+                f'--python_out={script_dir}',
+                f'--grpc_python_out={script_dir}',
+                proto_source
+            ], check=True, cwd=script_dir)
             print("✓ Generated successfully!")
+            print(f"✓ Files created in: {script_dir}")
             print("\nYou can now run:")
             print("  python grpcio-example.py server")
             print("  python grpcio-example.py client")
