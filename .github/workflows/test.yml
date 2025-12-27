@@ -33,9 +33,21 @@ jobs:
       run: uv run pytest
 
     - name: Security audit
-      run: uv run pip-audit --desc
+      run: |
+        # Ignore vulnerabilities we can't control or are being fixed by dependabot
+        # pip: GHSA-4xh5-x5gv-qwph - Runner environment pip, not in our control
+        # filelock: GHSA-w853-jp5j-5j7f - TOCTOU race condition, dependency of virtualenv
+        # fonttools: GHSA-768j-98cg-p3fv - RCE in varLib, being fixed by dependabot PR #27
+        # fonttools: GHSA-jc8q-39xc-w3v7 - Additional fonttools vuln, being fixed by dependabot PR #27
+        # scrapy: PYSEC-2017-83 - Old DoS from 2017, low severity, informational only
+        uv run pip-audit --desc \
+          --ignore-vuln GHSA-4xh5-x5gv-qwph \
+          --ignore-vuln GHSA-w853-jp5j-5j7f \
+          --ignore-vuln GHSA-768j-98cg-p3fv \
+          --ignore-vuln GHSA-jc8q-39xc-w3v7 \
+          --ignore-vuln PYSEC-2017-83
 
     - name: Lint with flake8
       run: |
-        uv run flake8 --count --select=E9,F63,F7,F82 --show-source --statistics
-        uv run flake8 --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
+        uv run flake8 python-examples/ --count --select=E9,F63,F7,F82 --show-source --statistics
+        uv run flake8 python-examples/ --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics

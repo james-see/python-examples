@@ -17,12 +17,10 @@ dependencies = [
     "blockchain>=1.4.4",
     "websockify>=0.11.0",
     "shodan>=1.31.0",
-    "urllib3>=2.2.1",
+    "urllib3>=2.6.0",
     "fuzzywuzzy>=0.18.0",
-    "scrapy>=2.12.0",
+    "scrapy>=2.13.4",
     "pytest>=8.3.0",
-    # Security note: pip 25.2 has known tarfile vulnerability (GHSA-4xh5-x5gv-qwph)
-    # scrapy 2.13.3 has old DoS vulnerability (PYSEC-2017-83) - consider if needed
     "termcolor>=2.4.0",
     "pycld2>=0.41",
     "polyglot>=16.7.4",
@@ -36,7 +34,7 @@ dependencies = [
     "pypdf2>=3.0.1",
     "pinboard>=2.1.9",
     "webdriver-manager>=4.0.2",
-    "scapy>=2.5.0",
+    "scapy>=2.7.0",
     "matplotlib>=3.9.0",
     "iptcinfo3>=2.1.4",
     "requests>=2.31.0",

@@ -39,26 +39,57 @@ def hello_world():
 @app.route("/upload", methods=["POST"])
 def upload_csv() -> str:
     """Upload CSV example."""
+    if "file" not in request.files:
+        return jsonify({"status": HTTPStatus.BAD_REQUEST, "message": "No file provided"}), 400
+    
     submitted_file = request.files["file"]
-    if submitted_file and allowed_filename(submitted_file.filename):
-        filename = secure_filename(submitted_file.filename)
-        directory = os.path.join(app.config["UPLOAD_FOLDER"])
-        if not os.path.exists(directory):
-            os.mkdir(directory)
-        basedir = os.path.abspath(os.path.dirname(__file__))
-        submitted_file.save(
-            os.path.join(basedir, app.config["UPLOAD_FOLDER"], filename)
-        )
-        out = {
-            "status": HTTPStatus.OK,
-            "filename": filename,
-            "message": f"{filename} saved successful.",
-        }
-        return jsonify(out)
+    
+    if not submitted_file or not submitted_file.filename:
+        return jsonify({"status": HTTPStatus.BAD_REQUEST, "message": "No file selected"}), 400
+    
+    if not allowed_filename(submitted_file.filename):
+        return jsonify({"status": HTTPStatus.BAD_REQUEST, "message": "File type not allowed"}), 400
+    
+    filename = secure_filename(submitted_file.filename)
+    
+    # Additional security check: ensure filename is not empty after sanitization
+    if not filename:
+        return jsonify({"status": HTTPStatus.BAD_REQUEST, "message": "Invalid filename"}), 400
+    
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    upload_folder = os.path.abspath(os.path.join(basedir, app.config["UPLOAD_FOLDER"]))
+    
+    # Create directory with secure permissions if it doesn't exist
+    if not os.path.exists(upload_folder):
+        os.makedirs(upload_folder, mode=0o755, exist_ok=True)
+    
+    # Construct full path and verify it's within the upload directory (prevent path traversal)
+    file_path = os.path.abspath(os.path.join(upload_folder, filename))
+    
+    if not file_path.startswith(upload_folder):
+        return jsonify({"status": HTTPStatus.BAD_REQUEST, "message": "Invalid file path"}), 400
+    
+    # Limit file size (optional but recommended)
+    # submitted_file.seek(0, os.SEEK_END)
+    # file_size = submitted_file.tell()
+    # submitted_file.seek(0)
+    # if file_size > MAX_FILE_SIZE:
+    #     return jsonify({"status": HTTPStatus.BAD_REQUEST, "message": "File too large"}), 400
+    
+    submitted_file.save(file_path)
+    
+    out = {
+        "status": HTTPStatus.OK,
+        "filename": filename,
+        "message": f"{filename} saved successfully.",
+    }
+    return jsonify(out)
 
 
 if __name__ == "__main__":
     app.config["UPLOAD_FOLDER"] = "flaskme/"
-    app.run(port=6969, debug=True)
+    # Debug mode disabled for security - use environment variable to enable in development
+    debug_mode = os.environ.get("FLASK_DEBUG", "False").lower() == "true"
+    app.run(port=6969, debug=debug_mode)
 
 # curl -X POST localhost:6969/upload -F file=@"assets/archive_name.tar.gz" -i

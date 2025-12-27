@@ -10,7 +10,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    global result
     hoster = result.hostname
     return "<body style='font-family:monospace;'>\
             <p>Hi Grandma! {}</p><pre>{}</pre</body>".format(hoster)
