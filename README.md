@@ -9,6 +9,8 @@ It is a way for me to remember and hopefully get others started.
 
 Start your Python journey in Python 3. Onward and upward.
 
+**📚 [View the documentation site →](https://james-see.github.io/python-examples/)**
+
 ## 🚀 Quick Start
 
 This project uses [uv](https://github.com/astral-sh/uv) for modern Python package management.

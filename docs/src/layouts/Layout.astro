@@ -1,0 +1,27 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="A curated collection of Python examples for modern development" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/python-examples/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="paper-container">
+			<slot />
+		</div>
+		<style is:global>
+			@import "../styles/global.css";
+		</style>
+	</body>
+</html>

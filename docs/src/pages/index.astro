@@ -1,0 +1,291 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const examples = [
+	// LLM & AI
+	{
+		title: 'openai_gpt-example.py',
+		description: 'Chat completions, streaming, function calling, JSON mode with GPT-4',
+		category: 'LLM & AI',
+		tags: ['openai', 'gpt', 'chat', 'streaming'],
+		difficulty: 'intermediate'
+	},
+	{
+		title: 'anthropic_claude-example.py',
+		description: 'Claude 3.5 integration with vision, streaming, and extended thinking',
+		category: 'LLM & AI',
+		tags: ['anthropic', 'claude', 'vision', 'ai'],
+		difficulty: 'intermediate'
+	},
+	{
+		title: 'langchain-example.py',
+		description: 'LangChain framework: chains, memory, RAG, and prompt templates',
+		category: 'LLM & AI',
+		tags: ['langchain', 'rag', 'agents', 'chains'],
+		difficulty: 'advanced'
+	},
+	{
+		title: 'instructor-example.py',
+		description: 'Type-safe structured outputs from LLMs using Pydantic',
+		category: 'LLM & AI',
+		tags: ['instructor', 'pydantic', 'structured', 'validation'],
+		difficulty: 'intermediate'
+	},
+	// Network & APIs
+	{
+		title: 'grpcio-example.py',
+		description: 'gRPC client-server implementation with protocol buffers',
+		category: 'Network & APIs',
+		tags: ['grpc', 'rpc', 'protobuf', 'api'],
+		difficulty: 'advanced'
+	},
+	{
+		title: 'requests-example.py',
+		description: 'HTTP requests library examples for API interactions',
+		category: 'Network & APIs',
+		tags: ['http', 'requests', 'api', 'rest'],
+		difficulty: 'beginner'
+	},
+	{
+		title: 'flask-example.py',
+		description: 'Flask web framework with file uploads and routing',
+		category: 'Network & APIs',
+		tags: ['flask', 'web', 'server', 'api'],
+		difficulty: 'intermediate'
+	},
+	// Web Scraping
+	{
+		title: 'scrapy-spider.py',
+		description: 'Scrapy spider for crawling and extracting web data',
+		category: 'Web Scraping',
+		tags: ['scrapy', 'crawling', 'spider', 'web'],
+		difficulty: 'intermediate'
+	},
+	{
+		title: 'bs4-example.py',
+		description: 'BeautifulSoup HTML parsing and DOM manipulation',
+		category: 'Web Scraping',
+		tags: ['beautifulsoup', 'html', 'parsing', 'dom'],
+		difficulty: 'beginner'
+	},
+	// Data & ML
+	{
+		title: 'sentiment_analysis_nltk-example.py',
+		description: 'NLTK sentiment analysis on text data',
+		category: 'Data & ML',
+		tags: ['nltk', 'nlp', 'sentiment', 'ml'],
+		difficulty: 'intermediate'
+	},
+	{
+		title: 'opencv_facial_recognition-example.py',
+		description: 'OpenCV face detection and recognition',
+		category: 'Data & ML',
+		tags: ['opencv', 'cv', 'face-detection', 'ml'],
+		difficulty: 'advanced'
+	},
+	// Security
+	{
+		title: 'tor-example.py',
+		description: 'Tor network integration for anonymous browsing',
+		category: 'Security',
+		tags: ['tor', 'privacy', 'anonymity', 'network'],
+		difficulty: 'advanced'
+	},
+	{
+		title: 'shodan-example.py',
+		description: 'Shodan API for internet-connected device search',
+		category: 'Security',
+		tags: ['shodan', 'osint', 'security', 'api'],
+		difficulty: 'intermediate'
+	},
+	{
+		title: 'hashing_example.py',
+		description: 'Cryptographic hashing with SHA-256 and other algorithms',
+		category: 'Security',
+		tags: ['crypto', 'hashing', 'sha', 'security'],
+		difficulty: 'beginner'
+	},
+	// File Processing
+	{
+		title: 'pdfquery-example.py',
+		description: 'PDF text extraction and querying',
+		category: 'File Processing',
+		tags: ['pdf', 'text', 'extraction', 'files'],
+		difficulty: 'beginner'
+	},
+	{
+		title: 'exif_reader-example.py',
+		description: 'EXIF metadata extraction from images',
+		category: 'File Processing',
+		tags: ['exif', 'images', 'metadata', 'photos'],
+		difficulty: 'beginner'
+	}
+];
+
+const categories = [...new Set(examples.map(e => e.category))];
+const totalExamples = examples.length;
+---
+
+<Layout title="Python Examples - A Curated Collection">
+	<header class="site-header">
+		<h1 class="site-title">
+			<span class="accent">$</span> python-examples
+		</h1>
+		<p class="site-subtitle">A Curated Collection of Python Implementations</p>
+		<div class="meta">
+			by <a href="https://github.com/james-see" target="_blank">@james-see</a> 
+			· Updated 2025 
+			· <a href="https://github.com/james-see/python-examples" target="_blank">View on GitHub</a>
+		</div>
+	</header>
+
+	<div class="abstract">
+		<div class="abstract-title">Abstract</div>
+		<p>
+			This repository presents a comprehensive collection of Python examples demonstrating
+			modern development patterns, from cutting-edge LLM integrations to classic data processing.
+			Each example prioritizes security, type safety, and real-world applicability. 
+			Built for developers who value clarity, efficiency, and getting things done.
+		</p>
+	</div>
+
+	<div class="stats">
+		<div class="stat">
+			<span class="stat-number">{totalExamples}+</span>
+			<span class="stat-label">Examples</span>
+		</div>
+		<div class="stat">
+			<span class="stat-number">{categories.length}</span>
+			<span class="stat-label">Categories</span>
+		</div>
+		<div class="stat">
+			<span class="stat-number">3.12+</span>
+			<span class="stat-label">Python</span>
+		</div>
+	</div>
+
+	<h2>Examples</h2>
+
+	<div class="search-container">
+		<input 
+			type="text" 
+			id="search" 
+			class="search-input" 
+			placeholder="Search examples... (try 'api', 'llm', 'security')"
+		/>
+	</div>
+
+	<div class="filter-pills" id="filters">
+		<button class="filter-pill active" data-filter="all">All</button>
+		{categories.map(category => (
+			<button class="filter-pill" data-filter={category}>{category}</button>
+		))}
+	</div>
+
+	<div class="example-grid" id="examples">
+		{examples.map(example => (
+			<div class="example-card" data-category={example.category} data-tags={example.tags.join(' ')}>
+				<h4>{example.title}</h4>
+				<p>{example.description}</p>
+				<div class="tags">
+					{example.tags.map(tag => (
+						<span class="tag">{tag}</span>
+					))}
+				</div>
+			</div>
+		))}
+	</div>
+
+	<h2>Quick Start</h2>
+	<pre><code># Clone the repository
+git clone https://github.com/james-see/python-examples.git
+cd python-examples
+
+# Install dependencies (using uv)
+uv sync --dev
+
+# Run an example
+cd python-examples
+python openai_gpt-example.py</code></pre>
+
+	<h2>Features</h2>
+	<ul style="font-family: var(--font-sans); font-size: 1rem; line-height: 2; margin-left: 2rem;">
+		<li><strong>Modern Python 3.12+</strong> - Leveraging latest language features</li>
+		<li><strong>Type Safety</strong> - Pydantic models and type hints throughout</li>
+		<li><strong>Security First</strong> - Input validation, secure defaults, CodeQL verified</li>
+		<li><strong>Production Ready</strong> - Error handling, logging, and best practices</li>
+		<li><strong>Well Documented</strong> - Clear docstrings and usage examples</li>
+	</ul>
+
+	<footer class="site-footer">
+		<p>
+			Built with <a href="https://astro.build" target="_blank">Astro</a> · 
+			Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
+		</p>
+		<div class="citation">
+			<strong>Citation:</strong> Campbell, J. (2025). <em>python-examples: A Curated Collection</em>. 
+			GitHub. https://github.com/james-see/python-examples
+		</div>
+	</footer>
+
+	<script>
+		// Search functionality
+		const searchInput = document.getElementById('search') as HTMLInputElement;
+		const examplesContainer = document.getElementById('examples');
+		const cards = document.querySelectorAll('.example-card') as NodeListOf<HTMLElement>;
+
+		searchInput?.addEventListener('input', (e) => {
+			const query = (e.target as HTMLInputElement).value.toLowerCase();
+			cards.forEach(card => {
+				const title = card.querySelector('h4')?.textContent?.toLowerCase() || '';
+				const desc = card.querySelector('p')?.textContent?.toLowerCase() || '';
+				const tags = card.dataset.tags?.toLowerCase() || '';
+				
+				const matches = title.includes(query) || desc.includes(query) || tags.includes(query);
+				card.style.display = matches ? 'block' : 'none';
+			});
+		});
+
+		// Filter functionality
+		const filterButtons = document.querySelectorAll('.filter-pill') as NodeListOf<HTMLElement>;
+		let activeFilter = 'all';
+
+		filterButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				filterButtons.forEach(b => b.classList.remove('active'));
+				button.classList.add('active');
+				
+				activeFilter = button.dataset.filter || 'all';
+				
+				cards.forEach(card => {
+					const category = card.dataset.category;
+					card.style.display = activeFilter === 'all' || category === activeFilter ? 'block' : 'none';
+				});
+			});
+		});
+
+		// Easter egg - Konami code for nerds
+		let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+		let konamiIndex = 0;
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === konamiCode[konamiIndex]) {
+				konamiIndex++;
+				if (konamiIndex === konamiCode.length) {
+					document.body.style.animation = 'rainbow 2s infinite';
+					console.log('🎉 You found the easter egg! Here\'s a secret: I automate everything. Even this message.');
+					konamiIndex = 0;
+				}
+			} else {
+				konamiIndex = 0;
+			}
+		});
+	</script>
+
+	<style>
+		@keyframes rainbow {
+			0% { filter: hue-rotate(0deg); }
+			100% { filter: hue-rotate(360deg); }
+		}
+	</style>
+</Layout>
