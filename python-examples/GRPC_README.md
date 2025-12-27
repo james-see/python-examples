@@ -21,17 +21,22 @@ pip install grpcio grpcio-tools
 
 ## Setup
 
-First, generate the gRPC Python code from the proto file:
-
-```bash
-python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. python-examples/grpc_example.proto
-```
-
-Or use the built-in setup command:
+First, navigate to the python-examples directory and generate the gRPC Python code:
 
 ```bash
 cd python-examples
 python grpcio-example.py setup
+```
+
+This generates:
+- `grpc_example_pb2.py` - Protocol buffer message classes
+- `grpc_example_pb2_grpc.py` - gRPC service classes
+
+Alternatively, you can manually generate with:
+
+```bash
+cd python-examples
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. grpc_example.proto
 ```
 
 This generates:
