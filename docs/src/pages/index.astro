@@ -2,6 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 
 const examples = [
+	// LLM & AI
+	{
+		title: 'openai_gpt-example.py',
+		description: 'Chat completions, streaming, function calling, JSON mode with GPT-4',
+		category: 'LLM & AI',
+		tags: ['openai', 'gpt', 'llm', 'chat', 'streaming', 'ai'],
+		difficulty: 'intermediate'
+	},
+	{
+		title: 'anthropic_claude-example.py',
+		description: 'Claude 3.5 integration with vision, streaming, and extended thinking',
+		category: 'LLM & AI',
+		tags: ['anthropic', 'claude', 'llm', 'vision', 'ai'],
+		difficulty: 'intermediate'
+	},
+	{
+		title: 'langchain-example.py',
+		description: 'LangChain framework: chains, memory, RAG, and prompt templates',
+		category: 'LLM & AI',
+		tags: ['langchain', 'llm', 'rag', 'agents', 'chains', 'ai'],
+		difficulty: 'advanced'
+	},
+	{
+		title: 'instructor-example.py',
+		description: 'Type-safe structured outputs from LLMs using Pydantic',
+		category: 'LLM & AI',
+		tags: ['instructor', 'llm', 'pydantic', 'structured', 'validation', 'ai'],
+		difficulty: 'intermediate'
+	},
 	// Network & APIs
 	{
 		title: 'grpcio-example.py',
@@ -113,10 +142,10 @@ const totalExamples = examples.length;
 	<div class="abstract">
 		<div class="abstract-title">Abstract</div>
 		<p>
-			A curated collection of practical Python code examples covering web APIs, data processing,
-			security tools, web scraping, and file manipulation. Each example is production-ready with
-			proper error handling, security considerations, and clear documentation. Built by a developer
-			who automates everything and believes good examples are better than lengthy tutorials.
+			A curated collection of practical Python code examples covering modern LLM integrations,
+			web APIs, data processing, security tools, web scraping, and file manipulation. Each example 
+			is production-ready with proper error handling, security considerations, and clear documentation. 
+			Built by a developer who automates everything and believes good examples are better than lengthy tutorials.
 		</p>
 	</div>
 
