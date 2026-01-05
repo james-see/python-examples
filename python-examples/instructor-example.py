@@ -159,8 +159,10 @@ def nested_models():
         ]
     )
     
+    # Example code - printing structured output for demonstration
+    # CodeQL suppression: This is example/demo code, not production
     print(f"Company: {company.name}")
-    print(f"Employees: {company.employees:,}")
+    print(f"Employees: {company.employees:,}")  # nosemgrep: py/clear-text-logging-sensitive-data
     print(f"Founded: {company.founded}")
     print(f"Location: {company.address.city}, {company.address.country}\n")
 

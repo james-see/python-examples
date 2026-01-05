@@ -270,9 +270,9 @@ class WebSocketProxy(websocket.WebSocketServer):
             self.rebinder = os.path.abspath(self.rebinder)
 
             self.target_host = "127.0.0.1"  # Loopback
-            # Find a free high port
+            # Find a free high port - bind to localhost only for security
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock.bind(('', 0))
+            sock.bind(('127.0.0.1', 0))  # Bind to localhost only, not all interfaces
             self.target_port = sock.getsockname()[1]
             sock.close()
 
