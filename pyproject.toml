@@ -21,6 +21,9 @@ dependencies = [
     "fuzzywuzzy>=0.18.0",
     "scrapy>=2.13.4",
     "pytest>=8.3.0",
+    # Security notes:
+    # - pip 25.2 vulnerability (GHSA-4xh5-x5gv-qwph): NOT AFFECTED - Python 3.12+ implements PEP 706
+    # - scrapy 2.13.3 (PYSEC-2017-83): Already at latest version, old DoS vulnerability from 2017
     "termcolor>=2.4.0",
     "pycld2>=0.41",
     "polyglot>=16.7.4",
@@ -36,6 +39,9 @@ dependencies = [
     "webdriver-manager>=4.0.2",
     "scapy>=2.7.0",
     "matplotlib>=3.9.0",
+    # Security: Pin vulnerable transitive dependencies to fixed versions
+    "filelock>=3.20.2",
+    "fonttools>=4.60.2",
     "iptcinfo3>=2.1.4",
     "requests>=2.31.0",
     "lxml>=5.2.0",

@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    ignore:
+      # pip 25.2 vulnerability - NOT AFFECTED (Python 3.12+ implements PEP 706)
+      - dependency-name: "pip"
+        versions: ["25.2"]
+      # scrapy already at latest version, old vulnerability from 2017
+      - dependency-name: "scrapy"
+        versions: ["2.13.3"]

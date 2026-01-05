@@ -57,6 +57,29 @@ uv run isort .
 - **assets/**: Sample data files for examples
 - **tests/**: Test files
 - **.github/workflows/**: GitHub Actions for CI/CD
+- **configs.py.example**: Template for API keys and credentials (copy to `configs.py`)
+
+## 🔐 Security & Configuration
+
+### Setting Up API Keys
+
+Many examples require API keys or credentials. To use them:
+
+1. Copy the example config file:
+   ```bash
+   cp configs.py.example configs.py
+   ```
+
+2. Edit `configs.py` and add your actual API keys (this file is gitignored)
+
+3. Alternatively, use environment variables:
+   ```bash
+   export FOURSQUARE_CLIENT_ID="your_key"
+   export FOURSQUARE_CLIENT_SECRET="your_secret"
+   export DB_PASSWORD="your_password"
+   ```
+
+**⚠️ Never commit `configs.py` to version control!** It's already in `.gitignore`.
 
 ## 🤖 LLM & AI Examples
 

@@ -11,8 +11,20 @@ import urllib.request
 limiter = '1'  # make sure to keep as string due to concat issues otherwise
 cityer = input('What city to search? (no spaces, include country): ')
 queryer = urllib.parse.quote(input('What is the name of venue to search?: '))
-clientider = '5HIGYBY4D24FXGCYTMYBUBGLYQSLORV03CRUS4E53F3GZ1VS'
-clientsecreter = 'B11MC3TFDEY10XQQTUDQGGTKDGCCJBOHD4RPY5VYEW12ZNIN'
+# Get API credentials from configs.py or environment variables
+try:
+    from configs import foursquare_client_id, foursquare_client_secret
+    clientider = foursquare_client_id
+    clientsecreter = foursquare_client_secret
+except ImportError:
+    import os
+    clientider = os.getenv('FOURSQUARE_CLIENT_ID', '')
+    clientsecreter = os.getenv('FOURSQUARE_CLIENT_SECRET', '')
+    if not clientider or not clientsecreter:
+        print('Error: Foursquare API credentials not found.')
+        print('Please set FOURSQUARE_CLIENT_ID and FOURSQUARE_CLIENT_SECRET environment variables')
+        print('or create configs.py with foursquare_client_id and foursquare_client_secret variables')
+        exit(1)
 dater = dt.datetime.today().strftime("%Y%m%d")  # the v needs YYYYMMDD format
 # the actual api call url
 foursquareapivenuesearch = f"https://api.foursquare.com/v2/venues/search?limit={limiter}&near={cityer}&query={queryer}&client_id={clientider}&client_secret={clientsecreter}&v={dater}"
@@ -28,6 +40,12 @@ print(f'\nLat/Long for {urllib.parse.unquote(queryer)}: {lat}, {lng} \n')
 # INSTAGRAM API KILLED BY FACEBOOK - FUCK YOU FACEBOOK!
 print("This example was killed by Facebook killing API's. Complain to Facebook.")
 # globals Instagram API
-# instaclientid = '35b999a6d51344cc98ebb061da538999'
-# instaaccess_token='290277.35b999a.e2423222efa04c058b0e9b95cbf77c07'
+# Note: Instagram API credentials should be loaded from configs.py or environment variables
+# Example:
+# try:
+#     from configs import instagram_client_id, instagram_access_token
+# except ImportError:
+#     import os
+#     instaclientid = os.getenv('INSTAGRAM_CLIENT_ID', '')
+#     instaaccess_token = os.getenv('INSTAGRAM_ACCESS_TOKEN', '')
 #

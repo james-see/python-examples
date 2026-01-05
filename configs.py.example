@@ -1,0 +1,33 @@
+"""
+Example configuration file for python-examples.
+
+Copy this file to configs.py and fill in your actual API keys and credentials.
+NEVER commit configs.py to version control - it's already in .gitignore
+"""
+
+# Foursquare API (for instagram_geo-example.py)
+foursquare_client_id = "your_foursquare_client_id_here"
+foursquare_client_secret = "your_foursquare_client_secret_here"
+
+# Quandl API (for quandl-example.py)
+myqkey = "your_quandl_api_key_here"
+
+# Pinboard API (for pinboard-example.py)
+# Get your token at https://pinboard.in/settings/password
+pinapi = "your_username:your_api_token"
+
+# Shodan API (for shodan-example.py)
+globalshodankey = "your_shodan_api_key_here"
+
+# Zillow API (for pyzillow-example.py)
+zillowapi = "your_zillow_api_key_here"
+
+# PostgreSQL Database (for hug-postgresql-example.py)
+db_name = "your_database_name"
+db_user = "your_database_user"
+db_host = "localhost"
+db_password = "your_database_password"
+
+# Instagram API (deprecated - Facebook killed the API)
+# instagram_client_id = "your_instagram_client_id"
+# instagram_access_token = "your_instagram_access_token"
