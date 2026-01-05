@@ -107,3 +107,6 @@ configs.py
 *.doc
 *.jpg
 *.xml
+
+# Generated requirements files
+current_requirements.txt
