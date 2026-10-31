@@ -40,7 +40,7 @@ dependencies = [
     "scapy>=2.7.0",
     "matplotlib>=3.9.0",
     # Security: Pin vulnerable transitive dependencies to fixed versions
-    "filelock>=3.20.2",
+    "filelock>=4.2.1",
     "fonttools>=4.60.2",
     "iptcinfo3>=2.1.4",
     "requests>=2.31.0",
