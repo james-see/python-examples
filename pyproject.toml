@@ -47,7 +47,7 @@ dependencies = [
     "lxml>=5.2.0",
     "pillow>=10.3.0",
     "numpy>=1.26.0",
-    "grpcio>=1.68.0",
+    "grpcio>=1.85.1",
     "grpcio-tools>=1.68.0",
     # LLM/AI Libraries
     "openai>=1.59.0",
